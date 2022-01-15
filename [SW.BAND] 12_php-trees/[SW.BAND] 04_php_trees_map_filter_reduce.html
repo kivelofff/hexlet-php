@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Отображение, фильтрация, свёртка - PHP: Деревья - Испытания</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="uQSJk_rYN8zF1vOvc5gDEA27RZKbVDzGZyhTEICbntAj9wYLx6tHnICwhdtoaKtQDl4zlQYP6iLqCz7z9e9n5Q" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T14:29:37.436Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="CNVLO41vIjvVHIEm_KFV06VvClSPQmzJnX3ZixLVQ9SSJsSjsBxSa5B691LnUf2Tpop8UxIZui0QXrRoZ6G64Q";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":1202,"slug":"php_trees_map_filter_reduce"};gon.topics=[{"id":51131,"title":"Фууух... [добил](https://ru.hexlet.io/code_reviews/361085)... спустя недели три. Несколько вопросов:\n1. Почему в случае функции map callable \"пробрасывается\" во внутреннюю функции с помощью замыкания, а в остальных передаётся в качестве аргумента? Может стоит везде прокидывать callable с помощью замыкания, он же не изменяется?\n2. В [предыдущем](https://ru.hexlet.io/challenges/php_trees_itinerary) испытании был вопрос по именованию переменных (в частности, именованию одной буквой), там вроде ответили, что да, исправлено, и там, и в смежных испытаниях, но, например, в данной задаче не исправлено :) (то же и в примерах к упражнению).\n3. Не стоит ли во внутренних функциях filter и reduce в if вынести другую проверку, например, вот так для filter:\n```\nif (!isDirectory($node)) {\n    return $node;\n}\nи далее остальной код, который был в if\n```\nвроде всегда в ответах писали, что проверять следует краевой случай.\n\n4. Небольшое предложение, добавить в пример (ну или в тесты) для функции filter следующий случай:\n```\nfilter(fn($n) =\u003e !isDirectory($n), $tree); // вернёт null\n```\nчтобы показать, как должна работать функция? Для меня это было не очевидно, и я смотрел результат работы встроенной в библиотеку функции filter (НЕ САМ КОД, а результат работы :))\n\nНу это так, \"разрешите позанудствовать\" ©, как говориться. Спасибо за задачи и за Вашу помощь в преодолении трудностей.\n","creator":{"id":199233,"public_name":"Алексей Швецов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/alexeyobr","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"4 дня назад","location":"/topics/51131","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":109314,"body":"Приветствую, Алексей!\n\nОтлично! Рад, что вы победили это испытание!\n\n1. Спасибо, что обратили внимание. Я исправил этот момент в решении. Тут действительно больше подходит замыкание.\n2. Там речь шла о связанных испытаниях: Построение маршрута, Трансформер и Пазл. Это серия испытаний с общей идеей и нарастающей сложностью. Здесь я тоже исправил именование, теперь всё в порядке и имён состоящих из одной буквы у переменных и аргументов не наблюдается.\n3. Это ведь просто инвертирование. То есть логика ровно такая же как была раньше, если не директория, то возвращаем ноду, если директория, что-то делаем. В данном случае, условие без инверсии на мой взгляд воспринимается лучше. Уточните, пожалуйста, что вы имеете в виду под \"краевым\" случаем. Возможно я не до конца понял ваш вопрос.\n4. Добавил предложенный вами тест. Еще раз спасибо за фидбек и предложения! Чтобы обновить упражнение, выполните сброс с помощью кнопки на панели справа.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"3 дня назад","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":23905,"user_id":199233,"comment_id":109314}]},{"id":109361,"body":"**Роман Ашиков**, здравствуйте!\n\nПод третьим пунктом я имел в виду вынести \"основной код\" из-под if'а. Просто насколько я понял, обучаясь на Hexlet'е, это будет лучшей практикой. Возможно, я ошибся в этом моменте, ну да ладно.\n\nПо поводу серии испытаний: а как понять, что это именно задумывалась как серия смежных испытаний с возрастающей сложностью? Между ними как раз в списке стоит данное задание. Да и трансформер, судя по всему, сложнее, чем Пазл (4 палочки сложности против 3х :)\n\nСпасибо!","creator":{"id":199233,"public_name":"Алексей Швецов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/alexeyobr","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"3 дня назад","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":109374,"body":"В описании задачи говорится какое испытание рекомендуется пройти до выполнения текущего. Например, [тут](https://ru.hexlet.io/challenges/php_trees_transformer). А по поводу сложности, оказалось что проще реализовать Пазл, так как представление дерева с которым удобно работать уже реализовано в испытании Трансформер.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"2 дня назад","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":23919,"user_id":199233,"comment_id":109374}]}],"useful":false,"subscribers":[{"id":105802,"user_id":226258},{"id":105767,"user_id":199233}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":50854,"title":"Может кто пояснить, в чём суть данного задания? Я написал собственную реализацию трёх функций и у меня возникает ошибка \"Illegal string offset 'type'\". Я просто непонимаю, что ещё требуется сделать или в чём ошибка? Ведь функция просто проходит по циклу и для каждого элемента вызывает функцию-обработчик. Просто задание сформулировано не достаточно конкретно, либо функция должна выполнять, что-то ещё, хотя в курсе об \"золотой тройке\" прямо сказано, что они должны \"отображать, фильтровать, или возвращать аккумулятор и перебирать элементы массива передавая им функцию-обработчик\". А тут получается не только это.\nКод-ревью: https://ru.hexlet.io/code_reviews/358126","creator":{"id":328174,"public_name":"Александр Акулич","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/akulich_aliaksandr","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"02 января 2021","location":"/topics/50854","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":108832,"body":"Приветствую, Александр!\n\nНужно учитывать, что деревья имеют рекурсивную природу и с ними нужно работать соответствующим образом, то есть использовать рекурсию. В код-ревью я не вижу никаких рекурсивных вызовов. Кроме того, в текущем варианте решения никак не используются импортированные функции. Они нужны для того, чтобы не завязываться на внутреннюю реализацию деревьев, так как она в будущем может поменяться. Это достаточно сложное испытание, которое очень хорошо прокачивает понимание рекурсии. Попробуйте не использовать циклы, и учесть замечания которые я привёл выше. Смело задавайте уточняющие вопросы, если возникнут затруднения.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"04 января 2021","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":105226,"user_id":226258},{"id":105159,"user_id":328174}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":48593,"title":"Не является ли этот код протечкой асбтракции?\n\n    return array_merge(\n        $newNode,\n        ['children' =\u003e array_map($map, getChildren($node))]\n    );\n\nВедь по идее мы не должны знать как устроено дерево, для его использования у нас есть специальные методы... Вложенные узлы могут и не в 'children' лежать, если асбтрагироваться именно от этой реализации... ","creator":{"id":248254,"public_name":"Vladimir Minkin","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/vitaminkin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImMzNWI5ZDY4OTliMDQyZGU3NjgwYWE3OGFjOTczZjkyLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=533319e6d5e848b99c4d3309f93df20ac99e0a6c7c1b6830c1043e8cd573cbab","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"21 октября 2020","location":"/topics/48593","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":104408,"body":"Приветствую, Владимир!\n\nСпасибо за фидбек! Тут действительно нужно подумать над реализацей и, если это возможно, то исправить её. Я поставил тикет на эту задачу. Посмотрим, что можно сделать. ","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"22 октября 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":106680,"body":"Приветствую, Владимир!\n\nЕще раз спасибо, что обратили внимание на недочёты. Я отрефакторил решение учителя. Можно нажать на кнопку Сброс, чтобы обновить упражнение.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"24 ноября 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":100198,"user_id":226258},{"id":100107,"user_id":248254}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":47458,"title":"в испытании используются функции getChildren() и isDirectory(), можно ли использовать другие функции из этой библиотеки или задание предполагает, что мы не будем использовать mkfile(), mkdir() и тд?","creator":{"id":286685,"public_name":"Alex Smith","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-fcba2f858f0489f8","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjExYTRmYjFiNzMyZTQ5ODlmZGRlOWVjODJkNmFiMzliIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a66d23a6dd2db91f604a40c083a7304faffac08186d28ffcd9809faad12f0a72","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"18 сентября 2020","location":"/topics/47458","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":102270,"body":"Приветствую!\n\nПодключенных функций достаточно для решения задачи. Если вам нужны какие-то еще, то никто не мешает их импортировать и использовать. Другое дело, что это будет не совсем в соответствии с тем, как задумано испытание.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"21 сентября 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":97859,"user_id":226258},{"id":97746,"user_id":286685}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":44982,"title":"Привет ! стоит ли начинать проект, если не могу решить эту задачу ?","creator":{"id":128341,"public_name":"Виталий Кудрявцев","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kudrvet","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"08 июля 2020","location":"/topics/44982","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":97292,"body":"Приветствую, Виталий!\n\nМатериала в курсе достаточно для старта проекта. Поэтому начинать однозначно стоит. Данное испытание не относится к простым. Вы можете возвращаться к нему по мере прохождения проекта или после.","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"09 июля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":92552,"user_id":226258},{"id":92533,"user_id":128341}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":42240,"title":"Отличное интересное испытание. С начала казалось сложным, но, постепенно решние уложилось в голове.","creator":{"id":171040,"public_name":"Viktor Moisseyenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vitek","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU2MGU5OTU3MjBkZjQ5NmFkMWUzNTNhZTY5ZDc3NTJiIiwic3RvcmFnZSI6InN0b3JlIn0?signature=18d4517086a04a384c06be5c982ebe95b11e6b15b873bdc7a1c30518efc365ca","has_received_mentor_response_at_least_once":true},"communitable":{"id":1202,"slug":"php_trees_map_filter_reduce","name":"Отображение, фильтрация, свёртка","location":"/challenges/php_trees_map_filter_reduce","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-trees\"\u003ePHP: Деревья\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Отображение, фильтрация, свёртка»"},"created_at":"05 мая 2020","location":"/topics/42240","has_solutions":null,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"common","likes":[],"comments":[],"useful":false,"subscribers":[{"id":90076,"user_id":292456},{"id":86143,"user_id":171040}],"mentor":null}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=1202;gon.can_render_new_topic_box=true;gon.topics_count=6;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=1202\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_trees_map_filter_reduce.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Отображение, фильтрация, свёртка' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_trees_map_filter_reduce' property='og:url'>
+<meta content='PHP: Деревья: 
+
+В курсе PHP: Функции мы проходили три основные функции высшего порядка по работе с коллекциями: array_map(), array_filter() и array_reduce(). С помощью них можно решать практически любые задачи.
+src/solution.php
+В этом испытании вам предстоит написать собственную реализацию этих функций, только работать они будут с файловыми деревьями.
+
+map() принимает на вход функцию-обработчик и дерево, а возвращает отображенное дерево.
+
+filter() принимает в качестве параметров предикат и дерево, а возвращает отфильтрованное дерево по предикату.
+
+reduce() кроме основных параметров (функция-обработчик и дерево) принимает также начальное значение аккумулятора.
+&amp;lt;?php
+
+use function Php\Immutable\Fs\Trees\trees\mkdir;
+use function Php\Immutable\Fs\Trees\trees\mkfile;
+use function Php\Immutable\Fs\Trees\trees\getName;
+use function Php\Immutable\Fs\Trees\trees\isFile;
+use function Php\Immutable\Fs\Trees\trees\isDirectory;
+use function App\solution\map;
+use function App\solution\filter;
+use function App\solution\reduce;
+
+
+$tree = mkdir(&#39;/&#39;, [
+    mkdir(&#39;eTc&#39;, [
+        mkfile(&#39;config.json&#39;)
+    ]),
+]);
+
+Приводим имена всех директорий и файлов к верхнему регистру:
+map(fn($node) =&amp;gt; array_merge($node, [&#39;name&#39; =&amp;gt; strtoupper(getName($node))]), $tree);
+// [
+//   &#39;name&#39; =&amp;gt; &#39;/&#39;,
+//   &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//   &#39;meta&#39; =&amp;gt; [],
+//   &#39;children&#39; =&amp;gt; [
+//     [
+//       &#39;name&#39; =&amp;gt; &#39;ETC&#39;,
+//       &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//       &#39;meta&#39; =&amp;gt; [],
+//       &#39;children&#39; =&amp;gt; [[&#39;name&#39; =&amp;gt; &#39;CONFIG.JSON&#39;, &#39;type&#39; =&amp;gt; &#39;file&#39;, &#39;meta&#39; =&amp;gt; []]],
+//     ],
+//   ],
+// ]
+
+Отфильтровываем директории:
+filter(fn($node) =&amp;gt; isDirectory($node), $tree);
+// [
+//   &#39;name&#39; =&amp;gt; &#39;/&#39;,
+//   &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//   &#39;meta&#39; =&amp;gt; [],
+//   &#39;children&#39; =&amp;gt; [
+//     [
+//       &#39;name&#39; =&amp;gt; &#39;eTc&#39;,
+//       &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//       &#39;meta&#39; =&amp;gt; [],
+//       &#39;children&#39; =&amp;gt; [],
+//     ],
+//   ],
+// ]
+
+Подсчитываем количество узлов в дереве:
+reduce(fn($acc) =&amp;gt; $acc + 1, $tree, 0);
+// 3
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Деревья 
+
+В курсе PHP: Функции мы проходили три основные функции высшего порядка по работе с коллекциями: array_map(), array_filter() и array_reduce(). С помощью них можно решать практически любые задачи.
+src/solution.php
+В этом испытании вам предстоит написать собственную реализацию этих функций, только работать они будут с файловыми деревьями.
+
+map() принимает на вход функцию-обработчик и дерево, а возвращает отображенное дерево.
+
+filter() принимает в качестве параметров предикат и дерево, а возвращает отфильтрованное дерево по предикату.
+
+reduce() кроме основных параметров (функция-обработчик и дерево) принимает также начальное значение аккумулятора.
+&amp;lt;?php
+
+use function Php\Immutable\Fs\Trees\trees\mkdir;
+use function Php\Immutable\Fs\Trees\trees\mkfile;
+use function Php\Immutable\Fs\Trees\trees\getName;
+use function Php\Immutable\Fs\Trees\trees\isFile;
+use function Php\Immutable\Fs\Trees\trees\isDirectory;
+use function App\solution\map;
+use function App\solution\filter;
+use function App\solution\reduce;
+
+
+$tree = mkdir(&#39;/&#39;, [
+    mkdir(&#39;eTc&#39;, [
+        mkfile(&#39;config.json&#39;)
+    ]),
+]);
+
+Приводим имена всех директорий и файлов к верхнему регистру:
+map(fn($node) =&amp;gt; array_merge($node, [&#39;name&#39; =&amp;gt; strtoupper(getName($node))]), $tree);
+// [
+//   &#39;name&#39; =&amp;gt; &#39;/&#39;,
+//   &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//   &#39;meta&#39; =&amp;gt; [],
+//   &#39;children&#39; =&amp;gt; [
+//     [
+//       &#39;name&#39; =&amp;gt; &#39;ETC&#39;,
+//       &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//       &#39;meta&#39; =&amp;gt; [],
+//       &#39;children&#39; =&amp;gt; [[&#39;name&#39; =&amp;gt; &#39;CONFIG.JSON&#39;, &#39;type&#39; =&amp;gt; &#39;file&#39;, &#39;meta&#39; =&amp;gt; []]],
+//     ],
+//   ],
+// ]
+
+Отфильтровываем директории:
+filter(fn($node) =&amp;gt; isDirectory($node), $tree);
+// [
+//   &#39;name&#39; =&amp;gt; &#39;/&#39;,
+//   &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//   &#39;meta&#39; =&amp;gt; [],
+//   &#39;children&#39; =&amp;gt; [
+//     [
+//       &#39;name&#39; =&amp;gt; &#39;eTc&#39;,
+//       &#39;type&#39; =&amp;gt; &#39;directory&#39;,
+//       &#39;meta&#39; =&amp;gt; [],
+//       &#39;children&#39; =&amp;gt; [],
+//     ],
+//   ],
+// ]
+
+Подсчитываем количество узлов в дереве:
+reduce(fn($acc) =&amp;gt; $acc + 1, $tree, 0);
+// 3
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Отображение, фильтрация, свёртка</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-trees">PHP: Деревья</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<p>В курсе <a href="https://ru.hexlet.io/courses/php-functions" target="_blank">PHP: Функции</a> мы проходили три основные функции высшего порядка по работе с коллекциями: <code>array_map()</code>, <code>array_filter()</code> и <code>array_reduce()</code>. С помощью них можно решать практически любые задачи.</p>
+<h2 id="src-solution-php">src/solution.php</h2>
+<p>В этом испытании вам предстоит написать собственную реализацию этих функций, только работать они будут с файловыми деревьями.</p>
+
+<p><code>map()</code> принимает на вход функцию-обработчик и дерево, а возвращает отображенное дерево.</p>
+
+<p><code>filter()</code> принимает в качестве параметров предикат и дерево, а возвращает отфильтрованное дерево по предикату.</p>
+
+<p><code>reduce()</code> кроме основных параметров (функция-обработчик и дерево) принимает также начальное значение аккумулятора.</p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Php\Immutable\Fs\Trees\trees\mkdir</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Php\Immutable\Fs\Trees\trees\mkfile</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Php\Immutable\Fs\Trees\trees\getName</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Php\Immutable\Fs\Trees\trees\isFile</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Php\Immutable\Fs\Trees\trees\isDirectory</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">App\solution\map</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">App\solution\filter</span><span style="background-color: #f8f8f8">;</span>
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">App\solution\reduce</span><span style="background-color: #f8f8f8">;</span>
+
+
+<span style="color: #008080">$tree</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #0086B3">mkdir</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'/'</span><span style="background-color: #f8f8f8">,</span> <span style="background-color: #f8f8f8">[</span>
+    <span style="color: #0086B3">mkdir</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'eTc'</span><span style="background-color: #f8f8f8">,</span> <span style="background-color: #f8f8f8">[</span>
+        <span style="color: #990000;font-weight: bold">mkfile</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'config.json'</span><span style="background-color: #f8f8f8">)</span>
+    <span style="background-color: #f8f8f8">]),</span>
+<span style="background-color: #f8f8f8">]);</span>
+</code></pre>
+<p>Приводим имена всех директорий и файлов к верхнему регистру:</p>
+<pre class="hljs"><code class=php><span style="color: #990000;font-weight: bold">map</span><span style="background-color: #f8f8f8">(</span><span style="color: #000000;font-weight: bold">fn</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$node</span><span style="background-color: #f8f8f8">)</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #0086B3">array_merge</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$node</span><span style="background-color: #f8f8f8">,</span> <span style="background-color: #f8f8f8">[</span><span style="color: #d14">'name'</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #0086B3">strtoupper</span><span style="background-color: #f8f8f8">(</span><span style="color: #990000;font-weight: bold">getName</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$node</span><span style="background-color: #f8f8f8">))]),</span> <span style="color: #008080">$tree</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #999988;font-style: italic">// [</span>
+<span style="color: #999988;font-style: italic">//   'name' =&gt; '/',</span>
+<span style="color: #999988;font-style: italic">//   'type' =&gt; 'directory',</span>
+<span style="color: #999988;font-style: italic">//   'meta' =&gt; [],</span>
+<span style="color: #999988;font-style: italic">//   'children' =&gt; [</span>
+<span style="color: #999988;font-style: italic">//     [</span>
+<span style="color: #999988;font-style: italic">//       'name' =&gt; 'ETC',</span>
+<span style="color: #999988;font-style: italic">//       'type' =&gt; 'directory',</span>
+<span style="color: #999988;font-style: italic">//       'meta' =&gt; [],</span>
+<span style="color: #999988;font-style: italic">//       'children' =&gt; [['name' =&gt; 'CONFIG.JSON', 'type' =&gt; 'file', 'meta' =&gt; []]],</span>
+<span style="color: #999988;font-style: italic">//     ],</span>
+<span style="color: #999988;font-style: italic">//   ],</span>
+<span style="color: #999988;font-style: italic">// ]</span>
+</code></pre>
+<p>Отфильтровываем директории:</p>
+<pre class="hljs"><code class=php><span style="color: #990000;font-weight: bold">filter</span><span style="background-color: #f8f8f8">(</span><span style="color: #000000;font-weight: bold">fn</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$node</span><span style="background-color: #f8f8f8">)</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #990000;font-weight: bold">isDirectory</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$node</span><span style="background-color: #f8f8f8">),</span> <span style="color: #008080">$tree</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #999988;font-style: italic">// [</span>
+<span style="color: #999988;font-style: italic">//   'name' =&gt; '/',</span>
+<span style="color: #999988;font-style: italic">//   'type' =&gt; 'directory',</span>
+<span style="color: #999988;font-style: italic">//   'meta' =&gt; [],</span>
+<span style="color: #999988;font-style: italic">//   'children' =&gt; [</span>
+<span style="color: #999988;font-style: italic">//     [</span>
+<span style="color: #999988;font-style: italic">//       'name' =&gt; 'eTc',</span>
+<span style="color: #999988;font-style: italic">//       'type' =&gt; 'directory',</span>
+<span style="color: #999988;font-style: italic">//       'meta' =&gt; [],</span>
+<span style="color: #999988;font-style: italic">//       'children' =&gt; [],</span>
+<span style="color: #999988;font-style: italic">//     ],</span>
+<span style="color: #999988;font-style: italic">//   ],</span>
+<span style="color: #999988;font-style: italic">// ]</span>
+</code></pre>
+<p>Подсчитываем количество узлов в дереве:</p>
+<pre class="hljs"><code class=php><span style="color: #990000;font-weight: bold">reduce</span><span style="background-color: #f8f8f8">(</span><span style="color: #000000;font-weight: bold">fn</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$acc</span><span style="background-color: #f8f8f8">)</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #008080">$acc</span> <span style="color: #000000;font-weight: bold">+</span> <span style="color: #009999">1</span><span style="background-color: #f8f8f8">,</span> <span style="color: #008080">$tree</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">0</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #999988;font-style: italic">// 3</span>
+</code></pre>
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 78%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/alexeyobr">alexeyobr</a>
+</td>
+<td class='col-3 col-md-3'>11 янв., 01:51</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/zulkris">zulkris</a>
+</td>
+<td class='col-3 col-md-3'>10 янв., 15:47</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/msmyslov">msmyslov</a>
+</td>
+<td class='col-3 col-md-3'>04 янв., 21:40</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/akulich_aliaksandr">akulich_aliaksandr</a>
+</td>
+<td class='col-3 col-md-3'>15 янв., 01:14</td>
+<td class='col-1 col-md-2'>3</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/kirill-tabakov">kirill-tabakov</a>
+</td>
+<td class='col-3 col-md-3'>14 нояб., 11:37</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

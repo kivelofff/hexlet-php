@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Степень тройки - PHP: Основы - Испытания</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="BRxPzu0-g6MUos3iBawfAz2WRdNaI8YgXm-gjfl1NAsOkEFKE1paqU7S5AwQiGtuAjKKn_1Dj3fWpKH-OGjQTQ" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T13:56:08.800Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="SqO89YZqjKuews7C3K1CHH3m2Mb5yeEWSB9cXoq9ysBBL7JxeA5VocSy5yzJiTZxQkIXil6pqEHA1F0tS6Auhg";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":376,"slug":"php_basics_power3"};gon.topics=[{"id":44607,"title":"Добрый день, направьте меня на верный путь пожалуйста. Не знаю как решить \nCannot redeclare ....\nhttps://ru.hexlet.io/code_reviews/284046\nСкорее всего не правильно использую вызов вложенной функции, но не могу понять как нужно это сделать правильно.","creator":{"id":160737,"public_name":"Илья Твардиевич","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/user-99a431d4b4d7ad4a","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkMTQ4ZWU1YmJlMGUxNTQ2MDMzYTUxNzRkMmQwNGM4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=d070365e4aa613630e8746361ab9e649deeeef024a731c27c44db0f32c391e6a","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"27 июня 2020","location":"/topics/44607","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":96529,"body":"Здравствуйте. Здесь можно все решить гораздо проще, через цикл. Но если хотите довести свою идею с рекурсией до конца, то сделайте внутреннюю функцию анонимной:\n```\n$whatIsThePower = function(num) use (\u0026$whatIsThePower) {\n  ...\n};\n```\n\nСоответственно и вызывать ее изнутри надо как `$whatIsThePower(...)`","creator":{"id":198906,"public_name":"Максим Литвинов","is_removed":false,"is_mentor":true,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/malcom","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImFiNWI2MjQ4NWNhNWRmNDdkOGU0MDI5YzUyMTY5ZmE1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=13e3dc1b0f1b0c53869241f3fcf9653265d8840ceb4a0c9bdb552fa58802b20b","has_received_mentor_response_at_least_once":true},"created_at":"29 июня 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":96535,"body":"Приветствую, Илья!\n\nМаксим вам верно подсказал. Я бы посоветовал всёже решить задачу с помощью цикла.\n\nМаксим, спасибо!","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"29 июня 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":20545,"user_id":198906,"comment_id":96535}]}],"useful":false,"subscribers":[{"id":91831,"user_id":226258},{"id":91825,"user_id":198906},{"id":91735,"user_id":160737}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":41546,"title":"Добрый день. Не могу понять, почему цикл не заканчивается - https://ru.hexlet.io/code_reviews/253195\nЛогика: число должно делиться на 3, и результат деления должен делиться на 3, и т.д. Но у меня даже печать в цикле не идет, будто код и до выполнения тела цикла не доходит. В чем проблема? Переменная в цикле не присваивается? ","creator":{"id":257588,"public_name":"Eisen Stern","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/eisenstern","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImE3OThhZjAwM2I1ZTdhZTBlMjEzNjA0MGM5NzRhNGY3LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=6633270326af581c6adc993b014bb038e7b138cb0ad66a048f967e7dcafde150","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"21 апреля 2020","location":"/topics/41546","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":90611,"body":"**Eisen Stern**, приветствую!\n\nЛогика нормальная и в целом ваше решение работает. Но есть одно число $number при котором решение зациклится и это ноль. Остаток от деления 0 % 3 всегда будет ноль, и внутри цикла заново $number получит значение ноль и так до без конца. Тут вам нужно совсем немного подкорректировать решение.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90632,"body":"**Станислав Дзисяк**, Спасибо! ","creator":{"id":257588,"public_name":"Eisen Stern","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/eisenstern","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImE3OThhZjAwM2I1ZTdhZTBlMjEzNjA0MGM5NzRhNGY3LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=6633270326af581c6adc993b014bb038e7b138cb0ad66a048f967e7dcafde150","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":84818,"user_id":212236},{"id":84713,"user_id":257588}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":40683,"title":"Не пойму, что не так? https://ru.hexlet.io/code_reviews/244127","creator":{"id":263672,"public_name":"Стефа Ш","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-cc5d2aa4e40b26c8","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNiODU3ZmNlZTgzNDJlMWQ0MGU0ZWE4YjM2OGIzMjgwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=06c1f8586d02354b42ad0463d553156c7b9f63d0205a908645d3deba2249b371","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"06 апреля 2020","location":"/topics/40683","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":88907,"body":"Здравствуйте!\n\nИзучите вывод тестов: как видите ваша функция вернула `true`, хотя тесты ожидали `false`. `true` — функция вернёт только если выполнилось условие в if. Рекомендую использовать отладочную печать (https://ru.hexlet.io/courses/php-basics/lessons/debug/theory_unit), чтобы разобраться с тем, почему так произошло.","creator":{"id":130487,"public_name":"Kirill Chertkov","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/chertkov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlhN2M2NzVkNzAzYzA4OGU1NjhmMTVhMDMwMzNjZjBhLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=4929950f6d9245af9e7a2e0065ffec198eac562a01d79ce2530f7894aa39c7b0","has_received_mentor_response_at_least_once":true},"created_at":"07 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":88926,"body":"Нет, я поняла, что возвращает true. Неправильно вопрос задала, наверное. Я не понимаю, почему именно так происходит, в чем моя ошибка? Не понимаю даже с отладочной","creator":{"id":263672,"public_name":"Стефа Ш","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-cc5d2aa4e40b26c8","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNiODU3ZmNlZTgzNDJlMWQ0MGU0ZWE4YjM2OGIzMjgwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=06c1f8586d02354b42ad0463d553156c7b9f63d0205a908645d3deba2249b371","has_received_mentor_response_at_least_once":true},"created_at":"07 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":88948,"body":"Тесты падают, когда в функцию передаётся число 5. Значит выражение `(log(5) % log(3)) == 0` оказывается истинным. Поэкспериментируйте в интерактивном режиме PHP или на repl.it с тем, как работает оператор `%` в PHP :)","creator":{"id":130487,"public_name":"Kirill Chertkov","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/chertkov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlhN2M2NzVkNzAzYzA4OGU1NjhmMTVhMDMwMzNjZjBhLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=4929950f6d9245af9e7a2e0065ffec198eac562a01d79ce2530f7894aa39c7b0","has_received_mentor_response_at_least_once":true},"created_at":"07 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":18080,"user_id":263672,"comment_id":88948}]}],"useful":false,"subscribers":[{"id":82999,"user_id":130487},{"id":82846,"user_id":263672}],"mentor":{"id":62,"user_id":130487,"full_name":"Кирилл Чертков","username":"chertkov"}},{"id":40267,"title":"День добрый в чем ошибка ? https://ru.hexlet.io/code_reviews/239656 ? на REPle все ок.","creator":{"id":266304,"public_name":"Антон Силантьев","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/-danotello-","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJhNjY2ZjdmODI2MWNiY2U5MzcwZjlhNWFiZWVjZDJhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=79e10ed0b819d1bf223d22f2acd68fdc6fecef63e7c8ca9ab0d337dfc467645c","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"30 марта 2020","location":"/topics/40267","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":88109,"body":"Приветствую!  \nЦикл выполняется бесконечно, если на вход функции `isPowerOfThree` приходит `1` или `0`. Подумайте, как можно исправить этот момент.  \nОбратите внимание, что функция должна возвращать булевое значение `true` или `false`, сейчас она возвращает `true` и `false` в виде строк.  ","creator":{"id":231814,"public_name":"Roman Kozlov","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/rkozlov95","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjE4NjkzNTk1MTRkOWE1ZTgxYWYwNGZkODc1NmVlYjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=be9caca9a9994d6df3521249c1418b600bda2bfebf242a5f618d0adfb18c0f93","has_received_mentor_response_at_least_once":true},"created_at":"31 марта 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":88113,"body":"**Roman Kozlov**, Благодарю, с 0 действительно не учел. но с 1 у меня же прям прописано аж 2 подхода. https://ru.hexlet.io/code_reviews/239656 как к -1 так и 1. строки true и false это было специально что бы лучше видно было.","creator":{"id":266304,"public_name":"Антон Силантьев","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/-danotello-","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJhNjY2ZjdmODI2MWNiY2U5MzcwZjlhNWFiZWVjZDJhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=79e10ed0b819d1bf223d22f2acd68fdc6fecef63e7c8ca9ab0d337dfc467645c","has_received_mentor_response_at_least_once":true},"created_at":"31 марта 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":88231,"body":"Сейчас тесты с вашим решением проходят.    \nПопробуйте сделать сброс упражнения и заново запустить тесты :)  \n","creator":{"id":231814,"public_name":"Roman Kozlov","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/rkozlov95","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjE4NjkzNTk1MTRkOWE1ZTgxYWYwNGZkODc1NmVlYjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=be9caca9a9994d6df3521249c1418b600bda2bfebf242a5f618d0adfb18c0f93","has_received_mentor_response_at_least_once":true},"created_at":"01 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":82098,"user_id":231814},{"id":81978,"user_id":266304}],"mentor":{"id":63,"user_id":231814,"full_name":"Роман Козлов","username":"rkozlov95"}},{"id":37081,"title":"Моя логика сломалась. \nИз моих рассуждений все должно работать.\nПодскажите, где я пошел не туда =(\n\n`// removed`","creator":{"id":182989,"public_name":"Vitalii Bairak","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/vitalii_b88","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQzYjc2ZmZmNjkyZjEzMzdhOTc1NDI4MDgwZmIyOGY5LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=945354cacf29ecc7208c0a67d19204fdb07979569c9d99634137a3520481a98d","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"22 января 2020","location":"/topics/37081","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":81020,"body":"Нашел ошибку в \"синтаксическом сахаре\", забыл \"=\" поставить. Обидно что линтер не ругнулся =(","creator":{"id":182989,"public_name":"Vitalii Bairak","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/vitalii_b88","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQzYjc2ZmZmNjkyZjEzMzdhOTc1NDI4MDgwZmIyOGY5LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=945354cacf29ecc7208c0a67d19204fdb07979569c9d99634137a3520481a98d","has_received_mentor_response_at_least_once":true},"created_at":"22 января 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":81117,"body":"**Vitalii Bairak**, приветствую!\n\nАга, всё гениальное просто :). Отлично что разобрались!","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"23 января 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":75129,"user_id":212236},{"id":75029,"user_id":182989}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":35324,"title":"Ругается линтер, но не должен:\n5 | ERROR | Import statements must not begin with a leading\n| | backslash (PSR12.Files.ImportStatement.LeadingSlash)\n\n[code_reviews](https://ru.hexlet.io/code_reviews/181880)\n\nКод:\n\n`// removed`","creator":{"id":46545,"public_name":"Ilya Novikov","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/noviligx","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImUyMTY0NTkwYTUzNDc3YmM4ZTZhMTYzNzc0NzY4MzczLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=7992f64b5e0283a8f724a7f4e7c3b087a1bcfe7761c14eb70ec1d2f9ffb684ae","has_received_mentor_response_at_least_once":false},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"11 декабря 2019","location":"/topics/35324","has_solutions":null,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[],"comments":[{"id":77140,"body":"**Ilya Novikov**, приветствую!\n\nОшибка линтера не относится к вашему коду. Я её поправил. Спасибо, что обратили внимание.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"11 декабря 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":71192,"user_id":212236},{"id":71174,"user_id":130487},{"id":71166,"user_id":46545}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":31732,"title":"Здравствуйте! Сделал своим способом \"в лоб\", получился как бы частный случай (т.к. в моем решении количество степеней тройки ограничено): https://ru.hexlet.io/code_reviews/146804. Интересует вопрос: насколько \"возведение в степень\" сложнее для компьютера, чем \"умножение\" или это уже не нужные \"заморочки\" и насколько удобоварим мой код решения) Спасибо","creator":{"id":234930,"public_name":"Александр","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/user-cfca751b3784b7c6","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjEzNzJmMjM1M2U3MjFkNTk3OGQ4NWVkZmI4Mzc4Nzc0LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=96ff179d0ca52688218de28622db27a21655c6532608099ee01e457eeecab5bd","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"11 сентября 2019","location":"/topics/31732","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":68995,"body":"Добрый день! На тему оптимизации есть очень хорошая книга в открытом доступе - http://optimization.guide/","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"12 сентября 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":63706,"user_id":5174},{"id":63651,"user_id":234930}],"mentor":{"id":54,"user_id":5174,"full_name":"Сергей Карпук","username":"ck"}},{"id":26832,"title":"Может, я где-то пропустил, зачем писать ```int``` перед параметром функции?","creator":{"id":188043,"public_name":"Roman Kushnir","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/r","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjhlYjNhYWUwYjdiZTQxZjE4NTE3OGVmYmM5MmU2ZDVlLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=44642ebeb1935c8bc0f2c282a3be47498d53441cae3d3bf311b4e448076d1bea","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"11 апреля 2019","location":"/topics/26832","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":57521,"body":"Это значит, что на вход должно прийти значение именно этого типа, в данном случае int.","creator":{"id":177503,"public_name":"Константин Кузьмин","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/godedok","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImM0OGJiZDBmYTg0YjY1MjhiZTY3ZTQ0NTQ4MTZjMTQ3Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=829f757a5f39642c4d4e07c9922cc8fe72c7ae12f01661b8d25c02c25d0c4572","has_received_mentor_response_at_least_once":true},"created_at":"12 апреля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":57525,"body":"\u003e Может, я где-то пропустил, зачем писать int перед параметром функции?\n\nЭто используется для описания типов, проходили в [этом уроке](https://ru.hexlet.io/courses/php-basics/lessons/type-hinting/theory_unit).","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"12 апреля 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":57676,"body":"Спасибо, пересмотрю","creator":{"id":188043,"public_name":"Roman Kushnir","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/r","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjhlYjNhYWUwYjdiZTQxZjE4NTE3OGVmYmM5MmU2ZDVlLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=44642ebeb1935c8bc0f2c282a3be47498d53441cae3d3bf311b4e448076d1bea","has_received_mentor_response_at_least_once":true},"created_at":"13 апреля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":53433,"user_id":61806},{"id":53428,"user_id":177503},{"id":53396,"user_id":188043}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":25618,"title":"Доброго дня !!!\nНаправьте на путь истинный. \n``` function isPowerOfThree(float $num)\n{\n    \n    $a = log($num, 3); // float\n  \n    $b = floor ($a); // float\n   \n  \n    if ( $a === $b )\n    {\n        return true;\n    \n        \n    }\nreturn false;\n\n}\n\n// END ```\n\nпо логике вроде все верно ...\nно выдает ошибку \n``` There was 1 failure:\n\n1) App\\Tests\\SolutionTest::testIsPowerOfThree\nFailed asserting that true is false.\n\n/usr/src/app/tests/SolutionTest.php:12 ```","creator":{"id":210754,"public_name":"Алексей Кальмук","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/proger088","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"17 марта 2019","location":"/topics/25618","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":54788,"body":"Здравствуйте!\n\n\u003e Направьте на путь истинный\n\nАлексей, предлагаю начать с того, чтобы вы нормально отформатировали своё сообщение: код обернули тройными тиками, а текст не заворачивали в спойлер. Сейчас его тяжело читать и анализировать (также обратите внимание, что код отображается не полностью, потому что тройные тики должны быть единственными на строке). Как правильно форматировать можете посмотреть в нашем гайде https://guides.hexlet.io/markdown/","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"18 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":54789,"body":"Самое важное здесь сообщение `/usr/src/app/tests/SolutionTest.php:12`. Оно указывает на место, где падают тесты. На 12 строчке в файле *SolutionTest.php* проверяется пограничный случай. Загляните в файл с тестами.","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"18 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":50969,"user_id":5174},{"id":50968,"user_id":61806},{"id":50914,"user_id":210754}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":23394,"title":"Не совсем понимаю где ошибка. На компьютере все тесты проходит\n\n`// removed`","creator":{"id":191990,"public_name":"Иван Сабиров","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/sabirivan","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjVhYzJlOTZlMTU1NjIzOWQwMzc0YjEwNDk2ZDc2NmNhLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bd8df755f8c24b62ed41ebd99dbcf7c39b52c85f046a351657bd018e9dec4d39","has_received_mentor_response_at_least_once":true},"communitable":{"id":376,"slug":"php_basics_power3","name":"Степень тройки","location":"/challenges/php_basics_power3","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Степень тройки»"},"created_at":"23 января 2019","location":"/topics/23394","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":49911,"body":"Где ошибка разобрался. Очень глупая )\n\n`// removed`","creator":{"id":191990,"public_name":"Иван Сабиров","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/sabirivan","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjVhYzJlOTZlMTU1NjIzOWQwMzc0YjEwNDk2ZDc2NmNhLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bd8df755f8c24b62ed41ebd99dbcf7c39b52c85f046a351657bd018e9dec4d39","has_received_mentor_response_at_least_once":true},"created_at":"23 января 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":49954,"body":"Хорошо что разобрались!\n\nПросьба не постить код. Для этого есть код ревью.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"24 января 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":46570,"user_id":1},{"id":46525,"user_id":191990}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=376;gon.can_render_new_topic_box=true;gon.topics_count=28;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=376\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_basics_power3.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Степень тройки' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_basics_power3' property='og:url'>
+<meta content='PHP: Основы: 
+
+src/Solution.php
+Реализуйте функцию isPowerOfThree которая определяет, является ли переданное число натуральной степенью тройки. Например, число 27 это третья степень (33), а 81 это четвертая (34).
+&amp;lt;?php
+
+isPowerOfThree(1); // → true (3^0)
+isPowerOfThree(3); // → true
+isPowerOfThree(4); // → false
+isPowerOfThree(9); // → true
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Основы 
+
+src/Solution.php
+Реализуйте функцию isPowerOfThree которая определяет, является ли переданное число натуральной степенью тройки. Например, число 27 это третья степень (33), а 81 это четвертая (34).
+&amp;lt;?php
+
+isPowerOfThree(1); // → true (3^0)
+isPowerOfThree(3); // → true
+isPowerOfThree(4); // → false
+isPowerOfThree(9); // → true
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Степень тройки</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-basics">PHP: Основы</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<h3 id="src-solution-php">src/Solution.php</h3>
+<p>Реализуйте функцию <code>isPowerOfThree</code> которая определяет, является ли переданное число натуральной степенью тройки. Например, число 27 это третья степень (3<sup>3),</sup> а 81 это четвертая (3<sup>4).</sup></p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #990000;font-weight: bold">isPowerOfThree</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">1</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// → true (3^0)</span>
+<span style="color: #990000;font-weight: bold">isPowerOfThree</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">3</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// → true</span>
+<span style="color: #990000;font-weight: bold">isPowerOfThree</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">4</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// → false</span>
+<span style="color: #990000;font-weight: bold">isPowerOfThree</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">9</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// → true</span>
+</code></pre>
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 92%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/user-b59e324c8bc90f3b">user-b59e324c8bc90f3b</a>
+</td>
+<td class='col-3 col-md-3'>16 дек., 09:11</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/atamanov_ys">atamanov_ys</a>
+</td>
+<td class='col-3 col-md-3'>05 дек., 06:10</td>
+<td class='col-1 col-md-2'>2</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/aleksey19988">aleksey19988</a>
+</td>
+<td class='col-3 col-md-3'>29 нояб., 07:33</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/akulich_aliaksandr">akulich_aliaksandr</a>
+</td>
+<td class='col-3 col-md-3'>27 нояб., 11:53</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/user-ad792a2308a25a63">user-ad792a2308a25a63</a>
+</td>
+<td class='col-3 col-md-3'>24 нояб., 09:49</td>
+<td class='col-1 col-md-2'>2</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

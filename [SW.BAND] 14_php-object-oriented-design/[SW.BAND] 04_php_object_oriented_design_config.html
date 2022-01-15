@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Объект как массив - PHP: Объектно-ориентированный дизайн -...</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="AO5hfU6FVGS9w5fHKSsL8O6P40B8YF6kYMr7lVxSdi86tjius_q0jZM3r_ktt3M_DQXlE6zfgOIHEFfnDbe-Ww" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T14:37:22.365Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="fBOkvEtB_-nwOC9iKxWv5d-PDdVeAHTVcME6fCcuaCpGS_1vtj4fAN7MF1wvidcqPAULho6_qpMXG5YOdsugXg";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":866,"slug":"php_object_oriented_design_config"};gon.topics=[{"id":41496,"title":"Доброго времени суток!\n\nЗастрял на этом испытании. Уже три дня пытаюсь, что-то сделать, но безрезультатно.\n\nНа текущий момент [в моем решении](https://ru.hexlet.io/code_reviews/252653):\n\n1. `$obj['key2']['key3']` через `offsetGet()` отдается нормально. Проверял в repl.\n\n\n2. `$obj['key2']['key3']` через `offsetSet()` устанавливаться не хочет. В repl сообщает \n```\nPHP Notice:  Indirect modification of overloaded element of App\\Obj has no effect in /home/runner/HiddenShimmeringBrowsers/main.php on line 53\n```\n\nНепонятно, как один и тот же вложенный массив через `offsetGet()` прекрасно отдается, а при установке нового значения `offsetSet()` по вложенному массиву отрабатывать не хочет. Или установка значения через `$obj['key2']['key3'] = 'value'` вообще невозможна? В тестах такой способ не проверяется.\nПри этом не вложенный `$obj['key2']` прекрасно устанавливается через `offsetSet()`.\n\n\n\n3. При `$obj-\u003ekey2-\u003ekey3 = 'foo'`, либо `var_dump($obj-\u003ekey2-\u003ekey3)` в repl получаем \n \n```\nPHP Warning:  Attempt to assign property 'key3' of non-object\n```\n, либо \n\n```\nPHP Notice:  Trying to get property 'key3' of non-object\n``` \nво втором случае. \n\nКогда получаем или изменяем значение без вложенности, все срабатывает нормально. \nВ испытании в результатах проверки также выдается \n```\nTrying to get property 'key3' of non-object\n```\n\nЗакомментированный вариант `public function \u0026__get($key)` в ревью взят на основе варианта в комментах к [статье](https://habr.com/ru/post/103834/) на хабре. Но правда он тоже не срабатывает.\n\nВ обсуждении в прошлом году в подобной ситуации рекомендовалось: \n\u003e Возвращать такой же объект. Это же дерево, а оно по своей природе рекурсивно. Каждый раз когда нужно вернуть объект, надо его возвращать (то есть данные оборачиваются в объект).\n\nНо не совсем понятно в привязке к созданному классу, в какой части кода это нужно сделать.\n\nБуду благодарен за любые разъясняющие/направляющие комментарии по данной ситуации. Куда копать, какой метод изменять, какого рода изменения нужны.\n","creator":{"id":198605,"public_name":"Николай Калашников","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kalashnikov-n","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijg5ODM0NDQ4Njc5NzAyNmJkM2UzMzM2ZTA3ZGQzMTkzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fb4014eb1e065fb59e4205c099c8caad670a97c91de9a863cf104b59cefe7c7a","has_received_mentor_response_at_least_once":true},"communitable":{"id":866,"slug":"php_object_oriented_design_config","name":"Объект как массив","location":"/challenges/php_object_oriented_design_config","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-object-oriented-design\"\u003ePHP: Объектно-ориентированный дизайн\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Объект как массив»"},"created_at":"20 апреля 2020","location":"/topics/41496","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":90475,"body":"Насчёт вот этой ошибки\nTrying to get property 'key3' of non-object\n\nтоже столкнулся. Нашёл подсказку в статье с хабра. Что возвращать зависит от типа значения key. Или объект возвращаем или значение.\n\n\u003e Но не совсем понятно в привязке к созданному классу, в какой части кода это нужно сделать.\n\nВ геттере.","creator":{"id":171040,"public_name":"Viktor Moisseyenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vitek","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU2MGU5OTU3MjBkZjQ5NmFkMWUzNTNhZTY5ZDc3NTJiIiwic3RvcmFnZSI6InN0b3JlIn0?signature=18d4517086a04a384c06be5c982ebe95b11e6b15b873bdc7a1c30518efc365ca","has_received_mentor_response_at_least_once":true},"created_at":"21 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90497,"body":"**Viktor Moisseyenko**, спасибо за подсказку! Попробую скорректировать код. Постепенно в голове встает всё на место по поводу данной задачи. Надеюсь, что вскоре получится решить.","creator":{"id":198605,"public_name":"Николай Калашников","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kalashnikov-n","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijg5ODM0NDQ4Njc5NzAyNmJkM2UzMzM2ZTA3ZGQzMTkzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fb4014eb1e065fb59e4205c099c8caad670a97c91de9a863cf104b59cefe7c7a","has_received_mentor_response_at_least_once":true},"created_at":"21 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90500,"body":"Решил наконецто!\n\nНа последних тестах застрял надолго.\n$obj-\u003ekey2-\u003ekey3 = 'lolo';\nНе мог понять почему значение не устанавливалось. Я возвращал полностью новый объект из всего массива в геттере. Так не устанавливалось значение вложенного массива. Решил путём передачи значения в конструктор по ссылке.\nhttps://ru.hexlet.io/code_reviews/253218\n\nА решение учителя делает новый объект из вложенного массива и прописывет его в существующее свойство, потом возвращает уже как объект. Таким образом использование геттера при обращении к вложенному массиву меняет его на объект Obj.  Я правильно понимаю? Вопрос к ментору.","creator":{"id":171040,"public_name":"Viktor Moisseyenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vitek","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU2MGU5OTU3MjBkZjQ5NmFkMWUzNTNhZTY5ZDc3NTJiIiwic3RvcmFnZSI6InN0b3JlIn0?signature=18d4517086a04a384c06be5c982ebe95b11e6b15b873bdc7a1c30518efc365ca","has_received_mentor_response_at_least_once":true},"created_at":"21 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90506,"body":"**Viktor Moisseyenko**, тоже решил. \n\nДавно не тратил столько времени на одну задачу. Видимо, много здесь было вещей, про которые не знал, что и как работает (`ArrayAccess`, магические методы `__get` и `__set`). Вроде по всему этому есть документация, но понять удалось только спустя несколько дней, работая над этой задачей.\n\n**Вопрос менторам:** В решении учителя есть метод offsetSet. Какова цель ифа, примененного в данном методе? От какого варианта `$obj['x'] = 'value'` это защищает? В [моем решении](https://ru.hexlet.io/code_reviews/252653) тесты без этого ифа успешно проходят, но понимаю, что может это расчет на какой-то редкий случай, не учтенный тестами. ","creator":{"id":198605,"public_name":"Николай Калашников","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kalashnikov-n","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijg5ODM0NDQ4Njc5NzAyNmJkM2UzMzM2ZTA3ZGQzMTkzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fb4014eb1e065fb59e4205c099c8caad670a97c91de9a863cf104b59cefe7c7a","has_received_mentor_response_at_least_once":true},"created_at":"21 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90566,"body":"Приветствую, Николай!\n\n\u003e В решении учителя есть метод offsetSet. Какова цель ифа, примененного в данном методе? От какого варианта $obj['x'] = 'value' это защищает?\n\nСоздавать новые свойства, можно и так, например:\n\n    $obj[] = 'value1';\n    $obj[] = 'value2';\n\nВ этом случае [согласно документации](https://www.php.net/manual/ru/arrayaccess.offsetset.php) первый параметр метода будет содержать значение null. И если не использовать if, то в примере выше вначале будет создано свойство со значением 'value1', а потом оно будет перезаписано значением 'value2'. Используя такое условие как в решении учителя, итог будет другим: будет создано два отдельных свойства\n\n    [0] =\u003e\n    string(6) \"value1\"\n    [1] =\u003e\n    string(6) \"value2\"","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90606,"body":"**Станислав Дзисяк**, здравствуйте! \nСпасибо за ответ!\n\nЯ тоже сначала подумал, что if предназначен для этих целей, но попробовал в repl с учительским решением установить значение через $obj[] и получил ошибку \n```\nPHP Fatal error:  Uncaught Error: Cannot use object of type App\\Obj as array in\n```\nПоэтому подумал, что if для чего-то другого. Сейчас вспомнил, что в repl не получается установить значение даже через `$obj['key'] = 'foo';`. Выдается та же ошибка. Такое же поведение и на моем решении в repl. Единственное, что удаляю в repl - это `implements ObjInterface, ArrayAccess` после объявления класса, все остальное полностью соответствует учительскому решению. \n\nВ тестах к заданию подобный способ установки значения также не проверяется (`$obj[] = 'value1'` или `$obj['x'] = 'value'`). \n\nВ целом, подскажите, такие способы установки значения в учительском решении работают?\n","creator":{"id":198605,"public_name":"Николай Калашников","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kalashnikov-n","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijg5ODM0NDQ4Njc5NzAyNmJkM2UzMzM2ZTA3ZGQzMTkzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fb4014eb1e065fb59e4205c099c8caad670a97c91de9a863cf104b59cefe7c7a","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90610,"body":"\u003e В целом, подскажите, такие способы установки значения в учительском решении работают?\n\nДа конечно. Вы можете проверить это прямо в упражнении, например добавив такой тест:\n\n    public function testObjOffset()\n    {\n        $items = [\n            'key' =\u003e 'value',\n            'key2' =\u003e [\n                'key3' =\u003e 'value3'\n            ]\n        ];\n        $obj = new Obj($items);\n        $obj[] = 'value';\n        $obj[] = 'value1';\n        var_dump($obj);\n    }\n\nТакже можно и в репл. Только в репл нужно объявлять класс так: `class Obj implements \\ArrayAccess` без ObjInterface. Ну или как в упражнении, но тогда нужно добавить в репл и сам интерфейс ObjInterface.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":90624,"body":"**Станислав Дзисяк**, спасибо большое!","creator":{"id":198605,"public_name":"Николай Калашников","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/kalashnikov-n","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijg5ODM0NDQ4Njc5NzAyNmJkM2UzMzM2ZTA3ZGQzMTkzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fb4014eb1e065fb59e4205c099c8caad670a97c91de9a863cf104b59cefe7c7a","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":84772,"user_id":212236},{"id":84681,"user_id":171040},{"id":84591,"user_id":198605}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":30826,"title":"В задании написано, что класс должен реализовывать интерфейс _App\\ObjInterface_, он же в свою очередь содержит 2 метода: __set и __get, но в тестах нет ни одной проверки метода __set. Так и задумано? ","creator":{"id":236336,"public_name":"Sergey Zhurbey","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/zhurbeysa","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":866,"slug":"php_object_oriented_design_config","name":"Объект как массив","location":"/challenges/php_object_oriented_design_config","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-object-oriented-design\"\u003ePHP: Объектно-ориентированный дизайн\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Объект как массив»"},"created_at":"13 августа 2019","location":"/topics/30826","has_solutions":false,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[{"id":9870,"user_id":198436,"topic_id":30826}],"comments":[{"id":66881,"body":"Ага, добавил тестов!","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"13 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":13273,"user_id":236336,"comment_id":66881}]}],"useful":false,"subscribers":[{"id":90047,"user_id":292456},{"id":61823,"user_id":1},{"id":61804,"user_id":236336}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":29362,"title":"Не пойму, как быть с вложенным значением\n\n```\nTrying to get property 'key3' of non-object\n```","creator":{"id":76947,"public_name":"Lidia M","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/limoha","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImY2ODI0YzUwZmQ1ZWVmYTM0MTliOTNkZTlhNGU3MTRkIiwic3RvcmFnZSI6InN0b3JlIn0?signature=ace2cac50720aea7f661df7f382b2cb319f37b8f65b68f1bbce2dfa36c2e648b","has_received_mentor_response_at_least_once":true},"communitable":{"id":866,"slug":"php_object_oriented_design_config","name":"Объект как массив","location":"/challenges/php_object_oriented_design_config","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-object-oriented-design\"\u003ePHP: Объектно-ориентированный дизайн\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Объект как массив»"},"created_at":"01 июля 2019","location":"/topics/29362","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":63571,"body":"Возвращать такой же объект. Это же дерево, а оно по своей природе рекурсивно. Каждый раз когда нужно вернуть объект, надо его возвращать (то есть данные оборачиваются в объект).","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"01 июля 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":19826,"user_id":292456,"comment_id":63571},{"id":18404,"user_id":171040,"comment_id":63571}]}],"useful":false,"subscribers":[{"id":58745,"user_id":1},{"id":58726,"user_id":76947}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":28418,"title":"Кое-как решил, для меня слишком много магии в интерфейсе ArrayAccess. Почему при обращении к объекту как к массиву (через []) вызывается именно offsetGet(), offsetSet() и тд? То есть, если это встроенный интерфейс, абстракция, и все кишки спрятаны в исходниках интерпретатора?","creator":{"id":208838,"public_name":"Михаил Асалханов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mikhail_asalkhanov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImIyMDZkOTZmYmY1MzY0N2ZmNGMxOTdiMmEwMjFiYmJjIiwic3RvcmFnZSI6InN0b3JlIn0?signature=5bc0f7bcd005e691562431a35a24b1b0135d67c4ccb83744aadae1d79c21725f","has_received_mentor_response_at_least_once":true},"communitable":{"id":866,"slug":"php_object_oriented_design_config","name":"Объект как массив","location":"/challenges/php_object_oriented_design_config","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-object-oriented-design\"\u003ePHP: Объектно-ориентированный дизайн\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Объект как массив»"},"created_at":"30 мая 2019","location":"/topics/28418","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":61225,"body":"Да это прямо на уровне интерпретатора зашито, так как другой синтаксис.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"30 мая 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":66529,"body":"А можете дать чуть больше информации? Или где почитать-посмотреть можно? ","creator":{"id":232968,"public_name":"Evgen Guba","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/evgeniyguba","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU0YWEzYWViZjE4ZjJlZjQ4ZTJhZTFiZTI5MDg0YWYxIiwic3RvcmFnZSI6InN0b3JlIn0?signature=c3886f7425c989e66463a32b018effc65816a7228ae634f7cad71765a711da8f","has_received_mentor_response_at_least_once":true},"created_at":"09 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":66546,"body":"Честно говоря я не знаю статей на эту тему, но можно погуглить. Посмотреть можно в исходниках, но тут нужно хотя бы немного понимать си.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"09 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":61483,"user_id":232968},{"id":56673,"user_id":1},{"id":56671,"user_id":208838}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":28395,"title":"А не добавить ли ещё парочку ассёртов на отсутствие значений?\n```\n        $this-\u003eassertEquals(null, $obj-\u003ekey2-\u003ekey1);\n        $this-\u003eassertEquals(null, $obj['kei']);\n```\n","creator":{"id":111870,"public_name":"Zahar Steblovskiy","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/zulkris","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjQ5OWQ0OTAzNzE2NDM4OWEyMjljNWQ3YmQ2ZDU5NDI0LnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=05aba3182b546f36f73f143dbf252061ba2a61fff707ae99ec7e58adc4182412","has_received_mentor_response_at_least_once":true},"communitable":{"id":866,"slug":"php_object_oriented_design_config","name":"Объект как массив","location":"/challenges/php_object_oriented_design_config","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-object-oriented-design\"\u003ePHP: Объектно-ориентированный дизайн\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Объект как массив»"},"created_at":"29 мая 2019","location":"/topics/28395","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":61155,"body":"Ага добавил.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"29 мая 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":56626,"user_id":1},{"id":56623,"user_id":111870}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=866;gon.can_render_new_topic_box=true;gon.topics_count=5;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=866\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_object_oriented_design_config.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Объект как массив' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_object_oriented_design_config' property='og:url'>
+<meta content='PHP: Объектно-ориентированный дизайн: 
+
+В JavaScript, вместо ассоциативного массива, используется встроенный тип данных объект. Объекты поддерживают одновременно два способа обращения к ним: через точку (аналог -&amp;gt; в PHP) и через [], как в обычных массивах.
+const obj = {
+  key: &#39;value&#39;,
+  key2: {
+    key3: &#39;value3&#39;,
+  },
+};
+
+obj.key; // &#39;value&#39;
+obj[&#39;key&#39;]; // &#39;value&#39;
+
+obj.key2[&#39;key3&#39;]; // &#39;value3&#39;
+obj.key2[&#39;key3&#39;] = &#39;value2&#39;;
+obj.key2.key3; // &#39;value2&#39;
+
+obj.key = &#39;value4&#39;;
+obj.key; // &#39;value4&#39;
+
+В PHP то же самое можно эмулировать через объект, который реализует интерфейс ArrayAccess. Кроме этого интерфейса, нужно реализовать магические методы __get и __set, которые дают обращаться к свойствам даже без их явного описания.
+&amp;lt;?php
+
+$items = [
+    &#39;key&#39; =&amp;gt; &#39;value&#39;,
+    &#39;key2&#39; =&amp;gt; [
+        &#39;key3&#39; =&amp;gt; &#39;value3&#39;
+    ]
+];
+$obj = new Obj($items);
+$obj-&amp;gt;key; // &#39;value&#39;
+$obj-&amp;gt;key2-&amp;gt;key3; // &#39;value3&#39;
+$obj[&#39;key&#39;]; // &#39;value&#39;
+$obj[&#39;key2&#39;][&#39;key3&#39;]; // &#39;value3&#39;
+
+obj[&#39;undefinedKey&#39;]; // null
+obj-&amp;gt;undefinedKey; // null
+
+src\Obj.php
+Напишите класс Obj, который предоставляет к массиву (и всем вложенным массивам) объектный доступ. Класс должен реализовывать два интерфейса: App\ObjInterface и ArrayAccess.
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Объектно-ориентированный дизайн 
+
+В JavaScript, вместо ассоциативного массива, используется встроенный тип данных объект. Объекты поддерживают одновременно два способа обращения к ним: через точку (аналог -&amp;gt; в PHP) и через [], как в обычных массивах.
+const obj = {
+  key: &#39;value&#39;,
+  key2: {
+    key3: &#39;value3&#39;,
+  },
+};
+
+obj.key; // &#39;value&#39;
+obj[&#39;key&#39;]; // &#39;value&#39;
+
+obj.key2[&#39;key3&#39;]; // &#39;value3&#39;
+obj.key2[&#39;key3&#39;] = &#39;value2&#39;;
+obj.key2.key3; // &#39;value2&#39;
+
+obj.key = &#39;value4&#39;;
+obj.key; // &#39;value4&#39;
+
+В PHP то же самое можно эмулировать через объект, который реализует интерфейс ArrayAccess. Кроме этого интерфейса, нужно реализовать магические методы __get и __set, которые дают обращаться к свойствам даже без их явного описания.
+&amp;lt;?php
+
+$items = [
+    &#39;key&#39; =&amp;gt; &#39;value&#39;,
+    &#39;key2&#39; =&amp;gt; [
+        &#39;key3&#39; =&amp;gt; &#39;value3&#39;
+    ]
+];
+$obj = new Obj($items);
+$obj-&amp;gt;key; // &#39;value&#39;
+$obj-&amp;gt;key2-&amp;gt;key3; // &#39;value3&#39;
+$obj[&#39;key&#39;]; // &#39;value&#39;
+$obj[&#39;key2&#39;][&#39;key3&#39;]; // &#39;value3&#39;
+
+obj[&#39;undefinedKey&#39;]; // null
+obj-&amp;gt;undefinedKey; // null
+
+src\Obj.php
+Напишите класс Obj, который предоставляет к массиву (и всем вложенным массивам) объектный доступ. Класс должен реализовывать два интерфейса: App\ObjInterface и ArrayAccess.
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Объект как массив</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-object-oriented-design">PHP: Объектно-ориентированный дизайн</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<p>В JavaScript, вместо ассоциативного массива, используется встроенный тип данных объект. Объекты поддерживают одновременно два способа обращения к ним: через точку (аналог <code>-&gt;</code> в PHP) и через <em>[]</em>, как в обычных массивах.</p>
+<pre class="hljs"><code class=javascript><span style="color: #000000;font-weight: bold">const</span> <span style="background-color: #f8f8f8">obj</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">{</span>
+  <span style="color: #008080">key</span><span style="background-color: #f8f8f8">:</span> <span style="color: #d14">'</span><span style="color: #d14">value</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">,</span>
+  <span style="color: #008080">key2</span><span style="background-color: #f8f8f8">:</span> <span style="background-color: #f8f8f8">{</span>
+    <span style="color: #008080">key3</span><span style="background-color: #f8f8f8">:</span> <span style="color: #d14">'</span><span style="color: #d14">value3</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">,</span>
+  <span style="background-color: #f8f8f8">},</span>
+<span style="background-color: #f8f8f8">};</span>
+
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// 'value'</span>
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'</span><span style="color: #d14">key</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">];</span> <span style="color: #999988;font-style: italic">// 'value'</span>
+
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key2</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'</span><span style="color: #d14">key3</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">];</span> <span style="color: #999988;font-style: italic">// 'value3'</span>
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key2</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'</span><span style="color: #d14">key3</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">]</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">'</span><span style="color: #d14">value2</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">;</span>
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key2</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key3</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// 'value2'</span>
+
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #d14">'</span><span style="color: #d14">value4</span><span style="color: #d14">'</span><span style="background-color: #f8f8f8">;</span>
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">.</span><span style="background-color: #f8f8f8">key</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// 'value4'</span>
+</code></pre>
+<p>В PHP то же самое можно эмулировать через объект, который реализует интерфейс <a href="https://www.php.net/manual/ru/class.arrayaccess.php" target="_blank" rel="nofollow">ArrayAccess</a>. Кроме этого интерфейса, нужно реализовать магические методы <a href="https://www.php.net/manual/en/language.oop5.overloading.php#object.get" target="_blank" rel="nofollow">__get</a> и <a href="https://www.php.net/manual/en/language.oop5.overloading.php#object.set" target="_blank" rel="nofollow">__set</a>, которые дают обращаться к свойствам даже без их явного описания.</p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #008080">$items</span> <span style="color: #000000;font-weight: bold">=</span> <span style="background-color: #f8f8f8">[</span>
+    <span style="color: #d14">'key'</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #d14">'value'</span><span style="background-color: #f8f8f8">,</span>
+    <span style="color: #d14">'key2'</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="background-color: #f8f8f8">[</span>
+        <span style="color: #d14">'key3'</span> <span style="color: #000000;font-weight: bold">=&gt;</span> <span style="color: #d14">'value3'</span>
+    <span style="background-color: #f8f8f8">]</span>
+<span style="background-color: #f8f8f8">];</span>
+<span style="color: #008080">$obj</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #000000;font-weight: bold">new</span> <span style="color: #445588;font-weight: bold">Obj</span><span style="background-color: #f8f8f8">(</span><span style="color: #008080">$items</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #008080">$obj</span><span style="color: #000000;font-weight: bold">-&gt;</span><span style="background-color: #f8f8f8">key</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// 'value'</span>
+<span style="color: #008080">$obj</span><span style="color: #000000;font-weight: bold">-&gt;</span><span style="background-color: #f8f8f8">key2</span><span style="color: #000000;font-weight: bold">-&gt;</span><span style="background-color: #f8f8f8">key3</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// 'value3'</span>
+<span style="color: #008080">$obj</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'key'</span><span style="background-color: #f8f8f8">];</span> <span style="color: #999988;font-style: italic">// 'value'</span>
+<span style="color: #008080">$obj</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'key2'</span><span style="background-color: #f8f8f8">][</span><span style="color: #d14">'key3'</span><span style="background-color: #f8f8f8">];</span> <span style="color: #999988;font-style: italic">// 'value3'</span>
+
+<span style="background-color: #f8f8f8">obj</span><span style="background-color: #f8f8f8">[</span><span style="color: #d14">'undefinedKey'</span><span style="background-color: #f8f8f8">];</span> <span style="color: #999988;font-style: italic">// null</span>
+<span style="background-color: #f8f8f8">obj</span><span style="color: #000000;font-weight: bold">-&gt;</span><span style="background-color: #f8f8f8">undefinedKey</span><span style="background-color: #f8f8f8">;</span> <span style="color: #999988;font-style: italic">// null</span>
+</code></pre><h2 id="src-obj-php">src\Obj.php</h2>
+<p>Напишите класс <code>Obj</code>, который предоставляет к массиву (и всем вложенным массивам) объектный доступ. Класс должен реализовывать два интерфейса: <code>App\ObjInterface</code> и <code>ArrayAccess</code>.</p>
+
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 82%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/evz">evz</a>
+</td>
+<td class='col-3 col-md-3'>08 янв., 13:32</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/akulich_aliaksandr">akulich_aliaksandr</a>
+</td>
+<td class='col-3 col-md-3'>06 янв., 23:09</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/msmyslov">msmyslov</a>
+</td>
+<td class='col-3 col-md-3'>02 янв., 18:32</td>
+<td class='col-1 col-md-2'>2</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/kirill-tabakov">kirill-tabakov</a>
+</td>
+<td class='col-3 col-md-3'>13 дек., 19:05</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/dmitriy_i">dmitriy_i</a>
+</td>
+<td class='col-3 col-md-3'>31 окт., 08:33</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

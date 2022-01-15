@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Высокооплачиваемые работники - Основы реляционных баз данных -...</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="Oo4Cto6-XnahKbQtIgBdCvvV1J-0ah6P2xovA7WSTuTvTzuGEA1ros8Bs_kAC0aEvNdEeWYBJM82mdkMY65PWA" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T14:43:23.027Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="3mcudyFS5_t8liqu4diWEOB9gyTBmy4YYVfaoz3IuQALphdHv-HSLxK-LXrD042ep38TwhPwFFiM1Cys6_S4vA";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":397,"slug":"rdb_basics_rich_employees"};gon.topics=[{"id":34226,"title":"Вопрос несколько отвлечённый. Ничего, что я одиночными буковками отношения [именую](https://ru.hexlet.io/code_reviews/170433)? В [документации](https://postgrespro.ru/docs/postgresql/11/tutorial-join) видел так (последний пример), а в решении обычно полные слова используют. Хочу понять, как ближе к стандарту, чтобы было короче или чтобы было понятнее?","creator":{"id":67051,"public_name":"Vasiliy Usachev","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/coswell","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImVjNTIzMTMwNDc4MmM2NWEzMmRlNjVhNzI3ZDI5OWMyIiwic3RvcmFnZSI6InN0b3JlIn0?signature=7069d9d88843e736026d1573e2cef24c27d153509d056c0077d8c3185ac431ad","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"14 ноября 2019","location":"/topics/34226","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":74675,"body":"**Vasiliy Usachev**, приветствую!\n\nПредпочтительно придерживаться понятного стиля написания, именование должно давать понять с какой сущностью в данный момент мы работаем. Таким образом улучшается читабельность и не приходится отвлекаться на то, что бы понять, что скрывает за собой данное имя.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"14 ноября 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":20773,"user_id":202664,"comment_id":74675}]}],"useful":false,"subscribers":[{"id":68907,"user_id":212236},{"id":68851,"user_id":67051}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":33818,"title":"В init-файле не описана таблица managers, а в таблице employees поле manager_id не является внешним ключом. \nПопробовала дописать init.sql самостоятельно, но тесты все равно пишут, что отношения managers не существует.","creator":{"id":240105,"public_name":"Ольга Товстенко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/kerono4ka","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNjYzdiMTAxN2M4MDA1MDVjNGM1MmY5NWM3MWY4NmNiLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=35e314b946d4436e59154ed164e9a706d96f0b010ea2f3eebc772b014b57a46b","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"05 ноября 2019","location":"/topics/33818","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":73702,"body":"Приветствую, **Ольга**!\n\nВнимательно прочтите описание задачи - **\"Таблица employees содержит всех работников включая их менеджеров.\"**. Менеджеры это такие же работники, поэтому для них нет отдельной таблицы.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"06 ноября 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":73951,"body":"**Станислав Дзисяк**, аааа, правильно, те, у которых в графе manager_id указан NULL.\nИзвините, недопоняла. Спасибо большое за ответ!","creator":{"id":240105,"public_name":"Ольга Товстенко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/kerono4ka","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNjYzdiMTAxN2M4MDA1MDVjNGM1MmY5NWM3MWY4NmNiLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=35e314b946d4436e59154ed164e9a706d96f0b010ea2f3eebc772b014b57a46b","has_received_mentor_response_at_least_once":true},"created_at":"07 ноября 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":90260,"user_id":292456},{"id":68067,"user_id":212236},{"id":67982,"user_id":240105}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":33456,"title":"А зачем проверка IS NOT NULL  у учителя? JOIN и так исключает строки с пустыми значениями, это же пересечение таблиц или я неправильно понимаю?","creator":{"id":204774,"public_name":"Rinat Salimyanov","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/rinat_salimyanov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWYyZGEwODAxN2EyNzI2NDZhOGFlNjc5YTIyYmExLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=4c537a2017fdafbb7ec67b21153234dd23aac25c23b90607ea54a66e77da8d4f","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"28 октября 2019","location":"/topics/33456","has_solutions":null,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[{"id":10866,"user_id":53329,"topic_id":33456}],"comments":[{"id":72954,"body":"**Rinat Salimyanov**, день добрый!\n\nДа, все верно. Решение учителя поправил. Спасибо, что обратили внимание.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"29 октября 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":67309,"user_id":212236},{"id":67231,"user_id":204774}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":31277,"title":"[ревью](https://ru.hexlet.io/code_reviews/142015)\n\nв моем варианте добавлена проверка `IS NULL`, в решении учителя этого нет, потому что любая зарплата (числовое значение) более, чем NULL?","creator":{"id":184023,"public_name":"Сергей Егупов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/egupsv","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"27 августа 2019","location":"/topics/31277","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":68245,"body":"Из-за приведения типа. А вообще я убрал эту неоднозначность. Теперь нужно искать только среди тех, кто имеет менеджера.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"30 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":62976,"user_id":1},{"id":62746,"user_id":184023}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":29971,"title":"С помощью подзапроса тоже ведь можно было?\nhttps://ru.hexlet.io/code_reviews/129313","creator":{"id":76947,"public_name":"Lidia M","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/limoha","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImY2ODI0YzUwZmQ1ZWVmYTM0MTliOTNkZTlhNGU3MTRkIiwic3RvcmFnZSI6InN0b3JlIn0?signature=ace2cac50720aea7f661df7f382b2cb319f37b8f65b68f1bbce2dfa36c2e648b","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"20 июля 2019","location":"/topics/29971","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":65024,"body":"\u003e С помощью подзапроса тоже ведь можно было?\n\nА этот подзапрос будет выполнен один раз или много раз?","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"22 июля 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":65027,"body":"Да, получается для оптимизации лучше использовать JOIN.","creator":{"id":76947,"public_name":"Lidia M","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/limoha","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImY2ODI0YzUwZmQ1ZWVmYTM0MTliOTNkZTlhNGU3MTRkIiwic3RvcmFnZSI6InN0b3JlIn0?signature=ace2cac50720aea7f661df7f382b2cb319f37b8f65b68f1bbce2dfa36c2e648b","has_received_mentor_response_at_least_once":true},"created_at":"22 июля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":60079,"user_id":61806},{"id":59990,"user_id":76947}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":22493,"title":"В ридми поплыла таблица \n```\n+----+-------+--------+------------+ | id | name | salary | manager_id | +----+-------+--------+------------+ | 1 | Joe | 70000 | 3 | | 2 | Henry | 80000 | 4 | | 3 | Sam | 60000 | NULL | | 4 | Max | 90000 | NULL | +----+-------+--------+------------+\n```","creator":{"id":104929,"public_name":"Nikolai Gagarinov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/feycot","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMwYjg5MTliNWRmMWM2MTZlYzY2YmY5NWFjMGFhMmMzLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=e7ee6659f8ba584b6f01f5e938997395c3ac1007379f7bedeecd108c77f4b992","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"30 декабря 2018","location":"/topics/22493","has_solutions":true,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[],"comments":[{"id":47907,"body":"Спасибо за наводку! Пофиксил! С наступающим ;)","creator":{"id":182794,"public_name":"Юрий Чернышев","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/epsnv","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQwYzU2ZGQ5ZmE0ZmYyMzZlNzM5Mzg3OWNkMTkyNTRkLmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=497125b3991e0fb3a113f2a05c066d5c3478712abba2b377d88cb19077d41621","has_received_mentor_response_at_least_once":true},"created_at":"31 декабря 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":47911,"body":"Юра, спасибо, и тебя с наступающим :-)","creator":{"id":104929,"public_name":"Nikolai Gagarinov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/feycot","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMwYjg5MTliNWRmMWM2MTZlYzY2YmY5NWFjMGFhMmMzLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=e7ee6659f8ba584b6f01f5e938997395c3ac1007379f7bedeecd108c77f4b992","has_received_mentor_response_at_least_once":true},"created_at":"31 декабря 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":44740,"user_id":182794},{"id":44714,"user_id":104929}],"mentor":{"id":52,"user_id":182794,"full_name":"Юрий Чернышев","username":"epsnv"}},{"id":18188,"title":"Вот этот запрос корректный по смыслу?\nПравильно связала?\n```\nselect e.name from employees as e join employees as e1 on\n(e.manager_id=e1.id and e.salary \u003e e1.salary);\n```\nНе понимаю логику, как он понимает, что нужно сравнивать построчно?\n- Сначала производятся действия в скобках: найди работников, у кого менеджерский id совпадает с общим id в таблице.\n- Потом он находит первую такую строку, то есть Joe.\nПо логике он должен сравнить з.п. Joe с з.п. и Sam, и Max?\nКак он понимает, что только со своим менеджером надо сравнивать?\n\nИ вообще, почему он сравнивает только с менеджерами, если в таблице с алиасом e1 содержатся вообще все строки, ведь это копия таблицы employees. \n\n\nЯ понимаю, что это обеспечивается условием\n```\ne.manager_id=e1.id\n```\nно не понимаю, почему?\nРезультаты e.manager_id is not null должны быть идентичны результату  \n```\ne.manager_id=e1.id\n```\nно так не происходит.\nПомогите разложить по полочкам эту часть задачи.","creator":{"id":160539,"public_name":"Sun U","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-f2e1919064ddc113","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"27 августа 2018","location":"/topics/18188","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":38505,"body":"Добрый день!\n\n\u003e Сначала производятся действия в скобках:\n\nСначала производится **объединение двух таблиц**. Точнее, объединение одной таблицы саму на себя. Как происходит это объединение? По правилам, которые вы задали в скобках: к каждой строчке работника предприятия \"приклеится\" строчка с менеджером этого работникак предприятия (это обеспечивается первым условием вашей составной условной конструкции), но только при условии, что оклад работника выше оклада его менеджера (это обеспечивается вторым условием вашей составной услоной конструкции).","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"31 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":36132,"user_id":160539},{"id":36300,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":17779,"title":"Добрый день, хочу высказать пожелание: добавьте пожалуйста больше испытаний по SQL, хочется больше задач, которые встречаются на собеседованиях. Мне очень нравится Hexlet за то что вы даете много фундаментальных вещей, но как по мне, курс по SQL очень неполный, особенно на фоне других ваших курсов. Очень хотелось бы увидеть продолжение про такие вещи как индексы, процедуры, оптимизация, внутреннее устройство БД и прочее, да в интернете много информации по этим темам, но мне кажется, было бы просто замечательно если бы они появились в вашем формате! Спасибо.","creator":{"id":132216,"public_name":"Сергей Можаев","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/voltenko","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"14 августа 2018","location":"/topics/17779","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[{"id":10867,"user_id":53329,"topic_id":17779},{"id":8764,"user_id":101397,"topic_id":17779},{"id":8304,"user_id":208685,"topic_id":17779},{"id":6829,"user_id":116286,"topic_id":17779}],"comments":[{"id":37502,"body":"Здравствуйте, спасибо за обратную связь! Будем над этим работать, а сами курсы по БД планируются к апгрейду!","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"15 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":18530,"user_id":53329,"comment_id":37502}]}],"useful":false,"subscribers":[{"id":35334,"user_id":132216},{"id":35360,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":15263,"title":"SELECT employees_worker.name \nFROM employees AS employees_worker, employees AS employees_manager\nWHERE employees_worker.salary \u003e employees_manager.salary AND employees_worker.id in (1,2) AND employees_manager.id in (3,4); Не подскажете где ошибка? \n ВЫДАЕТ: ● rows › should be updated\n\n    expect(received).toEqual(expected)\n    \n    Expected value to equal:\n      [{\"name\": \"Henry\"}]\n    Received:\n      [{\"name\": \"Henry\"}, {\"name\": \"Henry\"}]\n    \n    Difference:\n    \n    - Expected\n    + Received\n    \n      Array [\n        anonymous {\n          \"name\": \"Henry\",\n        },\n    +   anonymous {\n    +     \"name\": \"Henry\",\n    +   },\n      ]\n\n      16 |     const actual1 = await db.query(solution);\n      17 |     const expected1 = await db.query('SELECT solution() AS name;');\n    \u003e 18 |     expect(actual1).toEqual(expected1);\n      19 | \n      20 |     await db.query('UPDATE employees SET salary=60000 WHERE id=1;');\n      21 |     const actual2 = await db.query(solution);","creator":{"id":154628,"public_name":"Михаил Манов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/mikhailm","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjFmZDBkYzY5Y2JiYjdiMTMyNzY1YzU1OTAwY2UwOGQyLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=8044ee6d9fd90c19c5e55e8fcf95a4cda6df47749fa63d39faf13dfa872f1b2b","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"30 апреля 2018","location":"/topics/15263","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":32134,"body":"Вы же должны сделать не полное объединение таблиц (точнее, одной таблицы саму на себе) - надо объединить записи таблицы так, чтобы одной записи таблицы соответствовала другая запись таблицы с ключем `id`, равным `manager_id`.\n\n`employees_manager.id in (3,4);` - вы не должны подстраиваться под конкретное наполнение таблицы, таблица может содержать любое количество записей (быть пустой, 10, 1000 и т.д.) и значения там могут быть разые","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"01 мая 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":30332,"user_id":154628},{"id":30347,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":15096,"title":"```\nSELECT name FROM employees WHERE id \u003c manager_id and name = 'Henry';\n```\n\n\nТакой запрос ломает тесты","creator":{"id":132306,"public_name":"Максим Бодрус","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/bodrus","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNiMGM4ODFmMGRiMDE5Y2JkNjg5MzYzNDg2Mjc1ZWQ4LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=071633ae0f5bb3ce8be6dd7b6190569bf3287ee41533cae21c691b6a1af6d162","has_received_mentor_response_at_least_once":true},"communitable":{"id":397,"slug":"rdb_basics_rich_employees","name":"Высокооплачиваемые работники","location":"/challenges/rdb_basics_rich_employees","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/rdb-basics\"\u003eОсновы реляционных баз данных\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Высокооплачиваемые работники»"},"created_at":"21 апреля 2018","location":"/topics/15096","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":31681,"body":"\u003e Такой запрос ломает тесты\n\nЭто ж неправильный запрос.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"22 апреля 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":29992,"user_id":132306},{"id":30005,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=397;gon.can_render_new_topic_box=true;gon.topics_count=17;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=397\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='rdb_basics_rich_employees.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Высокооплачиваемые работники' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/rdb_basics_rich_employees' property='og:url'>
+<meta content='Основы реляционных баз данных: 
+
+Таблица employees содержит всех работников, включая их менеджеров. Каждый работник имеет id и колонку для id менеджера manager_id.
+
+
+
+
+id
+name
+salary
+manager_id
+
+
+
+
+1
+Joe
+70000
+3
+
+
+2
+Henry
+80000
+4
+
+
+3
+Sam
+60000
+NULL
+
+
+4
+Max
+90000
+NULL
+
+
+
+solution.sql
+
+Напишите SQL запрос который найдет имена всех работников, которые получают больше чем их менеджеры. Если у работника нет менеджера, они не должны попадать в выборку.
+Запишите запрос в файл solution.sql.
+При решении может быть удобным использовать псевдонимы
+
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='Основы реляционных баз данных 
+
+Таблица employees содержит всех работников, включая их менеджеров. Каждый работник имеет id и колонку для id менеджера manager_id.
+
+
+
+
+id
+name
+salary
+manager_id
+
+
+
+
+1
+Joe
+70000
+3
+
+
+2
+Henry
+80000
+4
+
+
+3
+Sam
+60000
+NULL
+
+
+4
+Max
+90000
+NULL
+
+
+
+solution.sql
+
+Напишите SQL запрос который найдет имена всех работников, которые получают больше чем их менеджеры. Если у работника нет менеджера, они не должны попадать в выборку.
+Запишите запрос в файл solution.sql.
+При решении может быть удобным использовать псевдонимы
+
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Высокооплачиваемые работники</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/rdb-basics">Основы реляционных баз данных</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<p>Таблица <em>employees</em> содержит всех работников, включая их менеджеров. Каждый работник имеет <em>id</em> и колонку для <em>id</em> менеджера <em>manager_id</em>.</p>
+
+<table><thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>salary</th>
+<th>manager_id</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>Joe</td>
+<td>70000</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Henry</td>
+<td>80000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sam</td>
+<td>60000</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Max</td>
+<td>90000</td>
+<td>NULL</td>
+</tr>
+</tbody></table>
+<h2 id="solution-sql">solution.sql</h2>
+<ul>
+<li>Напишите SQL запрос который найдет имена всех работников, которые получают больше чем их менеджеры. Если у работника нет менеджера, они не должны попадать в выборку.</li>
+<li>Запишите запрос в файл <em>solution.sql</em>.</li>
+<li>При решении может быть удобным использовать <a href="https://ru.hexlet.io/courses/rdb-basics/lessons/group/theory_unit" target="_blank">псевдонимы</a></li>
+</ul>
+
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 86%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/matthew_mcconaughey">matthew_mcconaughey</a>
+</td>
+<td class='col-3 col-md-3'>12 янв., 15:31</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/olikan">olikan</a>
+</td>
+<td class='col-3 col-md-3'>10 янв., 00:02</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/komediant">komediant</a>
+</td>
+<td class='col-3 col-md-3'>06 янв., 18:28</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/vitaliipaprotskyi">vitaliipaprotskyi</a>
+</td>
+<td class='col-3 col-md-3'>05 янв., 08:01</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/makafonov">makafonov</a>
+</td>
+<td class='col-3 col-md-3'>30 дек., 12:24</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

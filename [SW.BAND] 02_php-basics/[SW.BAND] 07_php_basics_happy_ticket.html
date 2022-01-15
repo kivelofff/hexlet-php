@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Счастливый билет - PHP: Основы - Испытания</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="_dHE03k751BIzsFy9zedFFH9AGYjWDEJcHqa0PxOO__2XcpXh18-WhK-6JziE-l5blnPKoQ4eF74sZujPVPfuQ" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T13:56:11.758Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="R_cpdi0wLloviGIvdtRfadnkhs6zYLCZFS-qJtoi53pMeyfy01T3UHX4S8Fj8CsE5kBJghQA-c6d5KtVGz8DPA";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":796,"slug":"php_basics_happy_ticket"};gon.topics=[{"id":44708,"title":"[ссылка на ревью)](https://ru.hexlet.io/code_reviews/285159)\n\nПроверял у себя тесты, которые на хекслете - все удачно проходит, т.е. совпадение 100%. А на хекслете не проходит тест, хотелось бы узнать почему, сам уже всю голосу сломал и пробовал несколько вариантов) \nи ошибок на мой взгляд вроде как нет.. \n\nThere was 1 error:\n\n1) App\\Tests\\TicketTest::testIsHappy\n\nUninitialized string offset: 6\n\n/usr/src/app/src/Ticket.php:17\n/usr/src/app/tests/TicketTest.php:13\n\n\nERRORS!\nTests: 1, Assertions: 0, Errors: 1.\n\nmake: *** [Makefile:2: test] Error 2\n\nmake: Leaving directory '/usr/src/app'\nСам текст ","creator":{"id":204112,"public_name":"Alexandr  Fon Krabbe","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/askariel","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMzZmYwYmRmNjQ5MGI3YzkyNjIxZGNkOWM0NmY2MjY4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=ba3029959560d6e4d7a210b3c2f789a27d3b463a11c7476c8db377cd25a6ff81","has_received_mentor_response_at_least_once":false},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"30 июня 2020","location":"/topics/44708","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":96667,"body":"Добрый день.\nПожалуйста, удалите решение, отправьте его на ревью, когда нажимаете проверить, там есть кнопка на странице с выводом тестов.","creator":{"id":104929,"public_name":"Nikolai Gagarinov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/feycot","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMwYjg5MTliNWRmMWM2MTZlYzY2YmY5NWFjMGFhMmMzLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=e7ee6659f8ba584b6f01f5e938997395c3ac1007379f7bedeecd108c77f4b992","has_received_mentor_response_at_least_once":true},"created_at":"30 июня 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":96671,"body":"**Nikolai Gagarinov**, точно) спасибо за подсказку о ревью).  ","creator":{"id":204112,"public_name":"Alexandr  Fon Krabbe","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/askariel","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMzZmYwYmRmNjQ5MGI3YzkyNjIxZGNkOWM0NmY2MjY4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=ba3029959560d6e4d7a210b3c2f789a27d3b463a11c7476c8db377cd25a6ff81","has_received_mentor_response_at_least_once":false},"created_at":"30 июня 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":96672,"body":"Как думаете о чем говорит `Uninitialized string offset: 6`?\nК слову, почему может работать локально, а на Хекслете нет.\nДело в том, что при запуске тестов в случае предупреждений, ошибок будет вызываться исключение. Т.е. тесты не сработают, при малейших нарушениях кода.","creator":{"id":104929,"public_name":"Nikolai Gagarinov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/feycot","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMwYjg5MTliNWRmMWM2MTZlYzY2YmY5NWFjMGFhMmMzLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=e7ee6659f8ba584b6f01f5e938997395c3ac1007379f7bedeecd108c77f4b992","has_received_mentor_response_at_least_once":true},"created_at":"30 июня 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":96682,"body":"**Nikolai Gagarinov**, точно в этом и была проблема), спасибо","creator":{"id":204112,"public_name":"Alexandr  Fon Krabbe","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/askariel","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjMzZmYwYmRmNjQ5MGI3YzkyNjIxZGNkOWM0NmY2MjY4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=ba3029959560d6e4d7a210b3c2f789a27d3b463a11c7476c8db377cd25a6ff81","has_received_mentor_response_at_least_once":false},"created_at":"30 июня 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":91951,"user_id":104929},{"id":91950,"user_id":204112}],"mentor":null},{"id":41754,"title":"В решении ментора к числовому значению $balance арифметически плюсуется цифра $str[$i] из строки. \n1. Получается, здесь происходит скрытое преобразование из-за слабой типизации? \n2. Нужно ли указывать явное преобразование (int) $str[$i] для улучшения читаемости? Или это считается избыточным?\n","creator":{"id":185650,"public_name":"Denis Skvortsov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/skvord89","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI4MmE0YWU5NzE4ZWMxZjcxYWE0ZGFkNDlmZjcyODEwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=a3bb3e92ef51d3ebcea14a2743cfdac6a1e83736ed305985cb39872747c5f220","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"26 апреля 2020","location":"/topics/41754","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[{"id":11171,"user_id":283608,"topic_id":41754}],"comments":[{"id":91015,"body":"Приветствую, Денис!\n\n\u003e Получается, здесь происходит скрытое преобразование из-за слабой типизации?\n\nСовершенно верно. Строки преобразуются в числа.\n\n\u003e Нужно ли указывать явное преобразование (int) $str[$i] для улучшения читаемости? Или это считается избыточным?\n\nМожете указать, но в данном конкретном случае я не вижу в этом острой необходимости. Мы точно знаем входные данные, все кейсы описаны в тестах. Тесты — спецификация задачи. :)","creator":{"id":226258,"public_name":"Роман Ашиков","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/lastnorf","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImExMzNjYWYyMzhkYWIyZjM0NGZhODAyOWM2MzRkNjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=bf2ad42e8ee5e533bf4991567efca06fde7ca98cb34f766bcd480af301a4c64d","has_received_mentor_response_at_least_once":true},"created_at":"27 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":85264,"user_id":226258},{"id":85146,"user_id":185650}],"mentor":{"id":65,"user_id":226258,"full_name":"Роман Ашиков","username":"lastnorf"}},{"id":41753,"title":"\nВ OUTPUT при выводе при провале теста заметил название из другого упражнения: ```App\\Tests\\TicketTest::testIsPowerOfThree```","creator":{"id":185650,"public_name":"Denis Skvortsov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/skvord89","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI4MmE0YWU5NzE4ZWMxZjcxYWE0ZGFkNDlmZjcyODEwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=a3bb3e92ef51d3ebcea14a2743cfdac6a1e83736ed305985cb39872747c5f220","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"26 апреля 2020","location":"/topics/41753","has_solutions":true,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[],"comments":[{"id":91027,"body":"Приветствую, Денис!\n\nПоправил имя функции. Спасибо.","creator":{"id":212236,"public_name":"Станислав Дзисяк","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/corsicanec82","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjRkYTdmNmU5NDQ5NmM5M2ZjNmMzYmIyMGE1MDBiOTM1LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=cfdce2951ae6677e7de5510234c403862d156b38723e651d9a8444723f305ed7","has_received_mentor_response_at_least_once":true},"created_at":"27 апреля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":85280,"user_id":212236},{"id":85145,"user_id":185650}],"mentor":{"id":60,"user_id":212236,"full_name":"Станислав Дзисяк","username":"corsicanec82"}},{"id":38038,"title":"Посмотрел решение учителя, осознал, принял прием!) [Ревью.](https://ru.hexlet.io/code_reviews/211940#) Но понять не могу запись `return $balance === 0;` не понятен механизм возврата bool(true); bool(false).\nРавносильно ли это \n```\nreturn $firstSum === $lastSum ? true : false;\n```\nСпасибо","creator":{"id":146653,"public_name":"Сергей Пилипенко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/jpee","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjgwYzA2ZWU4NTg0NjAzZjZkNzIzNTYzMDYwNTk1NGQ5LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=521c8093d1da052b727b22498cc80d48cdf4e448ed8aeb3268b761835beb52ad","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"10 февраля 2020","location":"/topics/38038","has_solutions":null,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":83150,"body":"Сергей, добрый день!  \nПопробуйте поэксперементировать с этим моментом на [repl.it](https://repl.it/repls/MadGlumOutsourcing).","creator":{"id":231814,"public_name":"Roman Kozlov","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/rkozlov95","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjE4NjkzNTk1MTRkOWE1ZTgxYWYwNGZkODc1NmVlYjljLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=be9caca9a9994d6df3521249c1418b600bda2bfebf242a5f618d0adfb18c0f93","has_received_mentor_response_at_least_once":true},"created_at":"11 февраля 2020","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":77158,"user_id":231814},{"id":77095,"user_id":146653}],"mentor":{"id":63,"user_id":231814,"full_name":"Роман Козлов","username":"rkozlov95"}},{"id":30435,"title":"А нельзя было дать такое определение счастливому билету: \"Счастливым билетом называют  билет с четным количеством цифр, у которого сумма цифр в левой половине номера равна сумме цифр в правой половине\"?\n\nУж больно запутывает определение билета **именно** с шестизначным номером.\n\nИли я чего-то недопонимаю и так было написано с какой-то целью?\n\n","creator":{"id":235128,"public_name":"Вячеслав Михайлов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-ea488ae92884fd61","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjBiNTAyNjA0MzBlZGU1Y2FkYWM5YzMwZDM0MmNiNDI5LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=65e4d68444a9507ff2f82de15b7c0011fe4b982173bce3aea218b83f1685e1a1","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"01 августа 2019","location":"/topics/30435","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":65975,"body":"Приветствую!\n\n\u003e Уж больно запутывает определение билета именно с шестизначным номером.\n\nА чего запутывает-то? Версия с шестизначным номером несколько проще расширенной версии с чётным количеством цифр.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":66002,"body":"**Александр О.**, Объясняю)):во-первых в текущей версии задания **определение билета** стоит в самом начале и четко дает понимание что такое билет, т.е. это шестизначный номер.\n\nДалее в задании идет пояснение, что номер может быть произвольной длины, но количество цифр всегда четное и в качестве примера что такое четность - номер из двух и четырех цифр. Но исходя из **определения** номер билета 6-ти значный. Значит, вероятно все-таки допускается, что он может содержать и большее количество, чем 6-ть, но ни как не меньше, поскольку категорично заявлено что билет \"...с шестизначным номером...\".\n\nМожно, конечно же, посмотреть пример ниже или тестовый файл. Но ... для меня лично это оказалось \"не судьба\"))), сначала решил задачу для 6-ти значного номера и более, а потом уже, когда проверки на меньшее количество цифр не прошли, пришлось заглядывать в тестовый файл и пример, долго вспоминать всех родственников своих и чужих, и перделывать задачу. Хотя лишняя практика и не помешала.\n\nК чему я это все. Подобных мне, невнимательных или \"недоделанных\")), думаю, есть немаленький процент, логика восприятия и мышления у всех разная. Но есть правило, которое нам привили со школы: определение чего-либо - **определяет** эту сущность и ему надо следовать. \n\nТак вот, в задании **определение** стоит на первом месте и оно трактует одно, а дальше идут его противоречия. Мне кажется, что правильнее, когда в определении будет отсутствовать конкретика по количеству цифр. \n\nВсе вышесказанное чисто субъективное мнение.Надеюсь, не сильно запутанно объяснил.      \n\n","creator":{"id":235128,"public_name":"Вячеслав Михайлов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-ea488ae92884fd61","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjBiNTAyNjA0MzBlZGU1Y2FkYWM5YzMwZDM0MmNiNDI5LmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=65e4d68444a9507ff2f82de15b7c0011fe4b982173bce3aea218b83f1685e1a1","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":66243,"body":"**Вячеслав**, да, вы правы, непоследовательность в описании задачи есть. Я поправил описание, убрав указание про шесть цифр и добавил дополнительные примеры. Спасибо!\n\nP.S.: несовершенство описания, как ни странно, показало кое-что более интересное для вас, поэтому дам несколько советов:\n\n\u003e Можно, конечно же, посмотреть пример ниже или тестовый файл. Но ... для меня лично это оказалось \"не судьба\")))\n\nЭто неверный подход к решению задач: прежде чем писать код надо всегда анализировать задачу полностью (а не по первым нескольким строчкам). Более того, одним из главных источников информации по задаче, её спецификацией, является файл с тестами — поэтому правильным будет, если перед написанием кода, вы будете открывать модули с тестами и анализировать их код.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"06 августа 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":13182,"user_id":235128,"comment_id":66243}]}],"useful":false,"subscribers":[{"id":60981,"user_id":61806},{"id":60972,"user_id":235128}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":28813,"title":"Добрый день.\nОдному мне кажется что условие надо немного подкорректировать?\n\u003e Номера могут быть произвольной длины, с единственным условием что количество цифр всегда четно, например, here 33 или 2341 и так далее.\n\n33 и 00 - это Ок,\nкак насчет 06 ? Здесь количество цифр четно и сумма двух первых цифр равна сумме двух последних цифр.\n0+6 = 6+0\n\n","creator":{"id":82344,"public_name":"Олег Анищенко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":false,"public_profile_url":"/u/user-1d80f341dabc195a","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjFkODA0NmU0NzU3M2NlMzY3OTlhMDE3Y2FkZDQ4Y2VhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=2126fe2e8883812f329e72f9e5e4a2423436c095dacb6520bd45f187526d168b","has_received_mentor_response_at_least_once":false},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"13 июня 2019","location":"/topics/28813","has_solutions":false,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":62147,"body":"Здравствуйте, Олег.\n\nДело в том, что нужно брать не сумму первых двух цифр, а сумму первых n/2 цифр. Если у вас всего две цифры, то нужно сравнивать первую со второй, а `0 != 6`. Если было бы 6006, тогда да. Делим 4 на 2 и проверяем 6 + 0 == 0 + 6.\n\n_P.S. Если теперь поняли в чем проблема, не забудьте нажать на \"Отметить как решение\" под комментарием ;)_","creator":{"id":50933,"public_name":"Павел Ким","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/peacelovecookies","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjAzZjM3NjdlMzkyY2Q4MzU5Yzc5MTA5NTEzMjJjYWIxLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=c71ab53e29e08eadc4601204acae75b7c6dbaba28d56cb1c8f990ba986921835","has_received_mentor_response_at_least_once":true},"created_at":"13 июня 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":62153,"body":"Я давно решил задачу, она простая. :))) Просто условие задачи написано так, что 06 по условию подходит. Именно в условии где написано, что 06 не удовлетворяет условию? Количество четно - да, сумма первых двух цифр = сумме последних двух цифр - да. Нигде не написано, что цифры не могут пересекаться.","creator":{"id":82344,"public_name":"Олег Анищенко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":false,"public_profile_url":"/u/user-1d80f341dabc195a","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjFkODA0NmU0NzU3M2NlMzY3OTlhMDE3Y2FkZDQ4Y2VhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=2126fe2e8883812f329e72f9e5e4a2423436c095dacb6520bd45f187526d168b","has_received_mentor_response_at_least_once":false},"created_at":"13 июня 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":62155,"body":"Так нигде в условии и не написано, что должна быть сумма первых двух цифр =)\n\u003e Счастливым билетом называют такой билет с шестизначным номером, где сумма первых трех цифр равна сумме последних трех.\n\nЕсли вы про это, то тут говорится, что шестизначный номер, в котором сумма первых 3 равна сумме последних трех. Вообще да, можно было бы добавить в условие сумма первых n/2 и сумма последних n/2. Но если честно, по-моему тут итак все ясно =) У вас пошел процесс overthinking.","creator":{"id":50933,"public_name":"Павел Ким","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/peacelovecookies","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjAzZjM3NjdlMzkyY2Q4MzU5Yzc5MTA5NTEzMjJjYWIxLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=c71ab53e29e08eadc4601204acae75b7c6dbaba28d56cb1c8f990ba986921835","has_received_mentor_response_at_least_once":true},"created_at":"13 июня 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":57517,"user_id":50933},{"id":57511,"user_id":82344}],"mentor":null},{"id":28509,"title":"Что не так я делаю?\n```\nfunction isHappy(string $num) : string\n{\n    if (strlen($num) % 2 === 0) {\n        $sumFirst = $num[0] + $num[1] + $num[2];\n        $sumSecond = $num[-1] + $num[-2] + $num[-3];\n        return $sumFirst === $sumSecond;\n    }\n    return false;\n}\n```","creator":{"id":227088,"public_name":"Владимир Якимов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/yakimov_dev","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjhkNTA4NGQ1MGNkYWU1YjhmZTFjNGMwMWI3NDgyMDg4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=c7a0ed0e20ef150cf5ec3455c9d3f1ad688588a7983cc1d90912bbd7704905da","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"02 июня 2019","location":"/topics/28509","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":61433,"body":"Приветствую.\n\n\u003e Что не так я делаю?\n\n1) размер строки может быть любым, поэтому сравнивание cумм первых 3 и последних 3 символов не даст правильный результат для любых строк (для примера можете взять число 12354421 или 1331).\n\n2) У символов в строке нет отрицательных индексов. Если вы хотите брать последние символы строки, то отталкивайтесь от его размера (`lenght($str) - 1` - это будет индекс последнего символа)","creator":{"id":106130,"public_name":"Dmitriy Bataev","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/rdb","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjIzNDE0MTY4ODJmMGJmMzBkNGU1MjU0YmQ3YWNlNDQzIiwic3RvcmFnZSI6InN0b3JlIn0?signature=1330e5be4a977aa8e1e324bbf742f8bd5d9baeff98d5e1ca011f8aa337beee82","has_received_mentor_response_at_least_once":true},"created_at":"02 июня 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":61463,"body":"Владимир, при проверке об ошибке вам сообщают автоматические тесты. Вы анализировали сообщение во вкладке OUTPUT?","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"03 июня 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":56883,"user_id":5174},{"id":56859,"user_id":106130},{"id":56855,"user_id":227088}],"mentor":{"id":54,"user_id":5174,"full_name":"Сергей Карпук","username":"ck"}},{"id":22874,"title":"Мда... Я, конечно, выбрал самое тупорылое решение - сравнивать половины числа, первые 3 и последние 3))))) Плюс 2 цикла еще))) Есть тут еще такие \"умники\" ?)))","creator":{"id":95804,"public_name":"Kirill Kirillov","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/kirillov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3ZGMyNWE2MTdiZGQ1ZThiNmU2M2VlYTZiMTNiMjQwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=315423e987d9b291ffd765b598c9f6b72548e19842d0f16dfa5e57b7a123b98d","has_received_mentor_response_at_least_once":true},"communitable":{"id":796,"slug":"php_basics_happy_ticket","name":"Счастливый билет","location":"/challenges/php_basics_happy_ticket","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-basics\"\u003ePHP: Основы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Счастливый билет»"},"created_at":"11 января 2019","location":"/topics/22874","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[{"id":9253,"user_id":72224,"topic_id":22874}],"comments":[{"id":48872,"body":"Здесь главное, чтобы вы потом сравнивали своё решение с альтернативами — решением учителя и других студентов (код-ревью других студентов доступны для вас). Попробуйте их проанализировать, затем отрефакторьте (перепишите более удачным, понятным или эффективным образом) свой код.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"12 января 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":10351,"user_id":95804,"comment_id":48872}]},{"id":49807,"body":"Кирилл! есть такие)))\n1 - строку перевожу в число\n2 - из числа делаю массив\n3 - узнаю длину массива\n4 - делю массив пополам\n5 - вытаскиваю сумму первого и второго элемента\n6 - сравниваю их))))\n","creator":{"id":164450,"public_name":"Sergali Bakeer","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/sbakeer","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"22 января 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":47067,"user_id":126518},{"id":46432,"user_id":164450},{"id":45541,"user_id":61806},{"id":45519,"user_id":95804}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=796;gon.can_render_new_topic_box=true;gon.topics_count=8;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=796\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_basics_happy_ticket.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Счастливый билет' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_basics_happy_ticket' property='og:url'>
+<meta content='PHP: Основы: 
+
+&quot;Счастливым&quot; называют билет с номером, в котором сумма первой половины цифр равна сумме второй половины цифр. Номера могут быть произвольной длины, с единственным условием, что количество цифр всегда чётно, например: 33 или 2341 и так далее.
+
+Билет с номером 385916 — счастливый, так как 3 + 8 + 5 = 9 + 1 + 6.
+Билет с номером 231002 не является счастливым, так как 2 + 3 + 1 != 0 + 0 + 2.
+src/Ticket.php
+Реализуйте функцию isHappy, проверяющую является ли номер счастливым (номер — всегда строка). Функция должна возвращать true, если билет счастливый, или false, если нет. 
+Примеры использования:
+&amp;lt;?php
+
+use function Ticket\isHappy;
+
+isHappy(&#39;385916&#39;); // true
+isHappy(&#39;231002&#39;); // false
+isHappy(&#39;1222&#39;); // false
+isHappy(&#39;054702&#39;); // true
+isHappy(&#39;00&#39;); // true
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Основы 
+
+&quot;Счастливым&quot; называют билет с номером, в котором сумма первой половины цифр равна сумме второй половины цифр. Номера могут быть произвольной длины, с единственным условием, что количество цифр всегда чётно, например: 33 или 2341 и так далее.
+
+Билет с номером 385916 — счастливый, так как 3 + 8 + 5 = 9 + 1 + 6.
+Билет с номером 231002 не является счастливым, так как 2 + 3 + 1 != 0 + 0 + 2.
+src/Ticket.php
+Реализуйте функцию isHappy, проверяющую является ли номер счастливым (номер — всегда строка). Функция должна возвращать true, если билет счастливый, или false, если нет. 
+Примеры использования:
+&amp;lt;?php
+
+use function Ticket\isHappy;
+
+isHappy(&#39;385916&#39;); // true
+isHappy(&#39;231002&#39;); // false
+isHappy(&#39;1222&#39;); // false
+isHappy(&#39;054702&#39;); // true
+isHappy(&#39;00&#39;); // true
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Счастливый билет</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-basics">PHP: Основы</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<p>&quot;Счастливым&quot; называют билет с номером, в котором сумма первой половины цифр равна сумме второй половины цифр. Номера могут быть произвольной длины, с единственным условием, что количество цифр всегда чётно, например: <code>33</code> или <code>2341</code> и так далее.</p>
+
+<p>Билет с номером <strong>385916</strong> — счастливый, так как 3 + 8 + 5 = 9 + 1 + 6. Билет с номером <strong>231002</strong> не является счастливым, так как 2 + 3 + 1 != 0 + 0 + 2.</p>
+<h3 id="src-ticket-php">src/Ticket.php</h3>
+<p>Реализуйте функцию <code>isHappy</code>, проверяющую является ли номер счастливым (номер — всегда строка). Функция должна возвращать <code>true</code>, если билет счастливый, или <code>false</code>, если нет.</p>
+<h4 id="primery-ispolzovaniya">Примеры использования:</h4><pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #000000;font-weight: bold">use</span> <span style="color: #000000;font-weight: bold">function</span> <span style="background-color: #f8f8f8">Ticket\isHappy</span><span style="background-color: #f8f8f8">;</span>
+
+<span style="color: #990000;font-weight: bold">isHappy</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'385916'</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// true</span>
+<span style="color: #990000;font-weight: bold">isHappy</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'231002'</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// false</span>
+<span style="color: #990000;font-weight: bold">isHappy</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'1222'</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// false</span>
+<span style="color: #990000;font-weight: bold">isHappy</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'054702'</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// true</span>
+<span style="color: #990000;font-weight: bold">isHappy</span><span style="background-color: #f8f8f8">(</span><span style="color: #d14">'00'</span><span style="background-color: #f8f8f8">);</span> <span style="color: #999988;font-style: italic">// true</span>
+</code></pre>
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 96%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/matthew_mcconaughey">matthew_mcconaughey</a>
+</td>
+<td class='col-3 col-md-3'>14 янв., 22:06</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/alleonov">alleonov</a>
+</td>
+<td class='col-3 col-md-3'>10 янв., 06:13</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/user-b58353404bf0e3b3">user-b58353404bf0e3b3</a>
+</td>
+<td class='col-3 col-md-3'>08 янв., 08:59</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/stiv">stiv</a>
+</td>
+<td class='col-3 col-md-3'>07 янв., 10:08</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/tao">tao</a>
+</td>
+<td class='col-3 col-md-3'>24 дек., 14:50</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

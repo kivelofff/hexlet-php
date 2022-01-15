@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Генератор квадратов - PHP: Введение в ООП - Испытания</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="ZlZ5NZiy-ecQkydLDKbadk2LgWaoUeAp6QcTIH2FDh_tAYu_e6VqRvwBGLWuFDPmNIX6kBTf3RjnJON09q26Wg" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T14:34:30.730Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="5BTMu_V0ZT-oEpHDH9inWyD5HUXJ2CzBACdufEt_Xn9vQz4xFmP2nkSArj29ak7LWfdms3VWEfAOBJ4owFfqOg";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":765,"slug":"php_introduction_to_oop_square"};gon.topics=[{"id":30537,"title":"Верно ли утверждение, что из-за того, что класс `Square` и `SquaresGenerator` находятся в одном namespace, то для них не нужно писать конструкции `use`?","creator":{"id":232968,"public_name":"Evgen Guba","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/evgeniyguba","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU0YWEzYWViZjE4ZjJlZjQ4ZTJhZTFiZTI5MDg0YWYxIiwic3RvcmFnZSI6InN0b3JlIn0?signature=c3886f7425c989e66463a32b018effc65816a7228ae634f7cad71765a711da8f","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"06 августа 2019","location":"/topics/30537","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[{"id":12751,"user_id":174277,"topic_id":30537}],"comments":[{"id":66281,"body":"Да. Так как поиск по умолчанию идет относительно текущего неймспейса (все как и в путях в файловой системе).","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"06 августа 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":22515,"user_id":174277,"comment_id":66281}]},{"id":78092,"body":"А, вот в чём дело. И когда использую исполняемый файл, создающий экземпляры классов, в нём указываю тот же неймспейс, что и в классах. Сначала не понял почему в решении учителя нет use. Думал, что где-нибудь в другом месте прописано. Попробовал у себя без use, тоже заработало. Теперь ясно.","creator":{"id":171040,"public_name":"Viktor Moisseyenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vitek","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU2MGU5OTU3MjBkZjQ5NmFkMWUzNTNhZTY5ZDc3NTJiIiwic3RvcmFnZSI6InN0b3JlIn0?signature=18d4517086a04a384c06be5c982ebe95b11e6b15b873bdc7a1c30518efc365ca","has_received_mentor_response_at_least_once":true},"created_at":"23 декабря 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":72157,"user_id":171040},{"id":61255,"user_id":1},{"id":61222,"user_id":232968}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":30264,"title":"А что насчет [такого решения?](https://ru.hexlet.io/code_reviews/131786)\nПравда, у меня линтер чего-то ругается,\n\"/usr/bin/env: ‘node’: No such file or directory\" говорит","creator":{"id":211641,"public_name":"Muz4k Victory","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/swollou","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjY0MzQzMjliY2Y4MDZkODhkY2RjYjE0OGQ2YjI3ZTIzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=0c635818bc26843582083663817f31503d713d30245b67fbd37a6aad2f7697b4","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"28 июля 2019","location":"/topics/30264","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":65525,"body":"Линтер поправим.\n\nТакое решение создает массив, состоящий из одного объекта. Я добавил тест, который проверяет подобную ситуацию.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"28 июля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":13065,"user_id":211641,"comment_id":65525}]},{"id":65530,"body":"А как всё хорошо начиналось :(","creator":{"id":211641,"public_name":"Muz4k Victory","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/swollou","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjY0MzQzMjliY2Y4MDZkODhkY2RjYjE0OGQ2YjI3ZTIzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=0c635818bc26843582083663817f31503d713d30245b67fbd37a6aad2f7697b4","has_received_mentor_response_at_least_once":true},"created_at":"28 июля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":65531,"body":"Жизнь сложная штука)\n\nПодобное решение бы сработало, если бы `array_fill` принимал последним параметром лямбду. В общем не хватает PHP функционального духа, для подобных решений)","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"28 июля 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":89923,"user_id":292456},{"id":60591,"user_id":1},{"id":60579,"user_id":211641}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":28645,"title":"Не пойму, почему в решении учителя в SquaresGenerator.php у $count есть значение по умолчанию. В задании ничего такого не нашёл","creator":{"id":227341,"public_name":"Роман","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/gagablik","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjNlMjZmYTFjMWVjMDU2ZTY4NmQzYzAwOTE4MjlmNTYyLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=862462c5c42abbff8d2e9446e326babce45bde694ce360a311d8ab72c9d23040","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"07 июня 2019","location":"/topics/28645","has_solutions":true,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[],"comments":[{"id":61797,"body":"Поправил ридми, спасибо!","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"08 июня 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":12317,"user_id":227341,"comment_id":61797}]}],"useful":false,"subscribers":[{"id":57213,"user_id":1},{"id":57152,"user_id":227341}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":21818,"title":"Мне непонятно, как класс `SquaresGenerator` сможет создать квадрат без информации о классе `Square`? Мне нужно в этом классе продублировать создание квадрата? Или можно как-то указать на ранее созданный класс `Square` и затем обращаться к его стороне через `self`?\n\nВот пока я решил сгенерировать массив с одним квадратом, а потом уже думать как его размножить: Но при такой записи получается пустой объект.\n```\n/////\n```\n\nUPD:\nвсе, решил :)","creator":{"id":59426,"public_name":"Нургельды Дюсенов","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/nurgeldy","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjZhMzljZGU5OTkxMDJmNGU4NDBjZmYzMTM1YjRmMzdiIiwic3RvcmFnZSI6InN0b3JlIn0?signature=bb9af4aaad9e39d847add4a47d30c6c3e8fbaa2fb134ad9aa1c21fc052038d29","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"08 декабря 2018","location":"/topics/21818","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":46442,"body":"Отлично!","creator":{"id":182794,"public_name":"Юрий Чернышев","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/epsnv","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQwYzU2ZGQ5ZmE0ZmYyMzZlNzM5Mzg3OWNkMTkyNTRkLmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=497125b3991e0fb3a113f2a05c066d5c3478712abba2b377d88cb19077d41621","has_received_mentor_response_at_least_once":true},"created_at":"08 декабря 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":43370,"user_id":59426},{"id":43404,"user_id":182794}],"mentor":{"id":52,"user_id":182794,"full_name":"Юрий Чернышев","username":"epsnv"}},{"id":20652,"title":"Написал ерунду в конструктор, а тесты проходит.\nhttps://ru.hexlet.io/code_reviews/71235#file-1\nНадо добавить в тест:\n\n``` \n$square = new Square(4);\n$squareSide = $square-\u003egetSide();\n$expected = 4;\n$this-\u003eassertEquals($expected, $squareSide); \n```\n","creator":{"id":182794,"public_name":"Юрий Чернышев","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/epsnv","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQwYzU2ZGQ5ZmE0ZmYyMzZlNzM5Mzg3OWNkMTkyNTRkLmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=497125b3991e0fb3a113f2a05c066d5c3478712abba2b377d88cb19077d41621","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"04 ноября 2018","location":"/topics/20652","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":43670,"body":"Приветствую, Юрий! Добавил тестирование класса `Square`, спасибо!\n\nP.S.: для сравнения примитивных значений лучше использовать [сравнение assertSame](https://phpunit.de/manual/6.5/en/appendixes.assertions.html#appendixes.assertions.assertSame)","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"05 ноября 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":41032,"user_id":182794},{"id":41065,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":17449,"title":"подскажите, что не так, в функции generate помещаю экземпляры квадратов в массив, возвращаю массив.   \n\nOUTPUT:\n```\n1) App\\Tests\\SquaresGeneratorTest::testGenerate\nFailed asserting that two arrays are equal.\n--- Expected\n+++ Actual\n@@ @@\n Array (\n     0 =\u003e App\\Square Object (\n-        'side' =\u003e 3\n+        'side' =\u003e 1\n     )\n     1 =\u003e App\\Square Object (...)\n+    2 =\u003e App\\Square Object (...)\n )\n\n/usr/src/app/tests/SquaresGeneratorTest.php:19\n```\n","creator":{"id":151694,"public_name":"Vladimir Moiseenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mva","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"01 августа 2018","location":"/topics/17449","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":36835,"body":"Во втором тесте при вызове generate(3, 2) должне возвратиться массив из двух квадратов со стороной 3. Ваша реализация возвращает массив из трёх элементов, да ещё с некорректным значеним стороны.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":36850,"body":"на локальной машине выполняю этот код, получается такой результат:   \n```\nArray\n(\n    [0] =\u003e Square Object\n        (\n            [side] =\u003e 3\n        )\n\n    [1] =\u003e Square Object\n        (\n            [side] =\u003e 3\n        )\n\n)\n```\nоткуда там третий элемент мог взяться, не понятно...","creator":{"id":151694,"public_name":"Vladimir Moiseenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mva","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":36854,"body":"\u003e откуда там третий элемент мог взяться, не понятно...\n\nПокажите свой код.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":36856,"body":"вот определение класса SquaresGenerator:   \n\n`// removed`","creator":{"id":151694,"public_name":"Vladimir Moiseenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mva","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"02 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":36949,"body":"\u003e self::$data[] = \n\nЗачем вы ввели состояние в класс? Функция должна генерировать и возвращать \"наружу\" массив квадратов, но для какой цели его сохранять? По сути в этот массив вы складываете результаты всех вызовов и при любом вызове возвращается массив с результатами не только текущего, но и всех прошлых вызовов.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"05 августа 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":36954,"body":"Это говорит о моей не внимательности, просто надо дочитывать задание до конца, а не бросаться сразу писать код. Я убрал состояние, всё заработало. Спасибо!","creator":{"id":151694,"public_name":"Vladimir Moiseenko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mva","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"05 августа 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":34698,"user_id":151694},{"id":34721,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":17281,"title":"Реализуйте класс \"SquareGenerator\" в тексте задачи, а в тестах и в названии файла Square**s**Generator","creator":{"id":150888,"public_name":"Ruslan Knyazev","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/orevenat","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImU1NmJiNjkxYjFhNmEyMDhjYzI2M2RhNDU3ODVjOTM2LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=ab395bb4a6a45139749fbacafce6c85f81f52fa1d78f0ed3fd64783ef94fad37","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"26 июля 2018","location":"/topics/17281","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":36486,"body":"Поправил readme, спасибо!","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"27 июля 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":34343,"user_id":150888},{"id":34390,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":17194,"title":"https://ru.hexlet.io/code_reviews/56445\nИсправьте название класса в задании. Не совпадает с классом в тестах","creator":{"id":179970,"public_name":"Alex Boobster","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/unior","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":765,"slug":"php_introduction_to_oop_square","name":"Генератор квадратов","location":"/challenges/php_introduction_to_oop_square","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-introduction-to-oop\"\u003ePHP: Введение в ООП\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Генератор квадратов»"},"created_at":"24 июля 2018","location":"/topics/17194","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":36344,"body":"Поправил, сенкс!\n\nP.S. не используйте транслиты в коде, давайте имена на английском языке","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"24 июля 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":34201,"user_id":179970},{"id":34225,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=765;gon.can_render_new_topic_box=true;gon.topics_count=8;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=765\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_introduction_to_oop_square.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Генератор квадратов' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_introduction_to_oop_square' property='og:url'>
+<meta content='PHP: Введение в ООП: 
+
+src/Square.php
+Реализуйте класс Square для описания квадратов. У квадрата есть только одно свойство — сторона. Реализуйте метод getSide, возвращающий значение стороны.
+&amp;lt;?php
+
+$square = new Square(10);
+$square-&amp;gt;getSide(); // 10
+
+src/SquaresGenerator.php
+Реализуйте класс SquaresGenerator со статическим методом generate, принимающим два параметра: сторону и количество экземпляров квадрата (по умолчанию 5 штук), которые нужно создать. Функция должна вернуть массив из квадратов.
+&amp;lt;?php
+
+$squares = SquaresGenerator::generate(3, 2);
+// [new Square(3), new Square(3)];
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Введение в ООП 
+
+src/Square.php
+Реализуйте класс Square для описания квадратов. У квадрата есть только одно свойство — сторона. Реализуйте метод getSide, возвращающий значение стороны.
+&amp;lt;?php
+
+$square = new Square(10);
+$square-&amp;gt;getSide(); // 10
+
+src/SquaresGenerator.php
+Реализуйте класс SquaresGenerator со статическим методом generate, принимающим два параметра: сторону и количество экземпляров квадрата (по умолчанию 5 штук), которые нужно создать. Функция должна вернуть массив из квадратов.
+&amp;lt;?php
+
+$squares = SquaresGenerator::generate(3, 2);
+// [new Square(3), new Square(3)];
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Генератор квадратов</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-introduction-to-oop">PHP: Введение в ООП</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<h3 id="src-square-php">src/Square.php</h3>
+<p>Реализуйте класс <code>Square</code> для описания квадратов. У квадрата есть только одно свойство — сторона. Реализуйте метод <code>getSide</code>, возвращающий значение стороны.</p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #008080">$square</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #000000;font-weight: bold">new</span> <span style="color: #445588;font-weight: bold">Square</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">10</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #008080">$square</span><span style="color: #000000;font-weight: bold">-&gt;</span><span style="color: #990000;font-weight: bold">getSide</span><span style="background-color: #f8f8f8">();</span> <span style="color: #999988;font-style: italic">// 10</span>
+</code></pre><h3 id="src-squaresgenerator-php">src/SquaresGenerator.php</h3>
+<p>Реализуйте класс <code>SquaresGenerator</code> со статическим методом <code>generate</code>, принимающим два параметра: сторону и количество экземпляров квадрата (по умолчанию 5 штук), которые нужно создать. Функция должна вернуть массив из квадратов.</p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #008080">$squares</span> <span style="color: #000000;font-weight: bold">=</span> <span style="color: #445588;font-weight: bold">SquaresGenerator</span><span style="color: #000000;font-weight: bold">::</span><span style="color: #990000;font-weight: bold">generate</span><span style="background-color: #f8f8f8">(</span><span style="color: #009999">3</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">2</span><span style="background-color: #f8f8f8">);</span>
+<span style="color: #999988;font-style: italic">// [new Square(3), new Square(3)];</span>
+</code></pre>
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 97%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/akulich_aliaksandr">akulich_aliaksandr</a>
+</td>
+<td class='col-3 col-md-3'>04 янв., 14:10</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/zharinov">zharinov</a>
+</td>
+<td class='col-3 col-md-3'>02 янв., 07:45</td>
+<td class='col-1 col-md-2'>2</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/olikan">olikan</a>
+</td>
+<td class='col-3 col-md-3'>29 дек., 23:13</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/msmyslov">msmyslov</a>
+</td>
+<td class='col-3 col-md-3'>13 дек., 19:07</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/aleksey_ponomarev">aleksey_ponomarev</a>
+</td>
+<td class='col-3 col-md-3'>12 дек., 12:58</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

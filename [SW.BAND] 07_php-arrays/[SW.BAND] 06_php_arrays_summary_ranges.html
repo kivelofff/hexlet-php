@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang='ru' prefix='og: https://ogp.me/ns#'>
+<head>
+<title>Список диапазонов - PHP: Массивы - Испытания</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="POtuorlwHMk7dJGRWb2NL2dV9IX-jJhf7bGTs_w4WuPyleDpMT87qlgnTc42nX99Bq4wOGg0J0pDvZy8-CDwag" />
+<meta name="csp-nonce" />
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn2.hexlet.io/assets/favicon-8fa102c058afb01de5016a155d7db433283dc7e08ddc3c4d1aef527c1b8502b6.ico" />
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta charset='utf-8'>
+<script type="text/javascript">var _rollbarConfig = {"accessToken":"fc27636027d0460bbc1578d97d0d27ad","captureUncaught":true,"captureUnhandledRejections":true,"hostWhiteList":["https://cdn2.hexlet.io"],"ignoredMessages":["(?-mix:VK is not defined)","(?-mix:VK.Retargeting is undefined)","(?-mix:pktAnnotationHighlighter)","(?-mix:amplitude)","(?-mix:grecaptcha)","(?-mix:google_tag_manager)","(?-mix:Unexpected keyword)","(?-mix:illegal character)","(?-mix:Unexpected identifier)","(?-mix:Illegal invocation)"],"payload":{"client":{"code_version":"v4924","guess_uncaught_frames":true},"environment":"production","person":{"id":null,"username":null,"email":null}}};</script>
+<script type="text/javascript">!function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.19.3/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||"object"==typeof a&&a.network)&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);</script>
+<meta content='IE=Edge' http-equiv='X-UA-Compatible'>
+<meta content='b9d3902d34' name='verify-admitad'>
+
+<script>
+//<![CDATA[
+window.gon={};gon.is_bot=true;gon.applications={};gon.hs={"autoloadBeacon":true};gon.current_user={"id":null,"email":null,"username":null,"created_at":"2021-01-15T14:01:34.540Z","last_viewed_notification_id":null,"paid_days_count":0,"full_name":"","text":" ()","is_guest":true,"is_mentor":false,"current_company":null,"can_use_paid_features":false};gon.token="lRRrTEuD8PxRrNM3unU07c--4ZNNRQBmke_nmbCNIGdbauUHw8zXnzL_D2jVVca_rkUlLtv9v3M_4-iWtJWK7g";gon.disqus_name="hexletio";gon.locale="ru";gon.rails_env="production";gon.mobile=false;gon.google={"analytics_key":"UA-1360700-51","optimize_key":"GTM-5QDVFPF"};gon.social_signin=false;gon.challenge={"id":380,"slug":"php_arrays_summary_ranges"};gon.topics=[{"id":37879,"title":"И снова линтер на тесты ругается.\n\n    FILE: /usr/src/app/tests/SolutionTest.php\n    ----------------------------------------------------------------------\n    FOUND 2 ERRORS AFFECTING 2 LINES\n    ----------------------------------------------------------------------\n    5 | ERROR | [x] Header blocks must be separated by a single blank\n    | | line (PSR12.Files.FileHeader.SpacingAfterBlock)\n    6 | ERROR | [ ] The class-based use imports must follow the\n    | | namespace declaration in the file header\n    | | (PSR12.Files.FileHeader.IncorrectOrder)\n    ----------------------------------------------------------------------\n    PHPCBF CAN FIX THE 1 MARKED SNIFF VIOLATIONS AUTOMATICALLY\n    ----------------------------------------------------------------------\n\n    Time: 325ms; Memory: 8MB","creator":{"id":239997,"public_name":"Никита Ионов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/nekedio","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImNhY2ZhYzBiOGZmZmI0OWJkZjk1MDBhZWFmOWM2N2IwLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=ae54bacf2bfd387d13e849add37a52b33b47a0dd7aa640e17197b692c37e1925","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"06 февраля 2020","location":"/topics/37879","has_solutions":true,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"bug","likes":[],"comments":[{"id":82766,"body":"И здесь тоже поправил. Спасибо!","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"06 февраля 2020","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":76774,"user_id":5174},{"id":76771,"user_id":239997}],"mentor":{"id":54,"user_id":5174,"full_name":"Сергей Карпук","username":"ck"}},{"id":27207,"title":"Добавьте, пожалуйста, в тесты проверку на массив, который содержит один символ. Мой предыдущий код тесты проходил, но если добавить такую проверку, не прошел бы. =)","creator":{"id":130487,"public_name":"Kirill Chertkov","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/chertkov","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlhN2M2NzVkNzAzYzA4OGU1NjhmMTVhMDMwMzNjZjBhLnBuZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=4929950f6d9245af9e7a2e0065ffec198eac562a01d79ce2530f7894aa39c7b0","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"18 апреля 2019","location":"/topics/27207","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":58392,"body":"Кирилл, спасибо за предложение. Тест добавил.","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"20 апреля 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":54221,"user_id":5174},{"id":54144,"user_id":130487}],"mentor":{"id":54,"user_id":5174,"full_name":"Сергей Карпук","username":"ck"}},{"id":24919,"title":"При выполнении тестов с данными [0, 1, 2, 4, 5, 7], у меня получается вот такой результат:\n\n    Array\n    (\n        [0] =\u003e 01-\u003e2\n        [1] =\u003e 4-\u003e7\n    )\nВозникает проблема с нулем, не могу понять каким образом сделать так, чтобы на втором счетчике цикла у меня строка не считалась пустой и единица не записывалась?\nПробовал такие варианты, но в таком случае код либо вообще перестает работать, либо результат тот-же:\n\n    $summary .= (int) $numbers[$i - 1];\n    if ($summary = '')\n\nСкорее всего тут решается каким-нибудь преобразованием типов, но пока я ничего не смог нагуглить. ","creator":{"id":181221,"public_name":"Павел Михайлов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/badta5te","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjdkZWMzNTQ1MmY2MjEwMjcxNDdkNzcxMjdmMWQ3ZmVmLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fd007dced1294671adea7c3c6e4da323874b35e49091c8a594c801cd53c38165","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"01 марта 2019","location":"/topics/24919","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":53509,"body":"Павел, вы разобрались в особенностях работы функции `empty`? [Документация](http://php.net/manual/ru/function.empty.php). Понимаете, какое ограничение накладывает её использование на ваш алгоритм?","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"04 марта 2019","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":53510,"body":"Сергей, добрый день.\nДа, я прочитал ее спецификацию, но думал, что можно каким-нибудь образом (типа преобразования типов) обойти ситуацию с 0. Получается, что данная ситуация с использованием empty безвыходна в части 0?","creator":{"id":181221,"public_name":"Павел Михайлов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/badta5te","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjdkZWMzNTQ1MmY2MjEwMjcxNDdkNzcxMjdmMWQ3ZmVmLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fd007dced1294671adea7c3c6e4da323874b35e49091c8a594c801cd53c38165","has_received_mentor_response_at_least_once":true},"created_at":"04 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":53636,"body":"В спецификации указаны все значения, которые будут восприняты как пустые. Исходите из этого.\n\n\u003e Получается, что данная ситуация с использованием empty безвыходна в части 0?\n\nНужно определить контекст. Для чего вы проверяете элемент на пустоту? Как формируется сама коллекция для проверки?","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"05 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":53640,"body":"Сергей, я уже код переписал и задание выполнил. Просто когда я начинал его писать, думал, что для решения моей задачи она (empty) подойдет, но потом возник случай с тем, что в функцию передается строка с 0 и возникла сложность, я думал, что ее можно как-то обойти с преобразованием типов, но не получилось и код пришлось переписать )","creator":{"id":181221,"public_name":"Павел Михайлов","is_removed":false,"is_mentor":null,"can_use_paid_features":true,"public_profile_enabled":null,"public_profile_url":"/u/badta5te","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjdkZWMzNTQ1MmY2MjEwMjcxNDdkNzcxMjdmMWQ3ZmVmLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=fd007dced1294671adea7c3c6e4da323874b35e49091c8a594c801cd53c38165","has_received_mentor_response_at_least_once":true},"created_at":"05 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":53642,"body":"Это нормальная ситуация. Хорошо, что справились!","creator":{"id":5174,"public_name":"Сергей К.","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ck","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImI3MjFiZDk3ZjAzYWMyYTlhMTZjMTc5NTE5M2FlYmQwIiwic3RvcmFnZSI6InN0b3JlIn0?signature=a38c848c33e1ff0dc15f29dd6c4d8c8315e02ec3d0f52aa5fa3489dee64607c5","has_received_mentor_response_at_least_once":true},"created_at":"05 марта 2019","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":49790,"user_id":5174},{"id":49540,"user_id":181221}],"mentor":{"id":54,"user_id":5174,"full_name":"Сергей Карпук","username":"ck"}},{"id":20166,"title":"Если не ошибаюсь второе условие в **elseif** лишнее. Или он для ясности добавлено? \n\n```\n\u0026\u0026 $expectedValue === $value\n```","creator":{"id":89234,"public_name":"Александр Щербаченко","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/mralejandro","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6Ijc4NmU3YjQxODc5NjA1ODY4YmY4NDZmMzJjNzgxYjdmIiwic3RvcmFnZSI6InN0b3JlIn0?signature=77b45a51b9d05f165c997f7770e3a3ef09bd354b2940de1052f60823ee8dbcbf","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"21 октября 2018","location":"/topics/20166","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":42721,"body":"Да, это лишнее условие, убрал, спасибо!","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"23 октября 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":40075,"user_id":89234},{"id":40157,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":17790,"title":"Добрый день!\n\nВопрос немного не по теме задания (вопрос возник, но не знаю, где ещё спросить): существует ли у вас материал по написанию тестов?\n\nС каждым разом всё больше убеждаюсь в пользе хороших тестов. Написал код, он работает, но забыл про один единственный случай, который мой код не покрывал. Только тесты помогли найти его.\n\nВопрос больше в том, как предусмотреть все варианты (ну или большинство).\nНу и [код ревью](https://ru.hexlet.io/code_reviews/59603) просто так.  ","creator":{"id":155116,"public_name":"Maxim Genko","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-93943d3cd23dcca6","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImFjZDRlZTJiMzE2MmEyYzMwNzE2ZjIxMGQ5ODhlMzM4Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=17bda8c4008d8d3cb722f07d078a3e44ad6be2b7a29a894d1d87ee31baff433e","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"15 августа 2018","location":"/topics/17790","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[{"id":8168,"user_id":198436,"topic_id":17790}],"comments":[{"id":37525,"body":"Здравствуйте! Посмотрите эти материалы:\n\n* [Начинаем писать тесты (правильно)](https://ru.hexlet.io/blog/posts/how-to-test-code)\n* [Hexlet Webinar #5 — Тестирование и TDD](https://youtu.be/DqOnfQ4Ad5s)","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"15 августа 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":22362,"user_id":99387,"comment_id":37525},{"id":11820,"user_id":198436,"comment_id":37525},{"id":8859,"user_id":155116,"comment_id":37525}]}],"useful":false,"subscribers":[{"id":35375,"user_id":155116},{"id":35377,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":16546,"title":"Подскажите  из-за чего здесь  ошибка undefined offset:0\n\n`// removed`","creator":{"id":177758,"public_name":"kambulat","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/kambulat","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"27 июня 2018","location":"/topics/16546","has_solutions":true,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":35084,"body":"Добрый день!\n\n\u003e Подскажите из-за чего здесь ошибка undefined offset:0\n\nЭто значит, что была попытка обращения к значению массива по несуществующему индексу. Внимательно изучите вывод тестов - так должно быть указано на какой конкретно строчке вашего кода это произшло.","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"28 июня 2018","solution":true,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":32916,"user_id":177758},{"id":32961,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":14035,"title":"Никак не могу понять суть задания. Я думал, что нужно просто вывести все числа в двух диапазонах.\n\n['1-\u003e3', '5-\u003e7'] даст [1,2,3,5,6,7]\n\nНе понимаю, откуда берутся другие числа в результирующем наборе.","creator":{"id":167573,"public_name":"Андрей Маргиев","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ellenripley4","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImM3ODlhY2Y2MDk3NWNlOGFmOGU2NmQyNDYwNGQ5NzFiLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=7370fecddfc327a1fb1984cb7d5ff1208d29a04f53b023413731201defcaf1ab","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"07 марта 2018","location":"/topics/14035","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":29575,"body":"`'1-\u003e3'` - диапазон в который входят числа 1, 2 и 3.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"09 марта 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":29636,"body":"Почему тогда в тестах есть вот такой вот ожидаемый и фактический результат?\n\n[['3-\u003e5', '8-\u003e10'], [1, 1, 3, 4, 5, -6, 8, 9, 10, 12, 14, 14]]","creator":{"id":167573,"public_name":"Андрей Маргиев","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/ellenripley4","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImM3ODlhY2Y2MDk3NWNlOGFmOGU2NmQyNDYwNGQ5NzFiLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=7370fecddfc327a1fb1984cb7d5ff1208d29a04f53b023413731201defcaf1ab","has_received_mentor_response_at_least_once":true},"created_at":"10 марта 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":29694,"body":"Тоже не могу понять, в чем задание =)","creator":{"id":64077,"public_name":"Максим Торбург","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-e4369c9b2f2a993e","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"created_at":"10 марта 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":29732,"body":"Действительно задание было сформулировано не вполне однозначно, могло показаться, что надо из массива строк парсить последовательности в виде массива чисел, нас самом деле наоборот - на вход функции подаётся массив чисел, в котором необходимо найти последовательности и записать их в массив строк:\n```\nsummaryRanges([0, 1, 2, 4, 5, 7]);\n// → [\"0-\u003e2\", \"4-\u003e5\"]\n```\n\nЯ обновил описание задания, в ближайшее время пройдёт сборка и оно появится на сайте. Спасибо за ваши замечания!","creator":{"id":61651,"public_name":"Игорь Инковский","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/igor-i","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImQ0ZGI4OTc1OGQ1NmEzOWI4YzdiZDc2ZTk2YWZjNzBiLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=f2fc4804aab0fc9a9a522cb8db1012b61d519004ec21dd5106af1caebec71dcc","has_received_mentor_response_at_least_once":true},"created_at":"11 марта 2018","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":22363,"user_id":99387,"comment_id":29732}]}],"useful":false,"subscribers":[{"id":27914,"user_id":167573},{"id":28013,"user_id":1},{"id":28124,"user_id":64077},{"id":28158,"user_id":61651}],"mentor":{"id":17,"user_id":1,"full_name":"Кирилл Мокевнин","username":"mokevnin"}},{"id":6338,"title":"Не нописаю, где ошибка. Тесты:\u003e \n1) App\\SolutionTest::testSummaryRanges with data set #1 (array('1-\u003e3'), array(1, 2, 3))\nFailed asserting that two arrays are equal.\n--- Expected\n+++ Actual\n@@ @@\n Array (\n-    0 =\u003e '1-\u003e3'\n )\n\nКод:\n```\nfunction summaryRanges(array $arr){\n$result=array();\n$start=false;\n$lastcheck=false;\n\n  for ($i=0;$i\u003csizeof($arr)-1;$i++){\n      if (($arr[$i]+1==$arr[$i+1])\u0026\u0026($start==false)){\n            $first=$arr[$i];\n            $start=true;\n      };\n      if (($arr[$i]+1!=$arr[$i+1])\u0026\u0026($start==true)){\n            $last=$arr[$i];\n            $start=false;\n            $lastcheck=true;\n      };\n      if ($lastcheck==true){\n        $lastcheck=false;\n        $result[]=\"$first-\u003e$last\";\n      \n      };\n  }\n  return $result;\n}\n```","creator":{"id":13759,"public_name":"user-6f68bfce3eef2f8a","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-6f68bfce3eef2f8a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"15 января 2017","location":"/topics/6338","has_solutions":false,"can_show_mentor_info":true,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":11597,"body":"1. Некорректно заданное условие в конструкции `for` - обходятся не все элементы массива.\n2. Проверки у Вас задаются таким образом, что при достижении последнего элемента массива будут возникать ошибки выхода за границы массива (при обращении по несуществующему индексу (значение которого больше максимального)).","creator":{"id":61806,"public_name":"Александр О.","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/alek_web","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjlkNWJlZmM5YTcyYjU5M2U3YTBhZDJmOTM4NmVhZWQ2Iiwic3RvcmFnZSI6InN0b3JlIn0?signature=fb373dbc771dd42c0a883160576897a3b9f623cf86efc562146324e69cfb27c2","has_received_mentor_response_at_least_once":true},"created_at":"16 января 2017","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":12395,"user_id":13759},{"id":12402,"user_id":61806}],"mentor":{"id":26,"user_id":61806,"full_name":"Александр Овчар","username":"alek_web"}},{"id":4541,"title":"подскажите пожалуйста, что не так с кодом?\n\n```\nfunction summaryRanges($arr) {\n  $res=[];\n  for ($i=0;$i\u003csizeof($arr);$i++) {\n      if(($arr[$i-1]+1 != $arr[$i]) \u0026\u0026 ($arr[$i] == $arr[$i+1]-1)) {\n        $first=$arr[$i];\n      }\n      elseif (($arr[$i-1]+1 == $arr[$i]) \u0026\u0026 ($arr[$i] != $arr[$i+1]-1)) {\n        $last=$arr[$i];\n        $res[]=\"$first-\u003e$last\";\n      }\n  }\n  return $res;\n}\n```","creator":{"id":113159,"public_name":"Катерина Шевцова","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-08ddae4250f7746a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":false},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"08 сентября 2016","location":"/topics/4541","has_solutions":false,"can_show_mentor_info":false,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":7829,"body":"А что пишут тесты?","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"08 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7845,"body":"Undefined offset: -1 in /usr/src/app/Solution.php on line 9 // if(...","creator":{"id":113159,"public_name":"Катерина Шевцова","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-08ddae4250f7746a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":false},"created_at":"09 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7874,"body":"На 9 строчке в файле `solution.php` вы обращаетесь к `-1` индексу массива, но его там нет.\n\nПодозреваю что это происходит на первой итерации, когда `$i` равно нулю, потому что у вас в коде есть такое `$arr[$i-1]`","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"10 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7907,"body":"\n\n```\nfunction summaryRanges($arr) {\n  $res=[];\n\n  for ($i=1;$i\u003csizeof($arr)-1;$i++) {\n      if(($arr[$i-1]+1 != $arr[$i]) \u0026\u0026 ($arr[$i] == $arr[$i+1]-1)) {\n        $first=$arr[$i];\n      }\n      elseif (($arr[$i-1]+1 == $arr[$i]) \u0026\u0026 ($arr[$i] != $arr[$i+1]-1)) {\n        $last=$arr[$i];\n        $res[]=\"$first-\u003e$last\";\n      }\n      elseif ($arr[0]==$arr[$i]-1){\n        $first=$arr[0];\n      }\n      \n      elseif ($arr[sizeof($arr)-1] == $arr[sizeof($arr)-2]+1) {\n          $last=$arr[sizeof($arr)-1];\n      }\n  }\n\n  return $res;\n}\n```\n\nтесты: \n```\nThere was 1 failure:\n\n1) App\\TestSolution::testSummaryRanges with data set #1 (array('1-\u003e3'), array(1, 2, 3))\nFailed asserting that two arrays are equal.\n--- Expected\n+++ Actual\n@@ @@\n Array (\n-    0 =\u003e '1-\u003e3'\n )\n\n/usr/src/app/TestSolution.php:14\n\nFAILURES!\nTests: 5, Assertions: 5, Failures: 1.\nmake: *** [test] Error 1\nmake: Leaving directory `/usr/src/app'\n```","creator":{"id":113159,"public_name":"Катерина Шевцова","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-08ddae4250f7746a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":false},"created_at":"11 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7908,"body":"Вам пишут что вход был `array(1, 2, 3))` выход должен был быть `array('1-\u003e3')` (что соответствует заданию), а ваша функция вернула пустой массив.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"11 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7912,"body":"да я понимаю, но почему он его возвращает пустым?!..\nснова все переделано, и все равно не проходит тест..\nвзгляните, пожалуйста, на код\n```\nfunction summaryRanges($arr) {\n  $res=[];\n\n  for ($i=1;$i\u003csizeof($arr)-1;$i++) {\n      if(($arr[$i-1]+1 != $arr[$i]) \u0026\u0026 ($arr[$i] == $arr[$i+1]-1)) {\n        $first=$arr[$i];\n      }\n      elseif (($arr[$i-1]+1 == $arr[$i]) \u0026\u0026 ($arr[$i] != $arr[$i+1]-1)) {\n        $last=$arr[$i];\n        $res[]=\"$first-\u003e$last\";\n      }\n      elseif ($arr[0]==$arr[$i]-1){\n        $first=$arr[0];\n      }\n      elseif (array_pop($arr) == $arr[sizeof($arr)-2]+1) {\n          $last=array_pop($arr);\n      }\n  }\n  return $res;\n}\n```","creator":{"id":113159,"public_name":"Катерина Шевцова","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-08ddae4250f7746a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":false},"created_at":"11 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7913,"body":"А как вы отлаживаете? Вы пробовали ставить print_r в разных местах вашей программы с печатью всех переменных?","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"11 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":3801,"user_id":98638,"comment_id":7913}]},{"id":7923,"body":"не совсем понимаю как правильно нужно это делать.\nв каждом if,elseif в конце вбиваю print_r. все равно выдает пустые массивы.","creator":{"id":113159,"public_name":"Катерина Шевцова","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/user-08ddae4250f7746a","avatar_img_url":"https://cdn2.hexlet.io/assets/team/you-bc72575a0e6eb39de3e28e54a8df1138beaa57cd5300061ecb5c202773131f9e.jpg","has_received_mentor_response_at_least_once":false},"created_at":"12 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":7929,"body":"У вас в коде есть ровно одно место где заполняется `$res` и судя по выводу тестов, вы можете сделать вывод, что php никогда не доходит до выполнения этой ветки. Попробуйте ответить на вопрос \"почему?\". И не забывайте включать отладочную печать в нужных местах и печатать все переменные, которые участвуют в процессе.","creator":{"id":1,"public_name":"Kirill Mokevnin","is_removed":false,"is_mentor":true,"can_use_paid_features":false,"public_profile_enabled":true,"public_profile_url":"/u/mokevnin","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6ImJhZWY2ODZkOWZjNzcxZTk2ZGI2ODI3MWU5ZjEwY2Q5LmpwZWciLCJzdG9yYWdlIjoic3RvcmUifQ?signature=658e3ca483e2355f15fd8c069fbf40053698b639bcfe7d5d158afff2e88160f0","has_received_mentor_response_at_least_once":false},"created_at":"12 сентября 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":8813,"user_id":113159},{"id":8818,"user_id":1}],"mentor":null},{"id":4045,"title":"Простенькая с виду задачка оказалась настоящим крепким орешком. Понимаю что можно получить все данные за один проход по исходному массиву, но не могу зафиксировать одновременно начальные и конечные значения последовательностей. Хоть намекните как-то на алгоритм...","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"communitable":{"id":380,"slug":"php_arrays_summary_ranges","name":"Список диапазонов","location":"/challenges/php_arrays_summary_ranges","link":"Курс «\u003ca href=\"https://ru.hexlet.io/courses/php-arrays\"\u003ePHP: Массивы\u003c/a\u003e»\u003cbr\u003e\u0026#8627; Испытание «Список диапазонов»"},"created_at":"18 июля 2016","location":"/topics/4045","has_solutions":false,"can_show_mentor_info":null,"state":"active","mentorship_state":"closed","can_destroy":false,"can_like":false,"can_update":false,"can_subscribe":false,"kind":"question","likes":[],"comments":[{"id":6758,"body":"Что значит не можете зафиксировать? В чем трудность?","creator":{"id":103858,"public_name":"Роман Лахтадыр","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/roman_gemini","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjQxMjRlMDcxOWJlYjM4ZmMwNjE0YzU2YjM5YmY4MzYzIiwic3RvcmFnZSI6InN0b3JlIn0?signature=eae82956f17880582a8365bd087d37043eba5d448886d3912e8bf9af2b38131b","has_received_mentor_response_at_least_once":false},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6759,"body":"Изначально хотелось сделать так: при проходе по исходному массиву $arr присвоить временной переменной $a значение первого элемента ($arr[0]). В случае если следующий элемент $arr[1] больше на 1, то присвоить его значение временной переменной $b. На следующем шаге, в случае если сохраняется последовательность, оставить полученное значение $а без изменений, а $b присвоить значение следующего элемента последовательности. На шаге, где проверка наличия последовательности не проходит, передать в массив результатов значения временных переменных - $result[] = $a . \"-\u003e\" . b$. \nНо при реализации этого алгоритма и возникают сложности: либо последний элемент последовательности теряется, либо дублируются начальные элементы, либо происходит ещё что-то, что и словами то не передать )))\nНе могу найти механизм сохранения правильных значений временных переменных и правильной передачи их в массив результатов.","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6760,"body":"Если последний элемент теряется, значит вы после обхода цикла забываете проверить значения `$a` и `$b`. В целом у вас верный подход. Попробуйте проверить все внимательнее. Или нужно видеть код.","creator":{"id":103858,"public_name":"Роман Лахтадыр","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/roman_gemini","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjQxMjRlMDcxOWJlYjM4ZmMwNjE0YzU2YjM5YmY4MzYzIiwic3RvcmFnZSI6InN0b3JlIn0?signature=eae82956f17880582a8365bd087d37043eba5d448886d3912e8bf9af2b38131b","has_received_mentor_response_at_least_once":false},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6761,"body":"ОК, спасибо. Перепишу заново, на свежую голову... ","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6762,"body":"Похоже это тупик... Во всех испробованных вариантах я не представляю каким образом оставить `$a` равным первому значению найденной последовательности и при этом передавать значения `$a` и `$b` в массив результатов только тогда, когда последовательность заканчивается, а не на каждом шаге. Вот один из многочисленных испробованных базовых вариантов реализации. Предпринимаемые далее действия похожи на попытки мухи вылететь через стекло... Не хватает какого-то дополнительного условия сравнения чего-то с чем-то, но сравнивать нечего, т.к. даже временные переменные меняются на каждом шаге. \n```\nfunction summaryRanges(array $list)\n{\n    $a = $list[0];\n\n    $i = 1;\n    while ($i \u003c count($list)) {\n        if ($list[$i - 1] + 1 == $list[$i]) {\n            $a = $list[$i - 1];\n            $b = $list[$i];\n            $result[] = $a . \"-\u003e\" . $b;\n        }\n        $i++;\n    }\n\n    return $result;\n}\n```","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6763,"body":"А почему вы их меняете на каждом шаге? Разве у переменных `$a` и `$b` условия для изменения идентичные? Во первых, надо инициализировать обе переменные значением первого элемента массива, но до этого убедиться, что у массива есть хотя бы один элемент. Далее работать с границами, определяющими диапазон. Что должно просиходить с диапазоном? Представьте вы получаете правильную последовательность (1, 2, 3, 4, 5, 6, ...). Как в таком посчитать диапазон?","creator":{"id":103858,"public_name":"Роман Лахтадыр","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/roman_gemini","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjQxMjRlMDcxOWJlYjM4ZmMwNjE0YzU2YjM5YmY4MzYzIiwic3RvcmFnZSI6InN0b3JlIn0?signature=eae82956f17880582a8365bd087d37043eba5d448886d3912e8bf9af2b38131b","has_received_mentor_response_at_least_once":false},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[{"id":2688,"user_id":101621,"comment_id":6763}]},{"id":6768,"body":"Большое спасибо за \"разбор полетов\". Поборол. Еще помог netbeans-xdebug - проходить пошагово и смотреть как меняются значения и куда \"сворачивает\" алгоритм.\n\nНо решение автора это какие-то не те основы PHP )))\nВот это, например, как понимать ```\n$firstValue-\u003e{$array[$index]}\n``` ?","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"created_at":"18 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6778,"body":"Что именно вам не понятно? Это интерполяция. \n```php\n$a = \"foo\";\n$b = \"bar\";\n$c = \"$a-\u003e$b\";\necho $c; // выведет \"foo-\u003ebar\"\n```","creator":{"id":103858,"public_name":"Роман Лахтадыр","is_removed":false,"is_mentor":false,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/roman_gemini","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjQxMjRlMDcxOWJlYjM4ZmMwNjE0YzU2YjM5YmY4MzYzIiwic3RvcmFnZSI6InN0b3JlIn0?signature=eae82956f17880582a8365bd087d37043eba5d448886d3912e8bf9af2b38131b","has_received_mentor_response_at_least_once":false},"created_at":"19 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]},{"id":6780,"body":"Упс... Не обратил внимание на кавычки...","creator":{"id":101621,"public_name":"Vlad Buk","is_removed":false,"is_mentor":null,"can_use_paid_features":false,"public_profile_enabled":null,"public_profile_url":"/u/vladbuk","avatar_img_url":"https://cdn2.hexlet.io/derivations/image/fill/290/290/eyJpZCI6IjJkOGIyM2QyZWFjYmVmNThiM2Q1ODY3NTBiZTZjOWZhIiwic3RvcmFnZSI6InN0b3JlIn0?signature=e0389150720f96125807ec0e28a6cdb4a11e9e74d6e2a459aab2c68598665c2f","has_received_mentor_response_at_least_once":true},"created_at":"19 июля 2016","solution":null,"can_destroy":false,"can_like":false,"can_update":false,"can_mark_as_solution":false,"likes":[]}],"useful":false,"subscribers":[{"id":7789,"user_id":101621},{"id":7790,"user_id":103858}],"mentor":{"id":8,"user_id":103858,"full_name":"Роман Лахтадыр","username":"roman_gemini"}}];gon.topic_type="community";gon.communitable_type="Exercise";gon.communitable_id=380;gon.can_render_new_topic_box=true;gon.topics_count=19;gon.api_topics_url="https://ru.hexlet.io/api/topics/challenges.json?q%5Bcommunitable_of_Exercise_type_id_eq%5D=380\u0026q%5Bcommunitable_type_eq%5D=Exercise";
+//]]>
+</script>
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;https://schema.org&quot;,&quot;@type&quot;:&quot;Organization&quot;,&quot;name&quot;:&quot;Hexlet&quot;,&quot;url&quot;:&quot;https://hexlet.io&quot;,&quot;sameAs&quot;:[&quot;https://www.facebook.com/Hexlet&quot;,&quot;https://www.youtube.com/user/HexletUniversity&quot;,&quot;https://twitter.com/HexletHQ&quot;,&quot;https://soundcloud.com/hexlet&quot;],&quot;legalName&quot;:&quot;Hexlet Ltd.&quot;,&quot;address&quot;:&quot;UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland&quot;,&quot;vatID&quot;:&quot;VAT ID: FI26641607&quot;,&quot;telephone&quot;:&quot;+7 (495) 147-73-79&quot;,&quot;logo&quot;:{&quot;@type&quot;:&quot;ImageObject&quot;,&quot;url&quot;:&quot;https://cdn2.hexlet.io/assets/hexlet_logo-e99fc2b3b7c1eec88899f3af1435a39aaac6fd29d011dfe2342499c0884b7a96.png&quot;}}
+
+</script>
+
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WK88TH');
+</script>
+
+<script>
+  // in development mode
+  if (!window.Rollbar) {
+    Rollbar = {
+      error: function() {
+      },
+      configure: function() {
+      }
+    }
+  }
+  
+  Rollbar.configure({
+    payload: {
+      person: gon.current_user
+    },
+  });
+</script>
+
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/129-833bfa60.css" />
+<link rel="stylesheet" media="all" href="https://cdn2.hexlet.io/packs/css/application-d78872c2.css" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ru.hexlet.io/lessons.rss" />
+<link href='php_arrays_summary_ranges.html' rel='canonical'>
+<meta content='website' property='og:type'>
+<meta content='Список диапазонов' property='og:title'>
+<meta content='https://ru.hexlet.io/challenges/php_arrays_summary_ranges' property='og:url'>
+<meta content='PHP: Массивы: 
+
+src/Solution.php
+Реализуйте функцию summaryRanges, которая находит в массиве непрерывные возрастающие последовательности чисел и возвращает массив с их перечислением.
+&amp;lt;?php
+
+summaryRanges([]);
+// → []
+
+summaryRanges([1]);
+// → []
+
+summaryRanges([1, 2, 3]);
+// → [&quot;1-&amp;gt;3&quot;]
+
+summaryRanges([0, 1, 2, 4, 5, 7]);
+// → [&quot;0-&amp;gt;2&quot;, &quot;4-&amp;gt;5&quot;]
+
+summaryRanges([110, 111, 112, 111, -5, -4, -2, -3, -4, -5]);
+// → [&#39;110-&amp;gt;112&#39;, &#39;-5-&amp;gt;-4&#39;]
+
+
+' property='og:description'>
+<meta content='https://cdn2.hexlet.io/assets/hexlet_logo_wide-35dfc9cd81ca50f5829cb3a50c4a81e30f4a9b42547e67d1d1a9a39e35e0f968.png' property='og:image'>
+<meta content='PHP: Массивы 
+
+src/Solution.php
+Реализуйте функцию summaryRanges, которая находит в массиве непрерывные возрастающие последовательности чисел и возвращает массив с их перечислением.
+&amp;lt;?php
+
+summaryRanges([]);
+// → []
+
+summaryRanges([1]);
+// → []
+
+summaryRanges([1, 2, 3]);
+// → [&quot;1-&amp;gt;3&quot;]
+
+summaryRanges([0, 1, 2, 4, 5, 7]);
+// → [&quot;0-&amp;gt;2&quot;, &quot;4-&amp;gt;5&quot;]
+
+summaryRanges([110, 111, 112, 111, -5, -4, -2, -3, -4, -5]);
+// → [&#39;110-&amp;gt;112&#39;, &#39;-5-&amp;gt;-4&#39;]
+
+
+' name='description'>
+
+</head>
+<body class='min-vh-100'>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK88TH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<nav class='navbar navbar-expand-lg navbar-light bg-white hexlet-navbar border-bottom'>
+<a aria-hidden='true' class='navbar-brand mr-4' href='https://ru.hexlet.io/'>
+Хекслет
+</a>
+<button aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-target='#navbarResponsive' data-toggle='collapse' type='button'>
+<span class='navbar-toggler-icon'></span>
+</button>
+<div class='collapse navbar-collapse' id='navbarResponsive'>
+<ul class='navbar-nav mr-auto'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/professions"><div class="my-2">Профессии</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/courses"><div class="my-2">Курсы</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/tracks"><div class="my-2">Треки</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/pricing"><div class="my-2">Цены</div></a></li>
+</ul>
+<ul class='navbar-nav'>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/session/new"><div class="my-2">Вход</div></a></li>
+<li class="nav-item"><a class="nav-link hexlet-navbar-link px-3 " href="https://ru.hexlet.io/u/new"><div class="my-2">Регистрация</div></a></li>
+</ul>
+</div>
+</nav>
+
+
+<main class='mb-5'>
+<div class='jumbotron jumbotron-fluid shadow-sm pt-4 pb-5'>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='d-flex align-items-center'>
+<span class='fas fa-bars mr-2 text-muted'></span>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/challenges">Испытания</a>
+</div>
+<h1 class='d-flex flex-column-reverse mt-4'>
+<span class='font-weight-bold mb-0'>Список диапазонов</span>
+<span class='mb-2 d-block h6 font-weight-normal'>
+<span class='text-muted'>Испытание курса:</span>
+<a href="https://ru.hexlet.io/courses/php-arrays">PHP: Массивы</a>
+</span>
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class='container'>
+<div class='row justify-content-center'>
+<div class='col-12 col-lg-10'>
+<div class='p-3 p-md-4 shadow-sm bg-white'>
+<div class='hexlet-markdown-body'>
+<h3 id="src-solution-php">src/Solution.php</h3>
+<p>Реализуйте функцию <code>summaryRanges</code>, которая находит в массиве непрерывные возрастающие последовательности чисел и возвращает массив с их перечислением.</p>
+<pre class="hljs"><code class=php><span style="color: #999999;font-weight: bold">&lt;?php</span>
+
+<span style="color: #990000;font-weight: bold">summaryRanges</span><span style="background-color: #f8f8f8">([]);</span>
+<span style="color: #999988;font-style: italic">// → []</span>
+
+<span style="color: #990000;font-weight: bold">summaryRanges</span><span style="background-color: #f8f8f8">([</span><span style="color: #009999">1</span><span style="background-color: #f8f8f8">]);</span>
+<span style="color: #999988;font-style: italic">// → []</span>
+
+<span style="color: #990000;font-weight: bold">summaryRanges</span><span style="background-color: #f8f8f8">([</span><span style="color: #009999">1</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">2</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">3</span><span style="background-color: #f8f8f8">]);</span>
+<span style="color: #999988;font-style: italic">// → ["1-&gt;3"]</span>
+
+<span style="color: #990000;font-weight: bold">summaryRanges</span><span style="background-color: #f8f8f8">([</span><span style="color: #009999">0</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">1</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">2</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">4</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">5</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">7</span><span style="background-color: #f8f8f8">]);</span>
+<span style="color: #999988;font-style: italic">// → ["0-&gt;2", "4-&gt;5"]</span>
+
+<span style="color: #990000;font-weight: bold">summaryRanges</span><span style="background-color: #f8f8f8">([</span><span style="color: #009999">110</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">111</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">112</span><span style="background-color: #f8f8f8">,</span> <span style="color: #009999">111</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">5</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">4</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">2</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">3</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">4</span><span style="background-color: #f8f8f8">,</span> <span style="color: #000000;font-weight: bold">-</span><span style="color: #009999">5</span><span style="background-color: #f8f8f8">]);</span>
+<span style="color: #999988;font-style: italic">// → ['110-&gt;112', '-5-&gt;-4']</span>
+</code></pre>
+<div class='text-center mt-3'>
+<div class='mb-3'>
+Успешных завершений: 73%
+</div>
+</div>
+<div class='bg-hexlet-gray mt-4 mt-lg-5 p-3 p-lg-5'>
+<div class='row justify-content-between'>
+<div class='col-lg-6'>
+<h2 class='h3 font-weight-normal'>Для полного доступа к&nbsp;испытанию нужна профессиональная подписка</h2>
+</div>
+<div class='col-lg-6'>
+<p class='mb-lg-0'>Профессиональная подписка откроет полный доступ ко всем курсам, упражнениям и урокам Хекслета, проектам и пожизненный доступ к теории пройденных уроков. Подписку можно отменить в любой момент.</p>
+</div>
+</div>
+<a class="btn btn-primary" href="https://ru.hexlet.io/subscription/new?nickname=professional_monthly_39">Получить доступ</a>
+<hr class='mt-5 x-opacity-50'>
+<div class='row justify-content-between mt-lg-4'>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>115</div>
+<div class='text-muted'>курсов</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-pen-alt fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>892</div>
+<div class='text-muted'>упражнения</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-book-reader fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>2241</div>
+<div class='text-muted'>час теории</div>
+</div>
+</div>
+<div class='col-sm-6 col-xl-auto d-flex mt-3'>
+<div class='x-w-25 x-w-sm-auto d-flex justify-content-center'>
+<span class='fal fa-ballot-check fa-2x text-muted'></span>
+</div>
+<div class='ml-3'>
+<div class='h4 mb-0'>3196</div>
+<div class='text-muted'>тестов</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<div class='mb-5'>
+<div class='row'>
+<div class='col-12 col-md-3 text-md-right pr-md-5 mt-4'>
+<h4 class='mb-0'>Последние код-ревью</h4>
+</div>
+<div class='col-12 col-md-9 mt-4'>
+<table class='table'>
+<tr class='row'>
+<th class='col-5 col-md-4'>Автор</th>
+<th class='col-3 col-md-3'>Дата обновления</th>
+<th class='col-1 col-md-2'>Версий</th>
+<th class='col-3 col-md-3'></th>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/alleonov">alleonov</a>
+</td>
+<td class='col-3 col-md-3'>12 янв., 06:15</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/anastaiya_ostertag">anastaiya_ostertag</a>
+</td>
+<td class='col-3 col-md-3'>25 дек., 11:40</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/atamanov_ys">atamanov_ys</a>
+</td>
+<td class='col-3 col-md-3'>13 дек., 15:04</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/akulich_aliaksandr">akulich_aliaksandr</a>
+</td>
+<td class='col-3 col-md-3'>29 нояб., 15:04</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+<tr class='row'>
+<td class='col-5 col-md-4'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/u/zaharov">zaharov</a>
+</td>
+<td class='col-3 col-md-3'>28 нояб., 11:23</td>
+<td class='col-1 col-md-2'>1</td>
+<td class='col-3 col-md-3'>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class='hexlet-community my-5'>
+<div id='community-box'></div>
+</div>
+</div>
+</div>
+</div>
+
+</main>
+<footer class='bg-light border-top py-4'>
+<div class='container-xl'>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-lg-4 pt-3'>
+<div class='col'>
+<ul class='list-unstyled h3 text-left d-flex flex-wrap'>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://slack-ru.hexlet.io/"><span class='fab fa-slack fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.youtube.com/user/HexletUniversity"><span class='fab fa-youtube fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://twitter.com/HexletHQ"><span class='fab fa-twitter fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://t.me/hexlet_ru"><span class='fab fa-telegram fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.facebook.com/Hexlet"><span class='fab fa-facebook fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://vk.com/hexlet"><span class='fab fa-vk fa-1x'></span>
+</a></li>
+<li class='mr-4 mb-2'>
+<a target="_blank" class="x-link-without-decoration" rel="noopener noreferrer nofollow" href="https://www.instagram.com/hexlethq"><span class='fab fa-instagram fa-1x'></span>
+</a></li>
+</ul>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/about">О проекте</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/careers">Карьера в Хекслете</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/testimonials">Отзывы студентов</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog/categories/success">Истории успеха</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" rel="noopener noreferrer nofollow" href="https://hexlet.printdirect.ru/?partner_id=615497">Магазин мерча</a>
+</li>
+</ul>
+<p class='mt-3 text-muted'>
+<span class='d-block'>Hexlet Ltd.</span>
+<span class='d-block'>UMA Esplanadi, Pohjoisesplanadi 39, 00100 Helsinki, Finland</span>
+<span class='d-block'>VAT ID: FI26641607</span>
+<span class='d-block'><a href="tel:+7(495)147-73-79">+7 (495) 147-73-79</a></span>
+</p>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/tos">Условия использования</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pages/privacy">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Обучение</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/courses">Курсы</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/tracks">Треки</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/pricing">Цены</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Компаниям</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/teams">Хекслет для компаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/hr">База выпускников</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Профессии</div>
+<ul class='list-unstyled'>
+<li class='mb-1 mb-sm-2 mb-lg-3'>
+<a class="x-link-only-hover text-primary" target="_blank" href="https://premium.hexlet.io">Индивидуальное обучение программированию</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/frontend">Фронтенд JavaScript</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/php">PHP-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/python">Python-программист</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/backend">Бэкенд JavaScript (Node.js)</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/layout-designer">Верстальщик HTML/CSS</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/professions/java">Java-программист</a>
+</li>
+</ul>
+</div>
+<div class='col'>
+<div class='font-weight-bold mb-2'>Полезно</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/blog">Блог</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://ru.code-basics.com/">Code Basics</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://codebattle.hexlet.io">Code Battle</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://guides.hexlet.io/">Hexlet Guides</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/categories/sandbox/courses">Песочница</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://cv.hexlet.io/">Хекслет-резюме</a>
+</li>
+</ul>
+<div class='font-weight-bold mb-2'>Помощь</div>
+<ul class='list-unstyled'>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/knowledge">База знаний</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" target="_blank" rel="noopener noreferrer" href="https://help.hexlet.io">Справка</a>
+</li>
+<li class='mb-1'>
+<a class="x-link-only-hover" href="https://ru.hexlet.io/community">Вопросы по урокам</a>
+</li>
+<li class='mb-1'>
+<a rel="nofollow" class="x-link-only-hover" href="mailto:support@hexlet.io">support@hexlet.io</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn2.hexlet.io/packs/js/runtime-6a253acc3da5e383db7a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/76-62641b4ba4d4ba41151b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/947-c71859fce214c939e55f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/479-1458ead673f3ee5645f0.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/57-7fa01adfcb0a66d42b6b.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/980-5da1e9044c3030482dc8.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/535-9d144ee816c8b99c903e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/129-0fa01037f302dbedb06f.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/857-a8b08d06d15994dce678.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/application-d29ce104afe04e0d27f6.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/935-7f8bfff985e62da9bf9c.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/894-ec8fccded7da3dfd676e.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/997-beddc28a7d0ef402590a.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/249-3e413f4252ded1dd4e94.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/726-a2b11f0982c2bdd597d7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/877-dab1d26ec16dca7984c9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/572-c050f9ee604c14650f44.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/206-8ba91db6787bdb64f1ec.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/996-264949adcf1dd0e349a7.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/177-df59e4e387caca78a0d4.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/522-ad78e657281f2b07a4db.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/810-792c311c61e3820450e9.js" crossorigin="anonymous"></script>
+<script src="https://cdn2.hexlet.io/packs/js/community-90283d42c8cd748b4966.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
