@@ -1,12 +1,22 @@
 <?php
 
-echo "sum = ".binarySum(101, 10);
+/*10101
+01111
+
+01010
+
+00101*/
+
+echo "sum = ".binarySum(101, 10).'<br>';
 
 function binarySum($a, $b) {
-    echo "summ $a and $b";
-    $slag = "0b$a";
-    $slag2 = "0b$b";
+    echo "summ $a and $b".'<br>';
+    $slag = $a;
+    $slag2 = $b;
 
-    return $sum = $slag&$slag2;
+    $c = $a^$b;
+    $d = $b;
+
+    return $sum = $slag|$slag2;
 
 }
