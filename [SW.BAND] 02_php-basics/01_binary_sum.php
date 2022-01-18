@@ -7,16 +7,17 @@
 
 00101*/
 
-echo "sum = ".binarySum(101, 10).'<br>';
+echo "sum = ".binarySum("10101", "1111").'<br>';
 
 function binarySum($a, $b) {
-    echo "summ $a and $b".'<br>';
-    $slag = $a;
-    $slag2 = $b;
 
-    $c = $a^$b;
-    $d = $b;
-
-    return $sum = $slag|$slag2;
-
+    $summand_1 = intval($a, 2);
+    $summand_2 = intval($b, 2);
+    echo "summ $summand_1 and $summand_2".'<br>';
+    while ($summand_2 !=0) {
+        $mask = $summand_1&$summand_2;
+        $summand_1 = $summand_1^$summand_2;
+        $summand_2 = $mask<<1;
+    }
+    return decbin($summand_1);
 }
