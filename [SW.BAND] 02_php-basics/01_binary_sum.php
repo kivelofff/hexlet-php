@@ -8,6 +8,8 @@
 00101*/
 
 echo "sum = ".binarySum("10101", "1111").'<br>';
+$aa=33%3;
+echo "aa= $aa".'<br>';
 
 function binarySum($a, $b) {
 
