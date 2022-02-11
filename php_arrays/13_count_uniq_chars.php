@@ -25,12 +25,21 @@ var_dump(countUniqChars($text2)); // 13
 
 $text3 = '';
 var_dump(countUniqChars($text3)); // 0
+$text4 = '0';
+//string '0' is an empty string!
+var_dump(countUniqChars($text4)); // 1
 
 function countUniqChars(string $string): int
 {
-    if (empty($string)) {
+    if (strlen($string) == 0) {
         return 0;
     }
-    $uniqueChars = array_unique(str_split($string));
+    $chars = str_split($string);
+    $uniqueChars = [];
+    foreach ($chars as $char) {
+        if (!in_array($char, $uniqueChars)) {
+            $uniqueChars[] = $char;
+        }
+    }
     return count($uniqueChars);
 }
