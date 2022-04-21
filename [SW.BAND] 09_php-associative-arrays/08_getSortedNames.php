@@ -29,7 +29,7 @@ function getSortedNames(array $users): array
     foreach ($users as $user) {
         ['name' => $names[]] = $user;
     }
-    asort($names);
+    sort($names);
     return $names;
 }
 
