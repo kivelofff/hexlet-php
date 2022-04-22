@@ -52,17 +52,65 @@ function make(): array
 
 function get(array &$map, $key, $defaultValue = null)
 {
-
+    $index = crc32($key) % 1000;
+    return (isset($map[$index]) && ($key === $map[$index][0])) ? $map[$index][1] : $defaultValue;
 }
 
 function set(array &$map, $key, $value)
 {
     $index = crc32($key) % 1000;
-    $currentLength = count($map);
-    if ($index > $currentLength - 1) {
-        for ($i = $currentLength; $i < $index; $i++) {
-            $map[]= '';
-        }
-        $map[] = $value;
+    if (isset($map[$index]) && ($key !== $map[$index][0])) {
+        return false;
     }
+    $map[$index] = [$key, $value];
+    return true;
 }
+
+$map = make();
+
+set($map, 'aaaaa0.462031558722291', 'vvv');
+set($map, 'aaaaa0.0585754039730588', 'boom!');
+
+$result = get($map, 'aaaaa0.462031558722291');
+var_dump($result); // => vvv
+
+$result = get($map, 'key');
+
+var_dump($result); // => null
+
+
+
+$result = get($map, 'key', 'value');
+
+var_dump($result); // => value
+
+
+
+set($map, 'key2', 'value2');
+
+$result = get($map, 'key2');
+
+var_dump($result); // => value2
+
+
+set($map, 'key2', 'value2_new');
+
+$result = get($map, 'key2');
+
+var_dump($result); // => value2_new
+
+
+set($map, 'aaaaa0.462031558722291', 'value_init');
+
+$result = get($map, 'aaaaa0.462031558722291');
+
+var_dump($result); // => value_init
+
+
+set($map, 'aaaaa0.0585754039730588', 'value_new');
+
+$result = get($map, 'aaaaa0.0585754039730588');
+$isSame = (crc32('aaaaa0.0585754039730588') % 1000) === (crc32('aaaaa0.462031558722291') % 1000);
+print_r("are the indexes the same: $isSame");
+
+var_dump($result); // => value_init
