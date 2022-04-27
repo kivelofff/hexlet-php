@@ -20,7 +20,7 @@ sayPrimeOrNot(4); // no
 
 function isPrime(int $num): bool
 {
-    if ($num == 1 || $num == 0)  {
+    if ($num <= 1) {
         return false;
     }
     for ($i = 2; $i <= round(sqrt($num)); $i++) {
@@ -40,3 +40,5 @@ function sayPrimeOrNot(int $num)
 sayPrimeOrNot(5); // yes
 
 sayPrimeOrNot(4); // no
+sayPrimeOrNot(-3); // yes
+sayPrimeOrNot(-4); // no
