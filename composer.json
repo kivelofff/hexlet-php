@@ -1,0 +1,18 @@
+{
+    "name": "ladmin/hexlet-php",
+    "description": "hexlet hw",
+    "require": {
+        "funct/funct": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ladmin\\HexletPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ladmin",
+            "email": "ladmin@ladmins.ky"
+        }
+    ]
+}
