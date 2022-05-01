@@ -12,6 +12,10 @@
         }
     ],
     "require": {
-        "funct/funct": "^1.5"
+        "funct/funct": "^1.5",
+        "webmozart/assert": "^1.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }
