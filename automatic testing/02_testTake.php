@@ -24,7 +24,7 @@ use function App\Implementations\take;
 
 $functionName = 'right';
 
-require_once __DIR__ . "/implementations/take.{$functionName}.php";
+require_once __DIR__ . "/Implementations/take.{$functionName}.php";
 
 Assert::eq(take([], 2), []);
 Assert::eq(take([1, 2, 3]), [1]);

@@ -23,7 +23,7 @@ use PHPUnit\Framework\TestCase;
 
 $functionName = 'wrong3';
 
-require_once __DIR__ . "/implementations/gt.$functionName.php";
+require_once __DIR__ . "/Implementations/gt.$functionName.php";
 
 use function App\Implementations\gt;
 

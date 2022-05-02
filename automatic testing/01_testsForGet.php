@@ -28,7 +28,7 @@ use function App\Implementations\get;
 
 $functionName = 'wrong3';
 
-require_once __DIR__ . "/implementations/get.{$functionName}.php";
+require_once __DIR__ . "/Implementations/get.{$functionName}.php";
 
 $testArray = [
     'key1' => 'value1',

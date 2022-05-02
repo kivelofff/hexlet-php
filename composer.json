@@ -2,7 +2,8 @@
     "name": "user/hexlet-php",
     "autoload": {
         "psr-4": {
-            "User\\HexletPhp\\": "src/"
+            "User\\HexletPhp\\": "src/",
+            "App\\": "automatic testing/"
         }
     },
     "authors": [

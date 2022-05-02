@@ -17,7 +17,7 @@ use function App\Implementations\without;
 
 $functionName = 'right';
 
-require_once  __DIR__ . "/implementations/without.$functionName.php";
+require_once  __DIR__ . "/Implementations/without.$functionName.php";
 
 class TestSolution extends TestCase
 {
