@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "User\\HexletPhp\\": "src/",
-            "App\\": "automatic testing/"
+            "App\\": "automatic testing/",
+            "Dat\\": "data_abstraction"
         }
     },
     "authors": [
