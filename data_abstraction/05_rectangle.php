@@ -88,12 +88,8 @@ containsOrigin($rectangle2); // true
 Квадрант плоскости — любая из 4 областей (углов), на которые плоскость делится двумя взаимно перпендикулярными прямыми, принятыми в качестве осей координат.
 
  */
-namespace Dat\Rectangle;
 
-use function Dat\Implementations\Points\makeDecartPoint;
-use function Dat\Implementations\Points\getX;
-use function Dat\Implementations\Points\getY;
-use function Dat\Implementations\Points\getQuadrant;
+require_once "../vendor/autoload.php";
 
 // BEGIN (write your solution here)
 function makeRectangle(array $startPoint, int $width, int $height): array
@@ -125,23 +121,18 @@ function containsOrigin(array $rectangle): bool
     $startPoint = getStartPoint($rectangle);
     $width = getWidth($rectangle);
     $height = getHeight($rectangle);
-
     $firstQuadrant = getQuadrant($startPoint);
-
     $secondPoint = makeDecartPoint(getX($startPoint) + $width, getY($startPoint));
     $secondQuadrant = getQuadrant($secondPoint);
-
     $thirdPoint = makeDecartPoint(getX($startPoint), getY($startPoint) - $height);
     $thirdQuadrant = getQuadrant($thirdPoint);
-
     $fourthPoint = makeDecartPoint(getX($startPoint) + $width, getY($startPoint) - $height);
     $fourthQuadrant = getQuadrant($fourthPoint);
-
     $quadrants = [$firstQuadrant, $secondQuadrant, $thirdQuadrant, $fourthQuadrant];
     return count($quadrants) === count(array_unique($quadrants));
 }
 // END
 
-$rectangleOne = makeRectangle(makeDecartPoint(-1, 1), 2, 2);
+$rectangleOne = makeRectangle(makeDecartPoint(-2, 2), 2, 2);
 
 var_dump(containsOrigin($rectangleOne));

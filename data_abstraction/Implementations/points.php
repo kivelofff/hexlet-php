@@ -1,7 +1,5 @@
 <?php
 
-namespace Dat\Implementations\Points;
-
 function makeDecartPoint($x, $y)
 {
     return [
