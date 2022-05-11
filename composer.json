@@ -4,11 +4,13 @@
         "psr-4": {
             "User\\HexletPhp\\": "src/",
             "App\\": "automatic testing/",
-            "Dat\\": "data_abstraction/"
+            "Dat\\": "data_abstraction/",
+            "Trees\\": "trees"
         },
         "files": [
             "data_abstraction/Implementations/points.php",
-            "data_abstraction/Implementations/utils.php"
+            "data_abstraction/Implementations/utils.php",
+            "trees/Tree.php"
         ]
     },
     "authors": [
