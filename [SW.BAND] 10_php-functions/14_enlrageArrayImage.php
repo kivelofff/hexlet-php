@@ -59,9 +59,48 @@ use Funct\Collection;
 
 function enlargeArrayImage(array $imageArray): array
 {
-    $zipImage = [];
-
-    return $zipImage;
+    $duplicate = fn($e) => [$e, $e];
+    $horEnlarged = array_map(fn($e) => Collection\flatten(array_map($duplicate, $e)), $imageArray);
+    return Collection\flatten(array_map($duplicate, $horEnlarged));
 }
 
-var_dump(Collection\zip([1,2,3,4,5], [1,2,3,4,5]));
+
+$image = [
+
+    ['*','*','*','*'],
+
+    ['*',' ',' ','*'],
+
+    ['*',' ',' ','*'],
+
+    ['*','*','*','*']
+
+];
+
+// ****
+
+// *  *
+
+// *  *
+
+// ****
+
+
+var_dump(enlargeArrayImage($image));
+
+// ********
+
+// ********
+
+// **    **
+
+// **    **
+
+// **    **
+
+// **    **
+
+// ********
+
+// ********
+
