@@ -83,15 +83,13 @@ use function Trees\getMeta;
 
 function du(array $directory): array
 {
-    $space = [];
-    $childrenSpace = [];
-    if (isFile($directory)) {
-        $space[getName($directory)] = getMeta($directory)['size'];
-    } else {
-        $children = getChildren($directory);
-        $childrenSpace = array_map(fn($node) => du($node), $children);
-    }
-    return array_merge($space, $childrenSpace);
+    $children = getChildren($directory);
+    $files = array_filter($children, fn($node) => isFile($node));
+    $folders = array_filter($children, fn($node) => isDirectory($node));
+    $filesSize = array_reduce($files, fn($carry, $node) => $carry += getMeta($node)['size'], 0);
+    $foldersSize = array_map(fn($folder) => du($folder), $folders);
+    $name = getName($directory);
+    return array_merge([$name => $filesSize], $foldersSize);
 }
 
 $tree = mkdir('/', [
