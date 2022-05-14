@@ -81,15 +81,21 @@ use function Trees\getChildren;
 use function Trees\getMeta;
 
 
-function du(array $directory): array
+function du(array $directory)
 {
+    if (isFile($directory)) {
+        return [getName($directory), getMeta($directory)['size']];
+    }
     $children = getChildren($directory);
-    $files = array_filter($children, fn($node) => isFile($node));
-    $folders = array_filter($children, fn($node) => isDirectory($node));
-    $filesSize = array_reduce($files, fn($carry, $node) => $carry += getMeta($node)['size'], 0);
-    $foldersSize = array_map(fn($folder) => du($folder), $folders);
-    $name = getName($directory);
-    return array_merge([$name => $filesSize], $foldersSize);
+    $childrenSpace = array_map(function ($dir) {
+        if (isDirectory($dir)) {
+            $elements = du($dir);
+            return [getName($dir), array_reduce($elements, fn($acc, $e) => $acc += $e[1], 0)];
+        }
+        return du($dir);
+        }, $children);
+    usort($childrenSpace, fn($a, $b) => -($a[1] <=> $b[1]));
+    return $childrenSpace;
 }
 
 $tree = mkdir('/', [
