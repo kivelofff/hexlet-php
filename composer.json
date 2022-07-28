@@ -5,7 +5,8 @@
             "User\\HexletPhp\\": "src/",
             "App\\": "automatic testing/",
             "Dat\\": "data_abstraction/",
-            "Trees\\": "trees"
+            "Trees\\": "trees",
+            "Oop\\One\\": "introduction_to_oop/01_point"
         },
         "files": [
             "data_abstraction/Implementations/points.php",
