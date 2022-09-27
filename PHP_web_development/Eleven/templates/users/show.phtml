@@ -1,0 +1,16 @@
+<a href="/users">Пользователи</a>
+
+<!-- BEGIN (write your solution here) -->
+<table>
+    <tr>
+        <?php foreach (array_keys($user) as $field): ?>
+            <td><?= $field ?></td>
+        <?php endforeach;?>
+    </tr>
+    <tr>
+        <?php foreach ($user as $key => $value): ?>
+            <td><?= $value ?></td>
+        <?php endforeach; ?>
+    </tr>
+</table>
+<!-- END -->

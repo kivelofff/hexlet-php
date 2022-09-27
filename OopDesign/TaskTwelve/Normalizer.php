@@ -47,7 +47,7 @@ echo $result;
 // one two?
  */
 
-function getQuestions(string $text):string
+function getQuestions(string $text): string
 {
     return collect(s($text)->match('/.*[?]\\s/', PREG_SET_ORDER))
         ->flatten()

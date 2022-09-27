@@ -1,0 +1,9 @@
+<form action="/courses" method="post">
+    <input type="submit" value="Create Course">
+</form>
+
+<!-- BEGIN (write your solution here) -->
+<?php if (isset($flash['success'][0])): ?>
+    <div><?= htmlspecialchars($flash['success'][0]) ?></div>
+<?php endif ?>
+<!-- END -->

@@ -1,0 +1,13 @@
+<!-- BEGIN (write your solution here) -->
+<html>
+<table>
+    <tr><td>User id</td><td>First Name</td></tr>
+    <?php foreach ($users as $userId => $firstname): ?>
+        <tr>
+            <td><?= $userId ?></td>
+            <td><a href="/users/<?= $userId ?>"><?= $firstname?></a></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+</html>
+<!-- END -->

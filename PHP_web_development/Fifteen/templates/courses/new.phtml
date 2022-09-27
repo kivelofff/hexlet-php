@@ -1,0 +1,27 @@
+<div>
+    <p><h3>Create new course</h3></p>>
+</div>
+<form action="/courses" method="post">
+    <div>
+        <label>
+            Is it paid:
+            <select name="course[paid]">
+                <option <?= $course['paid'] ? 'selected' : '' ?> value="1">Yes</option>
+                <option <?= !$course['paid'] ? 'selected' : '' ?> value="0">No</option>
+            </select>
+        </label>
+        <?php if(isset($errors['paid'])): ?>
+            <div><?= $errors['paid'] ?></div>
+        <?php endif ?>
+    </div>
+    <div>
+        <label>
+            Title
+            <input type="text" name="course[title]" value="<?= htmlspecialchars($course['title'])?>">
+        </label>
+        <?php if (isset($errors['title'])): ?>
+            <div><?= $errors['title']?></div>
+        <?php endif ?>
+    </div>
+    <input type="submit" value="Create">
+</form>

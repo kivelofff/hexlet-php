@@ -14,7 +14,8 @@
             "Oop\\Thirteen\\": "introduction_to_oop/13_Timer/",
             "Oop\\Fifteenth\\": "introduction_to_oop/15_time/",
             "Oop\\Sixteens\\": "introduction_to_oop/16_comparable_user",
-            "OopDesign\\": "OopDesign/"
+            "OopDesign\\": "OopDesign/",
+            "Web\\": "PHP_web_development/"
             
         },
         "files": [
@@ -39,9 +40,18 @@
         "php-ds/php-ds": "^1.4",
         "tightenco/collect": "^9.25",
         "nesbot/carbon": "^2.62",
-        "symfony/string": "^6.1"
+        "symfony/string": "^6.1",
+        "slim/slim": "^4.10",
+        "slim/psr7": "^1.5",
+        "slim/http": "^1.2",
+        "slim/php-view": "^3.2",
+        "php-di/php-di": "^6.4",
+        "fzaninotto/faker": "^1.5",
+        "illuminate/collections": "^9.29",
+        "slim/flash": "^0.4.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.7"
     }
 }

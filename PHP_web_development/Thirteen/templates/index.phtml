@@ -1,0 +1,9 @@
+<a href="/users">Пользователи</a>
+<div>All users:</div>
+<?php foreach ($users as $user): ?>
+<div>
+    <?php foreach ($user as $key=>$value): ?>
+    <p><?= $key ?>: <?= $value ?></p>
+    <?php endforeach;?>
+</div>
+<?php endforeach; ?>

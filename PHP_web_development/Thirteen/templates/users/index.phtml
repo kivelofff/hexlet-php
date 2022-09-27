@@ -1,0 +1,23 @@
+<!-- BEGIN (write your solution here) -->
+<div>
+    <form action="/users" method="get">
+        <p><input type="search" name="term" placeholder="Имя пользователя" value="<?= htmlspecialchars($term) ?>">
+            <input type="submit" value="Find"></p>
+    </form>
+</div>
+<table style="width: auto">
+    <tr>
+        <?php /** @var array $userFields */
+        foreach ($userFields as $field): ?>
+            <td style="width: 25%"><?= $field ?></td>
+        <?php endforeach; ?>
+    </tr>
+    <?php foreach ($filteredUsers as $user): ?>
+        <tr>
+            <?php foreach ($user as $key=>$value): ?>
+                <td style="width: 25%"><?= $value ?></td>
+            <?php endforeach;?>
+        </tr>
+    <?php endforeach;?>
+</table>
+<!-- END -->
