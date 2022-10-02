@@ -67,6 +67,7 @@ turum-purum
 HEREDOC;
 
 var_dump(getQuestions($text));
+var_dump(is_array(xdebug_get_code_coverage()));
 
 /**
  * function getQuestions(string $text)
