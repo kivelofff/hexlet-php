@@ -15,8 +15,8 @@
             "Oop\\Fifteenth\\": "introduction_to_oop/15_time/",
             "Oop\\Sixteens\\": "introduction_to_oop/16_comparable_user",
             "OopDesign\\": "OopDesign/",
-            "Web\\": "PHP_web_development/"
-            
+            "Web\\": "PHP_web_development/",
+            "Web\\Testing\\Errors\\": "PHP_web_development/19_PHP_advanced_testing/02_errors/src"
         },
         "files": [
             "data_abstraction/Implementations/points.php",
