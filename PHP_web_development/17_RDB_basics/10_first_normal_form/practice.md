@@ -16,4 +16,9 @@ INSERT INTO users (id, first_name, created_at) VALUES (1, 'Tom', '1832-11-23');
 INSERT INTO orders (id, user_first_name, months, created_at) VALUES (1, 'Tom', 3, '2012-10-1');
 Подсказки:
 
-Перед тем как писать запросы в файл, зайдите в psql и поэкспериментируйте как следует
+Перед тем как писать запросы в файл, зайдите в psql и поэкспериментируйте как 
+
+create table users (id bigint primary key, first_name varchar(255), created_at timestamp);
+insert into users (id, first_name, created_at) values (1, 'Tom', '2022-11-11');
+create table orders (id bigint primary key, user_first_name varchar(255), months smallint, created_at timestamp);
+insert into orders (id, user_first_name, months, created_at) values (1, 'Tom', '14', '2022-11-11');

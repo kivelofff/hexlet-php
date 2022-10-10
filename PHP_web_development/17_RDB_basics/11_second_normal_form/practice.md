@@ -1,6 +1,12 @@
 В базе данных содержится таблица old_cars, в которой составной первичный ключ: model-brand.
 
-old_cars: | model | brand | price | discount | |--------|--------|---------|----------| | m5 | bmw | 5500000 | 5 | | almera | nissan | 5500000 | 10 | | x5m | bmw | 6000000 | 5 | | m1 | bmw | 2500000 | 5 | | gt-r | nissan | 5000000 | 10 |
+old_cars: | model | brand | price | discount |
+          |--------|--------|---------|----------| 
+          | m5 | bmw | 5500000 | 5 | 
+          | almera | nissan | 5500000 | 10 | 
+          | x5m | bmw | 6000000 | 5 | 
+          | m1 | bmw | 2500000 | 5 | 
+          | gt-r | nissan | 5000000 | 10 |
 
 Цена (price) в этой таблице зависит от первичного ключа (model-brand), а вот скидка (discount) только от бренда (brand).
 
@@ -12,9 +18,23 @@ solution.sql
 Добавьте в эти таблицы те же записи, что и в исходной таблице, но в нормализованной форме
 В результате у вас должны получиться две следующие таблицы:
 
-brands: | id | name | discount | |----|--------|----------| | 1 | bmw | 5 | | 2 | nissan | 10 |
+brands: | id | name | discount | 
+|----|--------|----------| 
+| 1 | bmw | 5 | 
+| 2 | nissan | 10 |
 
-cars: | id | brand_id | model | price | |-----|----------|--------|---------| | 1 | 1 | m5 | 5500000 | | 2 | 1 | x5m | 6000000 | | 3 | 1 | m1 | 2500000 | | 4 | 2 | gt-r | 5000000 | | 5 | 2 | almera | 5500000 |
+cars: | id | brand_id | model | price | 
+|-----|----------|--------|---------|
+| 1 | 1 | m5 | 5500000 | 
+| 2 | 1 | x5m | 6000000 | 
+| 3 | 1 | m1 | 2500000 | 
+| 4 | 2 | gt-r | 5000000 | 
+| 5 | 2 | almera | 5500000 |
 
 Подсказки
 Перед тем, как писать запросы в файл, зайдите в psql и поэкспериментируйте, как следует
+
+create table brands (id bigint primary key, brand varchar(255), discount smallint);
+create table cars (id bigint primary key, brand_id bigint references brands (id), model varchar(255), price numeric);
+insert into brands values (1, 'bmw', 5), (2, 'nissan', 10);
+insert into cars values (1, 1, 'm5', 5500000), (2, 1, 'x5m', 6000000), (3, 1, 'm1', 2500000), (4, 2, 'gt-r', 5000000), (5, 2, 'almera', 5500000);
