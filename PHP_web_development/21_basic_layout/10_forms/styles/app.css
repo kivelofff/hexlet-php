@@ -20,8 +20,22 @@ body {
 }
 
 /* BEGIN (write your solution here) */
+.form-input * {
+    display: block;
+    width: 100%;
+}
 
+input[type=text] .form-input {
+    height: 50px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    border: 1px solid #e2e2e2;
+}
 
+.form-input textarea {
+    height: 200px;
+    resize: none;
+}
 /* END */
 
 .btn {

@@ -3,3 +3,5 @@ solution.sql
 
 Подсказки
 Перед тем, как записывать решение в файл, откройте psql и попробуйте сделать выборку там
+
+select first_name from users order by birthday desc nulls last;

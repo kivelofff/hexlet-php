@@ -14,3 +14,9 @@ created_at — не может быть null.
 Подсказки:
 
 Выберите типы данных самостоятельно.
+
+hexlet=> create table users (id bigint primary key generated always as identity, username varchar(255) unique not null, email varchar(255) not null, created_at timestamp not null);
+CREATE TABLE
+hexlet=> create table topics (id bigint primary key generated always as identity, user_id bigint references users (id), body varchar(255) not null, created_at timestamp not null);
+CREATE TABLE
+hexlet=>

@@ -9,3 +9,7 @@ ERD Заказа
 
 Подсказки
 Перед тем как писать запросы в файл, зайдите в psql и поэкспериментируйте, как следует
+
+create table orders (id bigint primary key generated always as identity, user_id bigint references users (id), created_at timestamp);
+create table goods (id bigint primary key generated always as identity, name varchar(255), price numeric); 
+create table order_items (id bigint primary key generated always as identity, order_id bigint references orders (id), good_id bigint references goods (id), price numeric);

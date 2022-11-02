@@ -20,3 +20,6 @@ name и first_name - одна и та же колонка.
 Подсказки
 Добавление ограничения UNIQUE выполняется через команду ADD
 Установка ограничения NOT NULL выполняется через команды ALTER COLUMN и SET
+
+alter table users add unique (email), drop column age, add column created_at timestamp, alter column name set not null;
+alter table users rename column name to first_name;

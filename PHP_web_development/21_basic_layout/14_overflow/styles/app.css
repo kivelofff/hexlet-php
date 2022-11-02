@@ -22,7 +22,7 @@ small {
     padding: 1rem;
 
     /* BEGIN (write your solution here) */
-
+    overflow-y: scroll;
     /* END */
 
     background: #fff;
@@ -46,7 +46,9 @@ small {
     margin: 0;
 
     /* BEGIN (write your solution here) */
-
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     /* END */
 }
 

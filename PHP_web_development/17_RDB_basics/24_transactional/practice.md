@@ -14,3 +14,9 @@ solution.sql
 
 Используйте в решении конкретные идентификаторы пользователей (без выполнения подзапросов)
 Идентификаторы пользователей можно узнать, сделав соответствующий запрос в базу данных к таблице users, используя psql в терминале упражнения
+
+begin;
+select id from users where first_name = 'Tirion';
+select id from users where first_name = 'Jon';
+insert into friendship (user1_id, user2_id) values (7, 2);
+commit;
