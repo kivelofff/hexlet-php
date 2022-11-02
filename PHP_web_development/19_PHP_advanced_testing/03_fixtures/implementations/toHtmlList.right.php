@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\Fixtures\Implementations;
 
 use Symfony\Component\Yaml\Yaml;
 

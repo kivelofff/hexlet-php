@@ -1,6 +1,6 @@
 <?php
 
-namespace Web\Testing\Errors\App\Acl;
+namespace Web\Testing\Errors\App;
 
 class AclWrong1
 {
@@ -18,12 +18,12 @@ class AclWrong1
         }
 
         if (!array_key_exists($privilege, $this->data[$resource])) {
-            throw new PrivilegeUndefined();
+            throw new Acl\PrivilegeUndefined();
         }
 
         $roles = $this->data[$resource][$privilege];
         if (!in_array($role, $roles)) {
-            throw new AccessDenied('Access denied');
+            throw new Acl\AccessDenied('Access denied');
         }
     }
 }

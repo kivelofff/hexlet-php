@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\DependencyInjection\Implementations;
 
 function getFilesCount($path, $log = null)
 {

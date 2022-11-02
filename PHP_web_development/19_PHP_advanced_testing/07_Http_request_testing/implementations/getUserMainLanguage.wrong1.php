@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace Web\Testing\HttpRequests;
 
-function getUserMainLanguage($user, $client = null)
+function getUserMainLanguageWrong($user, $client = null)
 {
-    $defaultClient = $client ? $client : new RepositoryClient();
+    $defaultClient = $client ? $client : new Src\RepositoryClient();
     $data = $defaultClient->repos($user);
     if (count($data) === 0) {
         return null;

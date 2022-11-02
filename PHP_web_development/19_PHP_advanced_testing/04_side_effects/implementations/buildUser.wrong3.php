@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\SideEffects\Implementations;
 
 use Faker\Factory;
 
-function buildUser()
+function buildUserWrong3()
 {
     $faker = Factory::create();
     $defaultData = [

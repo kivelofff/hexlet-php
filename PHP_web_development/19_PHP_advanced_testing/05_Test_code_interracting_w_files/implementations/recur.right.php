@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\Files\Implementations;
 
 function mkdirs($path)
 {

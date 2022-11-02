@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Web\Testing\HttpRequests\Src;
 
 interface RepositoryClientInterface
 {

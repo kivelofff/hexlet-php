@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\SideEffects\Implementations;
 
 use Faker\Factory;
 
-function buildUser($data = [])
+function buildUserWrong2($data = [])
 {
     $faker = Factory::create();
     $faker->seed(123);

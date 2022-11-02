@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Web\Testing\HttpRequests\Src;
 
 class RepositoryClient implements RepositoryClientInterface
 {
@@ -9,4 +9,3 @@ class RepositoryClient implements RepositoryClientInterface
         throw new \Exception('Can not send http request');
     }
 }
-

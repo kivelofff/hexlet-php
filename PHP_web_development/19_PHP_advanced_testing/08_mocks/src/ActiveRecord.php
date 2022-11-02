@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Web\Testing\Mocks\Src;
 
 interface ActiveRecord
 {

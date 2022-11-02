@@ -16,7 +16,13 @@
             "Oop\\Sixteens\\": "introduction_to_oop/16_comparable_user",
             "OopDesign\\": "OopDesign/",
             "Web\\": "PHP_web_development/",
-            "Web\\Testing\\Errors\\": "PHP_web_development/19_PHP_advanced_testing/02_errors/src"
+            "Web\\Testing\\Errors\\": "PHP_web_development/19_PHP_advanced_testing/02_errors/src",
+            "Web\\Testing\\Fixtures\\": "PHP_web_development/19_PHP_advanced_testing/03_fixtures/implementations",
+            "Web\\Testing\\SideEffects\\": "PHP_web_development/19_PHP_advanced_testing/04_side_effects/implementations",
+            "Web\\Testing\\Files\\": "PHP_web_development/19_PHP_advanced_testing/05_Test_code_interracting_w_files",
+            "Web\\Testing\\DependencyInjection\\": "PHP_web_development/19_PHP_advanced_testing/06_dependency_inversion",
+            "Web\\Testing\\HttpRequests\\": "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing",
+            "Web\\Testing\\Mocks\\": "PHP_web_development/19_PHP_advanced_testing/08_mocks"
         },
         "files": [
             "data_abstraction/Implementations/points.php",
@@ -24,7 +30,22 @@
             "trees/Tree.php",
             "introduction_to_oop/01_point/PointFunctions.php",
             "introduction_to_oop/07_user/UserFunctions.php",
-            "introduction_to_oop/08_segment/SegmentFunctions.php"
+            "introduction_to_oop/08_segment/SegmentFunctions.php",
+            "PHP_web_development/19_PHP_advanced_testing/03_fixtures/implementations/toHtmlList.right.php",
+            "PHP_web_development/19_PHP_advanced_testing/03_fixtures/implementations/toHtmlList.wrong1.php",
+            "PHP_web_development/19_PHP_advanced_testing/03_fixtures/implementations/toHtmlList.wrong2.php",
+            "PHP_web_development/19_PHP_advanced_testing/03_fixtures/implementations/toHtmlList.wrong3.php",
+            "PHP_web_development/19_PHP_advanced_testing/04_side_effects/implementations/buildUser.right.php",
+            "PHP_web_development/19_PHP_advanced_testing/04_side_effects/implementations/buildUser.wrong1.php",
+            "PHP_web_development/19_PHP_advanced_testing/04_side_effects/implementations/buildUser.wrong2.php",
+            "PHP_web_development/19_PHP_advanced_testing/04_side_effects/implementations/buildUser.wrong3.php",
+            "PHP_web_development/19_PHP_advanced_testing/05_Test_code_interracting_w_files/implementations/recur.right.php",
+            "PHP_web_development/19_PHP_advanced_testing/05_Test_code_interracting_w_files/implementations/recur.wrong1.php",
+            "PHP_web_development/19_PHP_advanced_testing/06_dependency_inversion/implementations/countFiles.right.php",
+            "PHP_web_development/19_PHP_advanced_testing/06_dependency_inversion/implementations/countFiles.wrong1.php",
+            "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing/implementations/getUserMainLanguage.right.php",
+            "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing/implementations/getUserMainLanguage.wrong1.php"
+
         ]
     },
     "authors": [
@@ -48,7 +69,9 @@
         "php-di/php-di": "^6.4",
         "fzaninotto/faker": "^1.5",
         "illuminate/collections": "^9.29",
-        "slim/flash": "^0.4.0"
+        "slim/flash": "^0.4.0",
+        "symfony/yaml": "^6.1",
+        "mikey179/vfsstream": "^1.6"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

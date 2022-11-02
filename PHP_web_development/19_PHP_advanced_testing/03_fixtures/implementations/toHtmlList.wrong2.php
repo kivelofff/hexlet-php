@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\Fixtures\Implementations;
 
-use Symfony\Component\Yaml\Yaml;
-
-function toHtmlList($filepath)
+function toHtmlListWrong2($filepath)
 {
     $parsers = [
-        'json' => fn () => [],
-        'yaml' => fn ($content) => Yaml::parse($content),
+        'json' => fn ($content) => json_decode($content, true),
+        'yaml' => fn () => [],
         'csv' => fn ($content) => str_getcsv($content)
     ];
 
@@ -18,3 +16,4 @@ function toHtmlList($filepath)
     $list = array_map(fn ($item) => "<li>{$item}</li>", $items);
     return "<ul>\n" . implode("\n", $list) . "\n</ul>";
 }
+

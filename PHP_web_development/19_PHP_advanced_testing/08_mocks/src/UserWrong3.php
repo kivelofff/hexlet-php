@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Variant;
+namespace Web\Testing\Mocks\Src;
 
-class User implements \App\ActiveRecord
+use Web\Testing\Mocks\Src\ActiveRecord;
+use Web\Testing\Mocks\Src\DbInterface;
+
+class UserWrong3 implements ActiveRecord
 {
     private $dirty = true;
 
@@ -10,7 +13,7 @@ class User implements \App\ActiveRecord
     private $firstName;
     private $lastName;
 
-    public function __construct(\App\DbInterface $dbconnection)
+    public function __construct(DbInterface $dbconnection)
     {
         $this->connection = $dbconnection;
     }
@@ -29,12 +32,8 @@ class User implements \App\ActiveRecord
 
     public function save()
     {
-        if (!$this->dirty) {
-            return false;
-        }
         $this->dirty = false;
         $sql = "insert into users ('{$this->firstName}', '{$this->lastName}')";
         $this->connection->query($sql);
     }
 }
-

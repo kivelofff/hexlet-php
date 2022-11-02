@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Implementations;
+namespace Web\Testing\Files\Implementations;
 
-function mkdirs($path)
+function mkdirsWrong($path)
 {
     return mkdir(explode("/", $path)[0], 0700);
 }
