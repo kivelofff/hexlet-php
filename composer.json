@@ -22,7 +22,8 @@
             "Web\\Testing\\Files\\": "PHP_web_development/19_PHP_advanced_testing/05_Test_code_interracting_w_files",
             "Web\\Testing\\DependencyInjection\\": "PHP_web_development/19_PHP_advanced_testing/06_dependency_inversion",
             "Web\\Testing\\HttpRequests\\": "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing",
-            "Web\\Testing\\Mocks\\": "PHP_web_development/19_PHP_advanced_testing/08_mocks"
+            "Web\\Testing\\Mocks\\": "PHP_web_development/19_PHP_advanced_testing/08_mocks",
+            "Polymorphysm\\ParamPolymorphysm\\": "22_PHP_polymorphysm/02_parametric_polimorphysm"
         },
         "files": [
             "data_abstraction/Implementations/points.php",
@@ -45,7 +46,6 @@
             "PHP_web_development/19_PHP_advanced_testing/06_dependency_inversion/implementations/countFiles.wrong1.php",
             "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing/implementations/getUserMainLanguage.right.php",
             "PHP_web_development/19_PHP_advanced_testing/07_Http_request_testing/implementations/getUserMainLanguage.wrong1.php"
-
         ]
     },
     "authors": [

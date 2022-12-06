@@ -7,4 +7,4 @@ solution.sql
 Подсказки
 Перед тем, как записывать решение в файл, откройте psql и попробуйте сделать выборку там
 
-select * from users where birthday < '2002-10-03' order by first_name desc limit 3 offset 2;
+select * from users where birthday < '2002-10-03' order by first_name limit 3 offset 2;

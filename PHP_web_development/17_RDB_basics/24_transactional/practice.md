@@ -19,4 +19,5 @@ begin;
 select id from users where first_name = 'Tirion';
 select id from users where first_name = 'Jon';
 insert into friendship (user1_id, user2_id) values (7, 2);
+insert into friendship (user1_id, user2_id) values (2, 7);
 commit;

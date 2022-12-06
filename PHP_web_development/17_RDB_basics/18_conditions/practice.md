@@ -7,4 +7,4 @@ solution.sql
 Подсказки
 Перед тем, как записывать решение в файл, откройте psql и попробуйте сделать выборку там
 
-select * from users where house = 'stark' and created_at between '2018-11-23' and '2018-12-12' order by created_at desc;
+select * from users where house = 'stark' or created_at between '2018-11-23' and '2018-12-12' order by created_at desc;

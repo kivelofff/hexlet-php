@@ -34,7 +34,7 @@ cars: | id | brand_id | model | price |
 Подсказки
 Перед тем, как писать запросы в файл, зайдите в psql и поэкспериментируйте, как следует
 
-create table brands (id bigint primary key, brand varchar(255), discount smallint);
+create table brands (id bigint primary key, name varchar(255), discount smallint);
 create table cars (id bigint primary key, brand_id bigint references brands (id), model varchar(255), price numeric);
 insert into brands values (1, 'bmw', 5), (2, 'nissan', 10);
 insert into cars values (1, 1, 'm5', 5500000), (2, 1, 'x5m', 6000000), (3, 1, 'm1', 2500000), (4, 2, 'gt-r', 5000000), (5, 2, 'almera', 5500000);

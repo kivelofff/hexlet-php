@@ -20,5 +20,5 @@ create table countries (id bigint primary key, name varchar(255));
 insert into countries values (1, 'Россия');
 create table country_regions (id bigint primary key, country_id bigint references countries (id), name varchar(255));
 insert into country_regions values (1, 1, 'Татарстан'), (2, 1, 'Самарская область');
-create table country_region_cities (id bigint primary key, country_regions_id bigint references country_regions (id), name varchar(255));
+create table country_region_cities (id bigint primary key, country_region_id bigint references country_regions (id), name varchar(255));
 insert into country_region_cities values (1, 1, 'Бугульма'), (2, 1, 'Казань'), (3, 2, 'Тольятти');
